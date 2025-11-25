@@ -169,6 +169,33 @@ nav a.active {
   border-bottom: 1px solid var(--border-light);
 }
 
+.hero-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-logo {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  background: linear-gradient(135deg, rgba(228, 120, 35, 0.1), rgba(253, 102, 8, 0.08));
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-light);
+}
+
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
@@ -731,6 +758,15 @@ footer {
   
   .menu-toggle {
     display: block;
+  }
+
+  .hero-layout {
+    gap: 1.25rem;
+  }
+
+  .hero-logo img {
+    width: 120px;
+    height: 120px;
   }
   
   nav ul {
