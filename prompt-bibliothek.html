@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt-Bibliothek – KI Workshop</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">KI</div>
+        <span>Workshop-Portal</span>
+      </a>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="prompt-bibliothek.html" class="active">Prompts</a></li>
+          <li><a href="30-60-90-plan.html">90-Tage-Plan</a></li>
+          <li><a href="multiplikatoren.html">Multiplikatoren</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 3rem 2rem;">
+    <div class="hero-content">
+      <span class="hero-badge">📝 Über 30 getestete Prompts</span>
+      <h1>Prompt-Bibliothek</h1>
+      <p class="hero-subtitle">Sofort einsetzbare Prompts für Ihren Träger-Alltag. Klicken Sie auf einen Prompt, um ihn zu kopieren.</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Anleitung -->
+    <section class="section">
+      <div class="card" style="background: var(--bg-cream); border-color: var(--primary);">
+        <h3 style="margin-bottom: 1rem;">💡 So nutzen Sie diese Bibliothek</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+          <div>
+            <strong style="color: var(--primary);">1. Prompt auswählen</strong>
+            <p style="font-size: 0.9rem; margin-top: 0.25rem;">Suchen Sie nach Ihrer Aufgabe in den Kategorien</p>
+          </div>
+          <div>
+            <strong style="color: var(--primary);">2. Platzhalter ersetzen</strong>
+            <p style="font-size: 0.9rem; margin-top: 0.25rem;">Ersetzen Sie [ECKIGE KLAMMERN] mit Ihren Inhalten</p>
+          </div>
+          <div>
+            <strong style="color: var(--primary);">3. Prompt anpassen</strong>
+            <p style="font-size: 0.9rem; margin-top: 0.25rem;">Passen Sie Tonalität und Details nach Bedarf an</p>
+          </div>
+          <div>
+            <strong style="color: var(--primary);">4. Testen & verbessern</strong>
+            <p style="font-size: 0.9rem; margin-top: 0.25rem;">Ergebnis prüfen und Prompt bei Bedarf anpassen</p>
+          </div>
+        </div>
+        <p style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: var(--radius-sm); border-left: 3px solid #dc2626;">
+          <strong style="color: #dc2626;">⚠️ Datenschutz:</strong> KEINE personenbezogenen Daten in die Prompts einfügen! Namen, Adressen, Geburtsdaten etc. gehören NICHT in KI-Tools.
+        </p>
+      </div>
+    </section>
+
+    <!-- Schnellnavigation -->
+    <section class="section">
+      <h3 style="margin-bottom: 1rem;">Schnellnavigation</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <a href="#kommunikation-intern" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Kommunikation intern</a>
+        <a href="#kommunikation-extern" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Kommunikation extern</a>
+        <a href="#planung" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Planung & Organisation</a>
+        <a href="#personal" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Personalmanagement</a>
+        <a href="#konzepte" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Konzeptentwicklung</a>
+        <a href="#dokumentation" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Dokumentation</a>
+        <a href="#oeffentlichkeitsarbeit" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Öffentlichkeitsarbeit</a>
+        <a href="#qualitaet" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Qualitätsentwicklung</a>
+        <a href="#krisen" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Krisenmanagement</a>
+      </div>
+    </section>
+
+    <!-- Kategorie 1: Kommunikation intern -->
+    <section class="section prompt-category" id="kommunikation-intern">
+      <h3>✉️ Kommunikation intern</h3>
+      
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>E-Mail an Kita-Leitung</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Du bist ein erfahrener Trägervertreter in einem katholischen Kita-Träger. 
+Schreibe eine professionelle E-Mail an die Leitung der Kita [KITA-NAME anonymisiert] zum Thema [THEMA]. 
+
+Die E-Mail soll:
+- Max. 200 Wörter umfassen
+- Folgende Punkte enthalten: [PUNKT 1], [PUNKT 2], [PUNKT 3]
+- Ton: wertschätzend, klar und lösungsorientiert
+- Mit konkreter Handlungsaufforderung enden
+
+Kontext: [Kurze Beschreibung der Situation]<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+          <div class="prompt-tip">
+            <strong>Beispiel:</strong> Thema: Neue Hygienevorschriften | Punkte: Information über Vorschriften, Umsetzungsfrist, Unterstützungsangebot
+          </div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Rundschreiben an alle Einrichtungen</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle ein Rundschreiben für alle Kita-Leitungen unseres Trägers zum 
+Thema [THEMA]. 
+
+Das Rundschreiben soll:
+- Formal und strukturiert aufgebaut sein
+- Folgende Abschnitte enthalten: 
+  1) Anlass/Hintergrund
+  2) Wichtige Informationen
+  3) To-Dos für die Einrichtungen
+  4) Ansprechpartner bei Rückfragen
+- Max. 1 DIN-A4-Seite
+- Ton: sachlich, aber freundlich
+
+Deadline für Rückmeldungen: [DATUM]<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Protokoll-Zusammenfassung</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Fasse dieses Meeting-Protokoll in einer übersichtlichen Executive Summary 
+zusammen. Die Zusammenfassung soll:
+
+1. Wichtigste Beschlüsse (max. 5 Punkte)
+2. Offene Punkte mit Verantwortlichen und Deadlines (Tabellenform)
+3. Nächste Schritte (konkrete Handlungsempfehlungen)
+
+Format: Max. 1 Seite, Bullet Points, handlungsorientiert
+Zielgruppe: Geschäftsführung und Trägervertretung
+
+[HIER PROTOKOLL EINFÜGEN - ohne Namen!]<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Schwieriges Gespräch vorbereiten</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Hilf mir, ein schwieriges Gespräch zum Thema [THEMA] vorzubereiten. 
+Situation: [BESCHREIBUNG DER SITUATION - anonymisiert]
+
+Erstelle bitte:
+1. Gesprächsleitfaden mit Struktur (Begrüßung, Problemdarstellung, 
+   Lösungsansätze, Vereinbarung)
+2. 5 mögliche Formulierungen für kritische Punkte (wertschätzend, 
+   aber klar)
+3. Antizipierte Gegenargumente und passende Antworten
+4. Deeskalationsstrategien
+
+Ton: Empathisch, professionell, lösungsorientiert<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategorie 2: Kommunikation extern -->
+    <section class="section prompt-category" id="kommunikation-extern">
+      <h3>📨 Kommunikation extern</h3>
+      
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Elternbrief allgemein</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle einen Elternbrief für die Eltern unserer Kita zum Thema [THEMA]. 
+
+Der Brief soll:
+- Verständlich für alle Bildungshintergründe sein
+- Empathisch und informativ formuliert sein
+- Folgende Struktur haben:
+  1) Freundliche Begrüßung
+  2) Information/Anliegen klar darstellen
+  3) Konkrete Handlungsempfehlungen (wenn nötig)
+  4) Herzlicher Abschluss mit Kontaktmöglichkeit
+- Max. 1 A4-Seite
+
+Zielgruppe: Eltern von Kindern im Alter von [ALTERSGRUPPE]
+Ton: Freundlich, verständlich, einladend<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Elternbrief: Schwieriges Thema</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Verfasse einen sensiblen Elternbrief zum Thema [SCHWIERIGES THEMA]. 
+
+Der Brief soll:
+- Die Situation transparent, aber behutsam darstellen
+- Verständnis zeigen für mögliche Sorgen der Eltern
+- Konkrete Maßnahmen unsererseits aufzeigen
+- Dialogangebot unterbreiten
+- Zuversicht vermitteln, ohne zu beschönigen
+
+Länge: Max. 1,5 Seiten
+Ton: Empathisch, transparent, professionell, beruhigend
+
+Wichtig: Achte auf rechtssichere Formulierungen!<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Pressemitteilung</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle eine Pressemitteilung für lokale Medien zum Thema [THEMA/EREIGNIS].
+
+Die Pressemitteilung soll:
+- Nach journalistischen Standards aufgebaut sein (W-Fragen)
+- Einen einprägsamen Titel haben
+- Folgende Abschnitte enthalten:
+  1) Lead (die wichtigste Info vorweg)
+  2) Hauptteil mit Details
+  3) Zitat von [FUNKTION, nicht Name]
+  4) Hintergrundinformationen zum Träger
+  5) Kontakt für Rückfragen (allgemein)
+- Max. 1 Seite (ca. 3000 Zeichen)
+
+Ton: Professionell, sachlich, aber lebendig
+Anlass: [KONKRETER ANLASS]<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Stellenausschreibung (extern)</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle eine attraktive Stellenausschreibung für die Position [POSITION] 
+in unserem katholischen Kita-Träger.
+
+Die Ausschreibung soll folgende Abschnitte enthalten:
+1. Über uns (kurz, authentisch, wertebezogen)
+2. Ihre Aufgaben (konkret, ansprechend formuliert)
+3. Ihr Profil (Muss-Kriterien und Wünsche getrennt)
+4. Wir bieten (Benefits, Entwicklungsmöglichkeiten, Werte)
+5. Bewerbung (einfacher Prozess, Ansprechpartner)
+
+Ton: Modern, wertschätzend, einladend
+Besonderheit: Betone katholische Werte, aber inklusiv formuliert
+
+Rahmenbedingungen: [Stundenumfang, Standort, Start-Datum]<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategorie 3: Planung & Organisation -->
+    <section class="section prompt-category" id="planung">
+      <h3>📅 Planung & Organisation</h3>
+      
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Jahresplanung erstellen</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle einen strukturierten Jahresplan für das Jahr [JAHR] für unseren 
+Kita-Träger mit [ANZAHL] Einrichtungen.
+
+Der Plan soll folgende Bereiche abdecken:
+1. Trägerkonferenzen / Gremiensitzungen (monatlich)
+2. Qualitätsentwicklungsmaßnahmen (quartalsweise)
+3. Fortbildungen für Leitungen (mind. 4 pro Jahr)
+4. Evaluationen / Audits (nach Vorgaben)
+5. Besondere Projekte: [PROJEKTE]
+6. Feste/Veranstaltungen auf Trägerebene
+
+Format: Übersichtstabelle mit Spalten: Monat | Aktivität | Verantwortlich | Status
+
+Berücksichtige: Schulferien, kirchliche Feiertage, Ferienzeiten<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Projektplan entwickeln</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle einen detaillierten Projektplan für das Projekt [PROJEKTNAME].
+
+Rahmendaten:
+- Projektziel: [ZIEL]
+- Laufzeit: [DAUER]
+- Budget: [ca. BETRAG, wenn relevant]
+- Beteiligte: [ROLLEN, keine Namen]
+
+Der Projektplan soll enthalten:
+1. Projektbeschreibung (kurz)
+2. Meilensteine mit Zeitachse
+3. Arbeitspakete mit Verantwortlichkeiten
+4. Ressourcenplanung (Personal, Material, Budget)
+5. Risikoanalyse mit Gegenmaßnahmen
+6. Kommunikationsplan (wer informiert wen wann)
+7. Erfolgskriterien
+
+Format: Strukturiert, tabellarisch wo möglich<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Checkliste für Standardprozess</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle eine Schritt-für-Schritt-Checkliste für den Prozess [PROZESSNAME].
+
+Die Checkliste soll:
+- Alle notwendigen Schritte in chronologischer Reihenfolge enthalten
+- Bei jedem Schritt angeben: Was? Wann? Wer? Womit?
+- Kritische Punkte/Stolperfallen markieren
+- Verweise auf relevante Dokumente/Formulare enthalten
+- Checkboxen zum Abhaken haben
+
+Zielgruppe: [WER NUTZT DIE CHECKLISTE]
+Wichtige Deadlines/Fristen: [WENN RELEVANT]
+
+Format: Übersichtlich, max. 2 Seiten<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategorie 4: Personalmanagement -->
+    <section class="section prompt-category" id="personal">
+      <h3>👥 Personalmanagement</h3>
+      
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Stellenbeschreibung intern</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle eine detaillierte Stellenbeschreibung für die Position 
+[POSITION] in unserem Träger.
+
+Die Stellenbeschreibung soll folgende Abschnitte enthalten:
+1. Positionsbezeichnung und Einordnung
+2. Zweck der Stelle
+3. Hauptaufgaben (ca. 5-8 Aufgabenbereiche mit %-Anteilen)
+4. Kompetenzen und Verantwortlichkeiten
+5. Anforderungsprofil (Qualifikation, Erfahrung, Fähigkeiten)
+6. Arbeitsbedingungen (Arbeitszeit, Vergütung nach Tarif, Besonderheiten)
+7. Weisungsbefugnis und Zusammenarbeit
+
+Ziel: Klare Rollenklärung, Basis für Mitarbeitergespräche
+Format: Strukturiertes Dokument, professionell<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Mitarbeitergespräch vorbereiten</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle einen Leitfaden für ein Mitarbeitergespräch mit [FUNKTION].
+
+Anlass: [Jahresgespräch/Zielvereinbarung/Entwicklungsgespräch]
+
+Der Leitfaden soll folgende Phasen abdecken:
+1. Begrüßung und Gesprächseinstieg
+2. Rückblick auf vergangenes Jahr/Periode
+   - Was lief gut? (Erfolge würdigen)
+   - Wo gab es Herausforderungen?
+3. Aktuelle Situation und Befindlichkeit
+4. Ziele für kommendes Jahr/Periode (SMART formulieren)
+5. Unterstützungsbedarfe klären
+6. Abschluss mit Vereinbarung
+
+Füge hinzu: Mögliche Fragen, Gesprächstechniken, Zeitstruktur
+Ton: Wertschätzend, entwicklungsorientiert, auf Augenhöhe<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Fortbildungsplan erstellen</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle einen Fortbildungsplan für das Jahr [JAHR] für die Mitarbeitenden 
+unseres Trägers.
+
+Zielgruppen:
+- Kita-Leitungen ([ANZAHL] Personen)
+- Stellvertretende Leitungen ([ANZAHL] Personen)
+- Verwaltungspersonal ([ANZAHL] Personen)
+
+Berücksichtige folgende Themenbereiche:
+- Pädagogik/Qualitätsentwicklung
+- Führung und Leitung
+- Rechtliches/Verwaltung
+- Digitalisierung
+- Persönliche Entwicklung
+
+Format: Tabelle mit Spalten: Termin | Thema | Zielgruppe | Format 
+(online/präsenz) | Dauer | Anbieter (falls bekannt)
+
+Hinweis: Mind. 2 Tage Fortbildung pro Jahr und Person<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Einarbeitungsplan für neue Mitarbeitende</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle einen strukturierten Einarbeitungsplan für [POSITION] in 
+unserem Träger.
+
+Einarbeitungszeit: [DAUER, z.B. 3 Monate]
+
+Der Plan soll folgende Phasen haben:
+Woche 1-2: Ankommen & Kennenlernen
+Woche 3-4: Grundlagen & erste Aufgaben
+Woche 5-8: Vertiefung & mehr Selbstständigkeit
+Woche 9-12: Vollständige Integration & Evaluation
+
+Für jede Phase:
+- Inhalte/Themen
+- Ansprechpartner (Funktion)
+- Lernziele
+- Meilensteine/Checkpoints
+
+Format: Übersichtstabelle oder Ablaufplan<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategorie 5: Konzeptentwicklung -->
+    <section class="section prompt-category" id="konzepte">
+      <h3>📋 Konzeptentwicklung</h3>
+      
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Konzept-Gliederung entwickeln</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle eine detaillierte Gliederung für ein [TYP]-Konzept zum 
+Thema [THEMA] in unserem Kita-Träger.
+
+Rahmenbedingungen:
+- Zielgruppe: [WER LIEST DAS KONZEPT]
+- Umfang: [SEITENANZAHL]
+- Besondere Anforderungen: [Z.B. GESETZLICHE VORGABEN]
+
+Die Gliederung soll:
+- Logisch aufgebaut sein mit Hauptkapiteln und Unterkapiteln
+- Alle relevanten Aspekte abdecken
+- Platz für konkrete Maßnahmen und Umsetzung lassen
+- Evaluationskriterien beinhalten
+
+Berücksichtige die Perspektiven: pädagogisch, organisatorisch, 
+finanziell und qualitätssichernd<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Qualitätskonzept-Kapitel ausarbeiten</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle das Kapitel [KAPITELNAME] für unser Qualitätskonzept.
+
+Kontext:
+- Art der Einrichtung: [KITA/HORT/KRIPPE]
+- Besondere Schwerpunkte: [Z.B. INKLUSION, SPRACHE]
+- Trägerphilosophie: Katholischer Träger mit Werteorientierung
+
+Das Kapitel soll folgende Elemente enthalten:
+1. Leitsätze/Vision für diesen Bereich
+2. Ziele (SMART formuliert)
+3. Standards und Kriterien
+4. Konkrete Maßnahmen zur Umsetzung
+5. Indikatoren für die Zielerreichung
+6. Verantwortlichkeiten
+7. Zeitplan für Evaluation
+
+Stil: Fachlich fundiert, aber verständlich
+Länge: Ca. [SEITENANZAHL] Seiten<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategorie 6: Dokumentation -->
+    <section class="section prompt-category" id="dokumentation">
+      <h3>📊 Dokumentation & Berichtswesen</h3>
+      
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Jahresbericht strukturieren</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle die Struktur für unseren Träger-Jahresbericht [JAHR].
+
+Der Bericht soll folgende Themenbereiche abdecken:
+1. Einleitung/Grußwort
+2. Zahlen und Fakten (Einrichtungen, Kinder, Personal)
+3. Pädagogische Schwerpunkte des Jahres
+4. Besondere Projekte und Highlights
+5. Qualitätsentwicklung
+6. Finanzen im Überblick
+7. Ausblick auf das kommende Jahr
+
+Schlage für jeden Bereich vor:
+- Konkrete Inhalte
+- Visualisierungsmöglichkeiten (Grafiken, Bilder)
+- Wichtige Kennzahlen
+
+Format: Übersichtliche Gliederung mit Hinweisen<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Sitzungsprotokoll erstellen</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle eine Vorlage für ein Sitzungsprotokoll für [GREMIUM/MEETING].
+
+Die Vorlage soll folgende Abschnitte haben:
+1. Kopfbereich (Datum, Uhrzeit, Ort, Teilnehmende als Funktionen)
+2. Tagesordnung
+3. Zu jedem TOP: Thema | Diskussion (Stichpunkte) | Beschluss | 
+   Verantwortlich | Frist
+4. Offene Punkte aus vorherigen Sitzungen (Status-Update)
+5. Verschiedenes
+6. Nächster Termin
+7. Unterschriften (Protokollführung, Leitung)
+
+Format: Tabellarisch, übersichtlich, max. 2-3 Seiten pro Sitzung<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategorie 7: Öffentlichkeitsarbeit -->
+    <section class="section prompt-category" id="oeffentlichkeitsarbeit">
+      <h3>📢 Öffentlichkeitsarbeit</h3>
+      
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Social Media Post</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Schreibe einen Social Media Post für [PLATTFORM: Facebook/Instagram/LinkedIn] 
+über [THEMA/EREIGNIS].
+
+Der Post soll:
+- Aufmerksamkeit erregen (starker erster Satz)
+- Informativ UND emotional ansprechend sein
+- [ZEICHENANZAHL] Zeichen nicht überschreiten
+- Call-to-Action enthalten
+- 3-5 passende Hashtags beinhalten
+
+Zielgruppe: [ZIELGRUPPE]
+Ton: [freundlich/professionell/motivierend]
+
+Ziel des Posts: [Informieren/Zur Aktion aufrufen/Begeistern]<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Newsletter-Beitrag</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle einen Newsletter-Beitrag für unseren Träger-Newsletter zum 
+Thema [THEMA].
+
+Der Beitrag soll:
+- Eine aufmerksamkeitsstarke Überschrift haben
+- In 3-4 Absätzen strukturiert sein
+- Informativ und gleichzeitig unterhaltsam sein
+- Einen Link/Verweis oder Call-to-Action enthalten
+- Max. 300 Wörter umfassen
+
+Zielgruppe: Eltern, Mitarbeitende, Interessierte
+Ton: Warmherzig, professionell, nahbar
+
+Kontext: [ZUSÄTZLICHE INFOS ZUM THEMA]<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategorie 8: Qualitätsentwicklung -->
+    <section class="section prompt-category" id="qualitaet">
+      <h3>⭐ Qualitätsentwicklung</h3>
+      
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Evaluationsbogen erstellen</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle einen Evaluationsbogen für [WAS WIRD EVALUIERT].
+
+Zielgruppe: [WER FÜLLT AUS]
+Ziel der Evaluation: [WAS WOLLEN WIR ERFAHREN]
+
+Der Bogen soll enthalten:
+1. Einleitung (Zweck, Anonymität, Zeitaufwand)
+2. Geschlossene Fragen (Skala 1-5 oder 1-6)
+   - Ca. 10-15 Fragen zu verschiedenen Aspekten
+3. Offene Fragen (max. 3)
+   - Was war besonders gut?
+   - Was könnte verbessert werden?
+   - Sonstige Anmerkungen
+4. Demografische Fragen (nur wenn nötig und anonymisiert)
+
+Format: Übersichtlich, schnell auszufüllen (max. 10 Min)<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Maßnahmenplan aus Evaluation</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle einen Maßnahmenplan basierend auf folgenden Evaluationsergebnissen:
+
+[HIER ERGEBNISSE EINFÜGEN - anonymisiert, nur Zusammenfassungen]
+
+Der Maßnahmenplan soll enthalten:
+1. Zusammenfassung der wichtigsten Erkenntnisse
+2. Priorisierung der Handlungsfelder (hoch/mittel/niedrig)
+3. Für jedes Handlungsfeld:
+   - Konkrete Maßnahme
+   - Verantwortlich (Funktion)
+   - Zeitrahmen
+   - Ressourcenbedarf
+   - Erfolgsindikatoren
+4. Kommunikationsplan (Wer wird wie informiert?)
+5. Nächster Evaluationszeitpunkt
+
+Format: Tabellarisch und übersichtlich<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kategorie 9: Krisenmanagement -->
+    <section class="section prompt-category" id="krisen">
+      <h3>🚨 Krisenmanagement</h3>
+      
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Krisenkommunikationsplan</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle einen Krisenkommunikationsplan für den Fall [KRISENSZENARIO].
+
+Der Plan soll folgende Punkte abdecken:
+1. Krisenstab: Wer ist beteiligt? (Funktionen, keine Namen)
+2. Kommunikationswege: Wer informiert wen? In welcher Reihenfolge?
+3. Botschaften: Kernbotschaften für verschiedene Zielgruppen 
+   (Eltern, Mitarbeitende, Öffentlichkeit, Behörden)
+4. Kanalstrategie: Über welche Kanäle kommunizieren wir?
+5. Zeitplan: Wann muss wer informiert werden?
+6. Sprachregelung: Was sagen wir? Was NICHT?
+7. Dokumentation: Wie halten wir fest, was kommuniziert wurde?
+
+Ton: Ruhig, transparent, handlungsfähig
+Ziel: Strukturierte Kommunikation auch in der Krise<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+
+      <div class="prompt-card">
+        <div class="prompt-header" onclick="togglePrompt(this)">
+          <h4>Notfallplan erstellen</h4>
+          <div class="prompt-toggle">▼</div>
+        </div>
+        <div class="prompt-content">
+          <div class="prompt-box">Erstelle einen Notfallplan für [NOTFALLSZENARIO, z.B. "Ausfall 
+Heizung im Winter", "Personalausfall durch Krankheitswelle", 
+"IT-Ausfall", etc.].
+
+Der Notfallplan soll enthalten:
+1. Sofortmaßnahmen (erste Schritte)
+2. Verantwortlichkeiten (wer tut was?)
+3. Kommunikation (wer muss informiert werden?)
+4. Übergangslösungen (wie halten wir den Betrieb aufrecht?)
+5. Externe Unterstützung (wen können wir hinzuziehen?)
+6. Eskalationsstufen (ab wann Träger einbinden? Ab wann Behörden?)
+7. Rückkehr zum Normalbetrieb (was ist zu tun?)
+
+Format: Checkliste, schnell erfassbar
+Ziel: Handlungsfähigkeit in der Krise<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tipps -->
+    <section class="section">
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <h3>🎓 Tipps zur Prompt-Optimierung</h3>
+        <p style="margin-bottom: 1.5rem;">Wenn ein Prompt nicht das gewünschte Ergebnis liefert:</p>
+        <ol style="padding-left: 1.5rem; color: var(--text-medium);">
+          <li style="margin-bottom: 0.75rem;"><strong>Präziser werden:</strong> Fügen Sie mehr Details hinzu</li>
+          <li style="margin-bottom: 0.75rem;"><strong>Beispiele geben:</strong> "Zum Beispiel..." oder "Ähnlich wie..."</li>
+          <li style="margin-bottom: 0.75rem;"><strong>Format konkretisieren:</strong> "Als Tabelle mit Spalten X, Y, Z"</li>
+          <li style="margin-bottom: 0.75rem;"><strong>Tonalität betonen:</strong> "Sehr wichtig: Der Ton soll XY sein"</li>
+          <li><strong>Länge angeben:</strong> "Max. 200 Wörter" oder "Genau 5 Punkte"</li>
+        </ol>
+        <p style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-cream); border-radius: var(--radius-sm);">
+          <strong>Iterativ verbessern:</strong> Prompt testen → Ergebnis prüfen → Prompt anpassen → Erneut testen
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Workshop-Portal</h4>
+        <p>KI in der Kita-Verwaltung<br>Workshop: 11.12.2025</p>
+      </div>
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="30-60-90-plan.html">30-60-90 Tage Plan</a></li>
+          <li><a href="multiplikatoren.html">Multiplikatoren-Kit</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Veranstalter</h4>
+        <p>Verband katholischer Kindertageseinrichtungen Bayern e.V.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 – Materialien für Workshop-Teilnehmende</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('open');
+    }
+
+    function togglePrompt(header) {
+      header.parentElement.classList.toggle('open');
+    }
+
+    function copyPrompt(btn) {
+      const promptBox = btn.parentElement;
+      const text = promptBox.innerText.replace('Kopieren', '').replace('Kopiert!', '').trim();
+      
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Kopiert!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Kopieren';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // Alle ersten Prompts öffnen
+    document.querySelectorAll('.prompt-category').forEach(cat => {
+      const firstCard = cat.querySelector('.prompt-card');
+      if (firstCard) firstCard.classList.add('open');
+    });
+  </script>
+</body>
+</html>

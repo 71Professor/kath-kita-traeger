@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplikatoren-Kit – KI Workshop</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👥</text></svg>">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">KI</div>
+        <span>Workshop-Portal</span>
+      </a>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="prompt-bibliothek.html">Prompts</a></li>
+          <li><a href="30-60-90-plan.html">90-Tage-Plan</a></li>
+          <li><a href="multiplikatoren.html" class="active">Multiplikatoren</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 3rem 2rem;">
+    <div class="hero-content">
+      <span class="hero-badge">👥 Wissen weitergeben</span>
+      <h1>Multiplikatoren-Kit</h1>
+      <p class="hero-subtitle">Alles was Sie brauchen, um Ihr KI-Wissen strukturiert und professionell an Kolleg:innen weiterzugeben.</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Übersicht -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Was ist im Kit enthalten?</h2>
+      </div>
+      
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Kurzpräsentation</h3>
+          <p>15 Folien – bereit zum Vortragen für Team-Meetings oder kurze Einführungen.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📝</div>
+          <h3>Top 10 Prompts</h3>
+          <p>Die wichtigsten Prompts für Einsteiger:innen – sofort einsetzbar.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✅</div>
+          <h3>Erste-Schritte-Checkliste</h3>
+          <p>Schritt-für-Schritt-Anleitung für KI-Neulinge.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3>Datenschutz-Handout</h3>
+          <p>"Was darf in KI-Tools?" – klare Regeln auf einen Blick.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⏱️</div>
+          <h3>Mini-Workshop-Konzepte</h3>
+          <p>Fertige Abläufe für 30, 60 oder 90 Minuten.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top 10 Prompts -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Top 10 Prompts für Einsteiger</h2>
+        <p style="color: var(--text-light);">Die wichtigsten Prompts für den Einstieg</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 2rem;">
+        <ol style="padding-left: 1.5rem;">
+          <li style="margin-bottom: 1.5rem;">
+            <strong>E-Mail an Kita-Leitung</strong>
+            <div class="prompt-box" style="margin-top: 0.5rem; font-size: 0.85rem;">Du bist ein erfahrener Trägervertreter. Schreibe eine freundliche, aber sachliche E-Mail an unsere Kita-Leitung zum Thema [THEMA]. Die E-Mail soll max. 150 Wörter umfassen und folgende Punkte enthalten: [PUNKT 1], [PUNKT 2], [PUNKT 3]. Ton: professionell und wertschätzend.<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+          </li>
+          <li style="margin-bottom: 1.5rem;">
+            <strong>Elternbrief erstellen</strong>
+            <div class="prompt-box" style="margin-top: 0.5rem; font-size: 0.85rem;">Erstelle einen Elternbrief für unsere Kita zum Thema [THEMA]. Der Brief soll verständlich, empathisch und informativ sein. Zielgruppe: Eltern von Kindern im Alter von 3-6 Jahren. Länge: 1 A4-Seite. Bitte gliedere den Brief in: Begrüßung, Hauptteil mit Informationen, Handlungsempfehlungen und freundlichen Abschluss.<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+          </li>
+          <li style="margin-bottom: 1.5rem;">
+            <strong>Checkliste erstellen</strong>
+            <div class="prompt-box" style="margin-top: 0.5rem; font-size: 0.85rem;">Erstelle eine übersichtliche Checkliste für [AUFGABE/PROZESS]. Die Checkliste soll chronologisch aufgebaut sein und alle wichtigen Schritte enthalten. Format: Aufzählungsliste mit Checkboxen. Zielgruppe: Trägervertreter und Verwaltungspersonal.<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+          </li>
+          <li style="margin-bottom: 1.5rem;">
+            <strong>Meeting-Protokoll zusammenfassen</strong>
+            <div class="prompt-box" style="margin-top: 0.5rem; font-size: 0.85rem;">Fasse dieses Meeting-Protokoll in einer Executive Summary zusammen. Die Zusammenfassung soll max. 1 Seite umfassen und folgende Abschnitte enthalten: 1) Wichtigste Beschlüsse, 2) Offene Punkte mit Verantwortlichen und Deadlines, 3) Nächste Schritte. Stil: prägnant und handlungsorientiert.
+
+[HIER PROTOKOLL EINFÜGEN]<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+          </li>
+          <li style="margin-bottom: 1.5rem;">
+            <strong>Stellenbeschreibung formulieren</strong>
+            <div class="prompt-box" style="margin-top: 0.5rem; font-size: 0.85rem;">Erstelle eine professionelle Stellenbeschreibung für die Position [POSITION] in unserem katholischen Kita-Träger. Die Stellenbeschreibung soll folgende Abschnitte enthalten: Über uns, Ihre Aufgaben, Ihr Profil, Wir bieten. Ton: modern, wertschätzend und attraktiv für Bewerber:innen.<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+          </li>
+          <li style="margin-bottom: 1.5rem;">
+            <strong>Projektplan erstellen</strong>
+            <div class="prompt-box" style="margin-top: 0.5rem; font-size: 0.85rem;">Erstelle einen Projektplan für [PROJEKT] mit einer Laufzeit von [DAUER]. Der Plan soll folgende Elemente enthalten: Ziele, Meilensteine mit Zeitachse, Verantwortlichkeiten, Risiken und Maßnahmen. Format: Tabellarisch und übersichtlich strukturiert.<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+          </li>
+          <li style="margin-bottom: 1.5rem;">
+            <strong>Konzept-Gliederung entwickeln</strong>
+            <div class="prompt-box" style="margin-top: 0.5rem; font-size: 0.85rem;">Erstelle eine detaillierte Gliederung für ein [TYP]-Konzept zum Thema [THEMA] in unserem Kita-Träger. Die Gliederung soll logisch aufgebaut sein mit Hauptkapiteln und Unterkapiteln. Berücksichtige die Perspektiven: pädagogisch, organisatorisch, finanziell und qualitätssichernd.<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+          </li>
+          <li style="margin-bottom: 1.5rem;">
+            <strong>Social Media Post</strong>
+            <div class="prompt-box" style="margin-top: 0.5rem; font-size: 0.85rem;">Schreibe einen Social Media Post für [PLATTFORM] über [THEMA]. Der Post soll: informativ und emotional ansprechend sein, max. [ZEICHENANZAHL] Zeichen umfassen, Call-to-Action enthalten. Zielgruppe: [ZIELGRUPPE]. Füge 3-5 passende Hashtags hinzu.<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+          </li>
+          <li style="margin-bottom: 1.5rem;">
+            <strong>Jahresbericht strukturieren</strong>
+            <div class="prompt-box" style="margin-top: 0.5rem; font-size: 0.85rem;">Erstelle die Struktur für unseren Träger-Jahresbericht [JAHR]. Der Bericht soll folgende Themenbereiche abdecken: Einleitung/Grußwort, Zahlen und Fakten, Pädagogische Schwerpunkte, Besondere Projekte, Finanzen im Überblick, Ausblick. Schlage für jeden Bereich konkrete Inhalte und Visualisierungsmöglichkeiten vor.<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+          </li>
+          <li>
+            <strong>Fortbildungsplan erstellen</strong>
+            <div class="prompt-box" style="margin-top: 0.5rem; font-size: 0.85rem;">Erstelle einen Fortbildungsplan für das Jahr [JAHR] für die Mitarbeitenden in unserem Träger. Berücksichtige folgende Themenbereiche: [THEMEN]. Der Plan soll enthalten: Fortbildungstitel, Zielgruppe, Format (online/präsenz), Dauer, vorgeschlagene Termine. Format: Übersichtstabelle.<button class="copy-btn" onclick="copyPrompt(this)">Kopieren</button></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Checkliste erste Schritte -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Checkliste für erste Schritte</h2>
+        <p style="color: var(--text-light);">Zum Weitergeben an KI-Neulinge</p>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="card">
+          <h3 style="color: var(--primary);">Phase 1: Vorbereitung (Tag 1)</h3>
+          <ul class="checklist">
+            <li>Account bei KI-Tool anlegen (ChatGPT, Claude, Gemini)</li>
+            <li>Datenschutz-Handout lesen</li>
+            <li>1-2 Aufgaben identifizieren für ersten Test</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary);">Phase 2: Erste Schritte (Tag 1-7)</h3>
+          <ul class="checklist">
+            <li>Ersten Prompt aus den Top 10 testen</li>
+            <li>5-Elemente-Schema üben</li>
+            <li>Ergebnis prüfen und nachbearbeiten</li>
+            <li>Prompt verbessern und erneut testen</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary);">Phase 3: Routine (Woche 2-4)</h3>
+          <ul class="checklist">
+            <li>Täglich mind. 1 Aufgabe mit KI</li>
+            <li>Verschiedene Aufgabentypen testen</li>
+            <li>Eigene Prompts sammeln</li>
+            <li>Erste Person einführen</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary);">Phase 4: Weitergeben (Woche 4-8)</h3>
+          <ul class="checklist">
+            <li>Mini-Workshop planen (30-60 Min)</li>
+            <li>Materialien vorbereiten</li>
+            <li>Workshop durchführen</li>
+            <li>Feedback einholen</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mini-Workshop Formate -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Mini-Workshop Ablaufpläne</h2>
+        <p style="color: var(--text-light);">Fertige Konzepte für Ihre Schulungen</p>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>⏱️ Format A: Express-Einführung (30 Min)</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <p style="margin-bottom: 1rem;"><strong>Zielgruppe:</strong> Kolleg:innen mit wenig Zeit | <strong>Setting:</strong> Team-Meeting, kurze Schulung</p>
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+              <thead>
+                <tr style="background: var(--bg-cream);">
+                  <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--border-light);">Zeit</th>
+                  <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--border-light);">Inhalt</th>
+                  <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--border-light);">Methode</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">0-5 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Begrüßung & Einordnung</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Kurzvortrag</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">5-10 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Was ist KI?</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Präsentation</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">10-15 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Das 5-Elemente-Prompt-Schema</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Live-Demo</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">15-25 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Erste eigene Prompts testen</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Hands-on</td></tr>
+                <tr><td style="padding: 0.5rem;">25-30 Min</td><td style="padding: 0.5rem;">Datenschutz & nächste Schritte</td><td style="padding: 0.5rem;">Handout, Q&A</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>⏱️ Format B: Standard-Einführung (60 Min)</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <p style="margin-bottom: 1rem;"><strong>Zielgruppe:</strong> Team, interessierte Kolleg:innen | <strong>Setting:</strong> Dedizierte Schulung</p>
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+              <thead>
+                <tr style="background: var(--bg-cream);">
+                  <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--border-light);">Zeit</th>
+                  <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--border-light);">Inhalt</th>
+                  <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--border-light);">Methode</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">0-5 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Begrüßung & Erwartungen</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Blitzlicht</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">5-15 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">KI-Grundlagen</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Präsentation</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">15-25 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Prompt-Schema & Live-Demo</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Demonstration</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">25-45 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Praktisches Ausprobieren</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Hands-on mit 2-3 Prompts</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">45-55 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Datenschutz & Ethik</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Input + Diskussion</td></tr>
+                <tr><td style="padding: 0.5rem;">55-60 Min</td><td style="padding: 0.5rem;">Nächste Schritte & Ressourcen</td><td style="padding: 0.5rem;">Checkliste, Handouts</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>⏱️ Format C: Vertiefungs-Workshop (90 Min)</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-content">
+            <p style="margin-bottom: 1rem;"><strong>Zielgruppe:</strong> Motivierte Kolleg:innen | <strong>Setting:</strong> Workshop-Format</p>
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+              <thead>
+                <tr style="background: var(--bg-cream);">
+                  <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--border-light);">Zeit</th>
+                  <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--border-light);">Inhalt</th>
+                  <th style="padding: 0.75rem; text-align: left; border-bottom: 2px solid var(--border-light);">Methode</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">0-10 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Ankommen & Erwartungscheck</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Interaktiv</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">10-20 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">KI-Grundlagen</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Präsentation</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">20-35 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Prompt-Engineering vertiefen</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Live-Demo + Beispiele</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">35-60 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Intensive Praxisphase</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Hands-on: 3-4 eigene Aufgaben</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">60-75 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Anwendungsfelder erkunden</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Gruppenarbeit</td></tr>
+                <tr><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">75-85 Min</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Datenschutz, Ethik & Transfer</td><td style="padding: 0.5rem; border-bottom: 1px solid var(--border-light);">Diskussion</td></tr>
+                <tr><td style="padding: 0.5rem;">85-90 Min</td><td style="padding: 0.5rem;">Abschluss & Vernetzung</td><td style="padding: 0.5rem;">Feedback, nächste Schritte</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tipps für Multiplikatoren -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Tipps für erfolgreiche Multiplikation</h2>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="card">
+          <h3 style="color: var(--primary);">📋 Vorbereitung</h3>
+          <ul style="padding-left: 1.25rem; color: var(--text-medium);">
+            <li>Zielgruppe kennen: Wie ist das KI-Niveau?</li>
+            <li>Eigene Beispiele nutzen, die funktioniert haben</li>
+            <li>Technik vorab testen (WLAN, KI-Tools)</li>
+            <li>Zeitpuffer einplanen</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary);">🎤 Durchführung</h3>
+          <ul style="padding-left: 1.25rem; color: var(--text-medium);">
+            <li>Begeisterung zeigen – Ihre Energie steckt an!</li>
+            <li>Nicht überfordern – lieber weniger, dafür gründlich</li>
+            <li>Hands-on priorisieren – Selbst machen ist besser</li>
+            <li>Fehler zulassen – KI macht nicht immer was man will</li>
+            <li>Datenschutz betonen!</li>
+          </ul>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: var(--primary);">📧 Nachbereitung</h3>
+          <ul style="padding-left: 1.25rem; color: var(--text-medium);">
+            <li>Materialien teilen (Multiplikatoren-Kit)</li>
+            <li>Ansprechpartner bleiben für Fragen</li>
+            <li>Follow-up nach 2-4 Wochen planen</li>
+            <li>Erfolge sammeln und teilen</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checkliste -->
+    <section class="section">
+      <div class="card" style="max-width: 700px; margin: 0 auto;">
+        <h3 style="margin-bottom: 1.5rem;">✅ Bin ich bereit als Multiplikator:in?</h3>
+        
+        <h4 style="color: var(--primary); margin-bottom: 0.75rem;">Inhaltlich:</h4>
+        <ul class="checklist" style="margin-bottom: 1.5rem;">
+          <li>Ich kann das 5-Elemente-Prompt-Schema erklären</li>
+          <li>Ich habe selbst mind. 5 verschiedene Prompts erfolgreich genutzt</li>
+          <li>Ich kenne die wichtigsten Datenschutz-Regeln</li>
+          <li>Ich kann 3 konkrete Anwendungsfälle nennen</li>
+        </ul>
+        
+        <h4 style="color: var(--primary); margin-bottom: 0.75rem;">Material:</h4>
+        <ul class="checklist" style="margin-bottom: 1.5rem;">
+          <li>Ich habe das Multiplikatoren-Kit vollständig</li>
+          <li>Ich habe eigene Beispiele vorbereitet</li>
+          <li>Handouts sind ausgedruckt oder digital verfügbar</li>
+        </ul>
+        
+        <h4 style="color: var(--primary); margin-bottom: 0.75rem;">Organisatorisch:</h4>
+        <ul class="checklist" style="margin-bottom: 1.5rem;">
+          <li>Termin ist festgelegt und kommuniziert</li>
+          <li>Raum ist gebucht mit WLAN und Beamer</li>
+          <li>Teilnehmende haben Laptops/Tablets dabei</li>
+        </ul>
+        
+        <h4 style="color: var(--primary); margin-bottom: 0.75rem;">Persönlich:</h4>
+        <ul class="checklist">
+          <li>Ich bin motiviert, mein Wissen zu teilen</li>
+          <li>Ich bin offen für Fragen und Skepsis</li>
+          <li>Ich freue mich darauf! 😊</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="text-align: center;">
+      <div class="card" style="background: linear-gradient(135deg, var(--bg-cream), var(--bg-white)); max-width: 600px; margin: 0 auto;">
+        <h3>Sie haben alles, was Sie brauchen!</h3>
+        <p>Mit diesem Kit können Sie Ihr KI-Wissen professionell weitergeben.</p>
+        <a href="downloads.html" class="btn btn-primary" style="margin-top: 1rem;">Alle Materialien herunterladen</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Workshop-Portal</h4>
+        <p>KI in der Kita-Verwaltung<br>Workshop: 11.12.2025</p>
+      </div>
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="prompt-bibliothek.html">Prompt-Bibliothek</a></li>
+          <li><a href="30-60-90-plan.html">90-Tage-Plan</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Veranstalter</h4>
+        <p>Verband katholischer Kindertageseinrichtungen Bayern e.V.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 – Materialien für Workshop-Teilnehmende</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('open');
+    }
+
+    function toggleAccordion(header) {
+      header.parentElement.classList.toggle('open');
+    }
+
+    function copyPrompt(btn) {
+      const promptBox = btn.parentElement;
+      const text = promptBox.innerText.replace('Kopieren', '').replace('Kopiert!', '').trim();
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Kopiert!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Kopieren';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

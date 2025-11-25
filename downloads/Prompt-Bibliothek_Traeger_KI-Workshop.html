@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Prompt-Bibliothek – KI in der Trägerarbeit</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #333;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 15mm;
+    }
+    
+    h1 {
+      color: #E47823;
+      font-size: 24pt;
+      margin-bottom: 5mm;
+      border-bottom: 3px solid #E47823;
+      padding-bottom: 3mm;
+    }
+    
+    h2 {
+      color: #E47823;
+      font-size: 14pt;
+      margin: 8mm 0 4mm;
+      page-break-after: avoid;
+    }
+    
+    h3 {
+      font-size: 12pt;
+      margin: 5mm 0 2mm;
+      page-break-after: avoid;
+    }
+    
+    .subtitle {
+      font-size: 12pt;
+      color: #666;
+      margin-bottom: 8mm;
+    }
+    
+    .intro-box {
+      background: #fef9f5;
+      border: 1px solid #E47823;
+      border-radius: 4px;
+      padding: 4mm;
+      margin-bottom: 8mm;
+    }
+    
+    .warning {
+      background: #fef2f2;
+      border: 1px solid #dc2626;
+      border-radius: 4px;
+      padding: 3mm;
+      margin: 4mm 0;
+      color: #991b1b;
+    }
+    
+    .prompt-section {
+      margin-bottom: 6mm;
+      page-break-inside: avoid;
+    }
+    
+    .prompt-title {
+      background: #fef9f5;
+      padding: 2mm 4mm;
+      border-left: 3px solid #E47823;
+      font-weight: 600;
+      margin-bottom: 2mm;
+    }
+    
+    .prompt-box {
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 3mm;
+      font-family: 'Consolas', monospace;
+      font-size: 9pt;
+      white-space: pre-wrap;
+      margin-bottom: 2mm;
+    }
+    
+    .tip {
+      font-size: 9pt;
+      color: #666;
+      font-style: italic;
+    }
+    
+    .category {
+      background: #E47823;
+      color: white;
+      padding: 2mm 4mm;
+      border-radius: 4px;
+      font-weight: 600;
+      margin: 8mm 0 4mm;
+    }
+    
+    .footer {
+      margin-top: 10mm;
+      padding-top: 4mm;
+      border-top: 1px solid #ddd;
+      font-size: 9pt;
+      color: #666;
+      text-align: center;
+    }
+    
+    @media print {
+      body { padding: 10mm; }
+      .prompt-section { page-break-inside: avoid; }
+      h2 { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Prompt-Bibliothek</h1>
+  <p class="subtitle">Über 30 getestete Prompts für Ihren Träger-Alltag</p>
+  
+  <div class="intro-box">
+    <strong>So nutzen Sie diese Bibliothek:</strong><br>
+    1. Prompt auswählen → 2. [PLATZHALTER] ersetzen → 3. Anpassen → 4. Testen & verbessern
+  </div>
+  
+  <div class="warning">
+    <strong>⚠️ Datenschutz:</strong> KEINE personenbezogenen Daten in Prompts eingeben! Namen, Adressen, Geburtsdaten etc. gehören NICHT in KI-Tools.
+  </div>
+
+  <div class="category">1. Kommunikation intern</div>
+  
+  <div class="prompt-section">
+    <div class="prompt-title">E-Mail an Kita-Leitung</div>
+    <div class="prompt-box">Du bist ein erfahrener Trägervertreter in einem katholischen Kita-Träger. 
+Schreibe eine professionelle E-Mail an die Leitung der Kita [KITA-NAME anonymisiert] zum Thema [THEMA]. 
+
+Die E-Mail soll:
+- Max. 200 Wörter umfassen
+- Folgende Punkte enthalten: [PUNKT 1], [PUNKT 2], [PUNKT 3]
+- Ton: wertschätzend, klar und lösungsorientiert
+- Mit konkreter Handlungsaufforderung enden
+
+Kontext: [Kurze Beschreibung der Situation]</div>
+  </div>
+
+  <div class="prompt-section">
+    <div class="prompt-title">Rundschreiben an alle Einrichtungen</div>
+    <div class="prompt-box">Erstelle ein Rundschreiben für alle Kita-Leitungen unseres Trägers zum Thema [THEMA]. 
+
+Das Rundschreiben soll:
+- Formal und strukturiert aufgebaut sein
+- Folgende Abschnitte enthalten: 
+  1) Anlass/Hintergrund
+  2) Wichtige Informationen
+  3) To-Dos für die Einrichtungen
+  4) Ansprechpartner bei Rückfragen
+- Max. 1 DIN-A4-Seite
+- Ton: sachlich, aber freundlich
+
+Deadline für Rückmeldungen: [DATUM]</div>
+  </div>
+
+  <div class="prompt-section">
+    <div class="prompt-title">Protokoll-Zusammenfassung</div>
+    <div class="prompt-box">Fasse dieses Meeting-Protokoll in einer übersichtlichen Executive Summary zusammen. 
+
+Die Zusammenfassung soll:
+1. Wichtigste Beschlüsse (max. 5 Punkte)
+2. Offene Punkte mit Verantwortlichen und Deadlines (Tabellenform)
+3. Nächste Schritte (konkrete Handlungsempfehlungen)
+
+Format: Max. 1 Seite, Bullet Points, handlungsorientiert
+Zielgruppe: Geschäftsführung und Trägervertretung
+
+[HIER PROTOKOLL EINFÜGEN - ohne Namen!]</div>
+  </div>
+
+  <div class="prompt-section">
+    <div class="prompt-title">Schwieriges Gespräch vorbereiten</div>
+    <div class="prompt-box">Hilf mir, ein schwieriges Gespräch zum Thema [THEMA] vorzubereiten. 
+Situation: [BESCHREIBUNG DER SITUATION - anonymisiert]
+
+Erstelle bitte:
+1. Gesprächsleitfaden mit Struktur (Begrüßung, Problemdarstellung, Lösungsansätze, Vereinbarung)
+2. 5 mögliche Formulierungen für kritische Punkte (wertschätzend, aber klar)
+3. Antizipierte Gegenargumente und passende Antworten
+4. Deeskalationsstrategien
+
+Ton: Empathisch, professionell, lösungsorientiert</div>
+  </div>
+
+  <div class="category">2. Kommunikation extern</div>
+
+  <div class="prompt-section">
+    <div class="prompt-title">Elternbrief allgemein</div>
+    <div class="prompt-box">Erstelle einen Elternbrief für die Eltern unserer Kita zum Thema [THEMA]. 
+
+Der Brief soll:
+- Verständlich für alle Bildungshintergründe sein
+- Empathisch und informativ formuliert sein
+- Folgende Struktur haben:
+  1) Freundliche Begrüßung
+  2) Information/Anliegen klar darstellen
+  3) Konkrete Handlungsempfehlungen (wenn nötig)
+  4) Herzlicher Abschluss mit Kontaktmöglichkeit
+- Max. 1 A4-Seite
+
+Zielgruppe: Eltern von Kindern im Alter von [ALTERSGRUPPE]
+Ton: Freundlich, verständlich, einladend</div>
+  </div>
+
+  <div class="prompt-section">
+    <div class="prompt-title">Stellenausschreibung (extern)</div>
+    <div class="prompt-box">Erstelle eine attraktive Stellenausschreibung für die Position [POSITION] in unserem katholischen Kita-Träger.
+
+Die Ausschreibung soll folgende Abschnitte enthalten:
+1. Über uns (kurz, authentisch, wertebezogen)
+2. Ihre Aufgaben (konkret, ansprechend formuliert)
+3. Ihr Profil (Muss-Kriterien und Wünsche getrennt)
+4. Wir bieten (Benefits, Entwicklungsmöglichkeiten, Werte)
+5. Bewerbung (einfacher Prozess, Ansprechpartner)
+
+Ton: Modern, wertschätzend, einladend
+Besonderheit: Betone katholische Werte, aber inklusiv formuliert
+
+Rahmenbedingungen: [Stundenumfang, Standort, Start-Datum]</div>
+  </div>
+
+  <div class="category">3. Planung & Organisation</div>
+
+  <div class="prompt-section">
+    <div class="prompt-title">Projektplan entwickeln</div>
+    <div class="prompt-box">Erstelle einen detaillierten Projektplan für das Projekt [PROJEKTNAME].
+
+Rahmendaten:
+- Projektziel: [ZIEL]
+- Laufzeit: [DAUER]
+- Budget: [ca. BETRAG, wenn relevant]
+- Beteiligte: [ROLLEN, keine Namen]
+
+Der Projektplan soll enthalten:
+1. Projektbeschreibung (kurz)
+2. Meilensteine mit Zeitachse
+3. Arbeitspakete mit Verantwortlichkeiten
+4. Ressourcenplanung (Personal, Material, Budget)
+5. Risikoanalyse mit Gegenmaßnahmen
+6. Kommunikationsplan
+7. Erfolgskriterien
+
+Format: Strukturiert, tabellarisch wo möglich</div>
+  </div>
+
+  <div class="prompt-section">
+    <div class="prompt-title">Checkliste für Standardprozess</div>
+    <div class="prompt-box">Erstelle eine Schritt-für-Schritt-Checkliste für den Prozess [PROZESSNAME].
+
+Die Checkliste soll:
+- Alle notwendigen Schritte in chronologischer Reihenfolge enthalten
+- Bei jedem Schritt angeben: Was? Wann? Wer? Womit?
+- Kritische Punkte/Stolperfallen markieren
+- Verweise auf relevante Dokumente/Formulare enthalten
+- Checkboxen zum Abhaken haben
+
+Zielgruppe: [WER NUTZT DIE CHECKLISTE]
+Wichtige Deadlines/Fristen: [WENN RELEVANT]
+
+Format: Übersichtlich, max. 2 Seiten</div>
+  </div>
+
+  <div class="category">4. Personalmanagement</div>
+
+  <div class="prompt-section">
+    <div class="prompt-title">Mitarbeitergespräch vorbereiten</div>
+    <div class="prompt-box">Erstelle einen Leitfaden für ein Mitarbeitergespräch mit [FUNKTION].
+
+Anlass: [Jahresgespräch/Zielvereinbarung/Entwicklungsgespräch]
+
+Der Leitfaden soll folgende Phasen abdecken:
+1. Begrüßung und Gesprächseinstieg
+2. Rückblick auf vergangenes Jahr/Periode
+   - Was lief gut? (Erfolge würdigen)
+   - Wo gab es Herausforderungen?
+3. Aktuelle Situation und Befindlichkeit
+4. Ziele für kommendes Jahr/Periode (SMART formulieren)
+5. Unterstützungsbedarfe klären
+6. Abschluss mit Vereinbarung
+
+Füge hinzu: Mögliche Fragen, Gesprächstechniken, Zeitstruktur
+Ton: Wertschätzend, entwicklungsorientiert, auf Augenhöhe</div>
+  </div>
+
+  <div class="prompt-section">
+    <div class="prompt-title">Fortbildungsplan erstellen</div>
+    <div class="prompt-box">Erstelle einen Fortbildungsplan für das Jahr [JAHR] für die Mitarbeitenden unseres Trägers.
+
+Zielgruppen:
+- Kita-Leitungen ([ANZAHL] Personen)
+- Stellvertretende Leitungen ([ANZAHL] Personen)
+- Verwaltungspersonal ([ANZAHL] Personen)
+
+Berücksichtige folgende Themenbereiche:
+- Pädagogik/Qualitätsentwicklung
+- Führung und Leitung
+- Rechtliches/Verwaltung
+- Digitalisierung
+- Persönliche Entwicklung
+
+Format: Tabelle mit Spalten: Termin | Thema | Zielgruppe | Format (online/präsenz) | Dauer
+
+Hinweis: Mind. 2 Tage Fortbildung pro Jahr und Person</div>
+  </div>
+
+  <div class="category">5. Dokumentation & Berichtswesen</div>
+
+  <div class="prompt-section">
+    <div class="prompt-title">Jahresbericht strukturieren</div>
+    <div class="prompt-box">Erstelle die Struktur für unseren Träger-Jahresbericht [JAHR].
+
+Der Bericht soll folgende Themenbereiche abdecken:
+1. Einleitung/Grußwort
+2. Zahlen und Fakten (Einrichtungen, Kinder, Personal)
+3. Pädagogische Schwerpunkte des Jahres
+4. Besondere Projekte und Highlights
+5. Qualitätsentwicklung
+6. Finanzen im Überblick
+7. Ausblick auf das kommende Jahr
+
+Schlage für jeden Bereich vor:
+- Konkrete Inhalte
+- Visualisierungsmöglichkeiten (Grafiken, Bilder)
+- Wichtige Kennzahlen
+
+Format: Übersichtliche Gliederung mit Hinweisen</div>
+  </div>
+
+  <div class="category">6. Krisenmanagement</div>
+
+  <div class="prompt-section">
+    <div class="prompt-title">Krisenkommunikationsplan</div>
+    <div class="prompt-box">Erstelle einen Krisenkommunikationsplan für den Fall [KRISENSZENARIO].
+
+Der Plan soll folgende Punkte abdecken:
+1. Krisenstab: Wer ist beteiligt? (Funktionen, keine Namen)
+2. Kommunikationswege: Wer informiert wen? In welcher Reihenfolge?
+3. Botschaften: Kernbotschaften für verschiedene Zielgruppen 
+   (Eltern, Mitarbeitende, Öffentlichkeit, Behörden)
+4. Kanalstrategie: Über welche Kanäle kommunizieren wir?
+5. Zeitplan: Wann muss wer informiert werden?
+6. Sprachregelung: Was sagen wir? Was NICHT?
+7. Dokumentation: Wie halten wir fest, was kommuniziert wurde?
+
+Ton: Ruhig, transparent, handlungsfähig
+Ziel: Strukturierte Kommunikation auch in der Krise</div>
+  </div>
+
+  <div class="footer">
+    <strong>Workshop: KI in der Kita-Verwaltung</strong> | 11.12.2025 | Verband kath. Kindertageseinrichtungen Bayern e.V.<br>
+    Referent: Michael Kohl | Diese Bibliothek enthält eine Auswahl – die vollständige Version finden Sie online.
+  </div>
+</body>
+</html>

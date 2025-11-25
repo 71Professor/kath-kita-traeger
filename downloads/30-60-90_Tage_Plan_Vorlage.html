@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>30-60-90 Tage Plan – KI in der Trägerarbeit</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #333;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 15mm;
+    }
+    
+    h1 {
+      color: #E47823;
+      font-size: 22pt;
+      margin-bottom: 3mm;
+      border-bottom: 3px solid #E47823;
+      padding-bottom: 3mm;
+    }
+    
+    h2 {
+      color: #E47823;
+      font-size: 14pt;
+      margin: 6mm 0 3mm;
+      page-break-after: avoid;
+    }
+    
+    h3 {
+      font-size: 11pt;
+      margin: 4mm 0 2mm;
+    }
+    
+    .subtitle {
+      font-size: 11pt;
+      color: #666;
+      margin-bottom: 6mm;
+    }
+    
+    .info-row {
+      display: flex;
+      gap: 10mm;
+      margin-bottom: 6mm;
+      padding-bottom: 4mm;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .info-row div {
+      flex: 1;
+    }
+    
+    .info-row label {
+      font-size: 9pt;
+      color: #666;
+      display: block;
+    }
+    
+    .info-row .line {
+      border-bottom: 1px solid #333;
+      height: 6mm;
+      margin-top: 1mm;
+    }
+    
+    .phase {
+      margin-bottom: 8mm;
+      padding: 4mm;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      page-break-inside: avoid;
+    }
+    
+    .phase-header {
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+      margin-bottom: 3mm;
+    }
+    
+    .phase-number {
+      width: 12mm;
+      height: 12mm;
+      background: #E47823;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14pt;
+    }
+    
+    .phase-title {
+      font-size: 13pt;
+      font-weight: 600;
+    }
+    
+    .phase-subtitle {
+      font-size: 9pt;
+      color: #666;
+    }
+    
+    .checklist {
+      list-style: none;
+      margin: 3mm 0;
+    }
+    
+    .checklist li {
+      padding: 2mm 0 2mm 7mm;
+      position: relative;
+      border-bottom: 1px dotted #ddd;
+    }
+    
+    .checklist li::before {
+      content: '☐';
+      position: absolute;
+      left: 0;
+      color: #E47823;
+    }
+    
+    .input-group {
+      margin: 3mm 0;
+    }
+    
+    .input-line {
+      border-bottom: 1px solid #999;
+      height: 7mm;
+      margin: 1mm 0 3mm;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 3mm 0;
+      font-size: 10pt;
+    }
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 2mm;
+      text-align: left;
+    }
+    
+    th {
+      background: #fef9f5;
+      font-weight: 600;
+    }
+    
+    .commitment-box {
+      background: #fef9f5;
+      border: 2px solid #E47823;
+      border-radius: 4px;
+      padding: 4mm;
+      margin-top: 6mm;
+    }
+    
+    .signature-row {
+      display: flex;
+      gap: 20mm;
+      margin-top: 6mm;
+    }
+    
+    .signature-row div {
+      flex: 1;
+    }
+    
+    .footer {
+      margin-top: 8mm;
+      padding-top: 3mm;
+      border-top: 1px solid #ddd;
+      font-size: 9pt;
+      color: #666;
+      text-align: center;
+    }
+    
+    @media print {
+      body { padding: 10mm; }
+      .phase { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <h1>30-60-90 Tage Plan</h1>
+  <p class="subtitle">KI nachhaltig in Ihre Trägerarbeit integrieren</p>
+  
+  <div class="info-row">
+    <div>
+      <label>Name:</label>
+      <div class="line"></div>
+    </div>
+    <div>
+      <label>Einrichtung/Träger:</label>
+      <div class="line"></div>
+    </div>
+    <div>
+      <label>Workshop-Datum:</label>
+      <div class="line">11.12.2025</div>
+    </div>
+  </div>
+
+  <h2>🎯 Meine Vision</h2>
+  <p style="font-size: 10pt; color: #666; margin-bottom: 2mm;">In 90 Tagen möchte ich mit KI erreichen:</p>
+  <div class="input-line"></div>
+  <div class="input-line"></div>
+
+  <!-- Phase 1 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-number">1</div>
+      <div>
+        <div class="phase-title">Erste 30 Tage</div>
+        <div class="phase-subtitle">bis ca. 10. Januar 2026 – Eigene KI-Nutzung etablieren</div>
+      </div>
+    </div>
+    
+    <h3>Meine 3 KI-Tools:</h3>
+    <table>
+      <tr>
+        <th style="width: 25%;">Tool</th>
+        <th style="width: 45%;">Wofür?</th>
+        <th style="width: 30%;">Wie oft?</th>
+      </tr>
+      <tr><td></td><td></td><td>☐ täglich ☐ 3-4x/Wo ☐ 1-2x/Wo</td></tr>
+      <tr><td></td><td></td><td>☐ täglich ☐ 3-4x/Wo ☐ 1-2x/Wo</td></tr>
+      <tr><td></td><td></td><td>☐ täglich ☐ 3-4x/Wo ☐ 1-2x/Wo</td></tr>
+    </table>
+    
+    <h3>Meine ersten 3 Aufgaben mit KI:</h3>
+    <table>
+      <tr><th>Aufgabe</th><th>KI-Tool</th><th>Bis wann?</th></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+    </table>
+    
+    <h3>Quick Wins:</h3>
+    <ul class="checklist">
+      <li>Erste E-Mail mit KI-Unterstützung formulieren</li>
+      <li>Ein Protokoll zusammenfassen lassen</li>
+      <li>Einen Elternbrief erstellen</li>
+      <li>Einem/einer Kolleg:in von KI erzählen</li>
+    </ul>
+    
+    <p style="font-size: 10pt; margin-top: 3mm;"><strong>📌 Check-in 1 (nach 4 Wochen):</strong> Termin: ____________</p>
+  </div>
+
+  <!-- Phase 2 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-number">2</div>
+      <div>
+        <div class="phase-title">30-60 Tage</div>
+        <div class="phase-subtitle">bis ca. 10. Februar 2026 – Prozesse optimieren & weitergeben</div>
+      </div>
+    </div>
+    
+    <h3>Prozessoptimierung:</h3>
+    <div class="input-group">
+      <label style="font-size: 10pt;">Welchen Prozess optimiere ich mit KI?</label>
+      <div class="input-line"></div>
+    </div>
+    <table>
+      <tr>
+        <th>Aktueller Zeitaufwand</th>
+        <th>Ziel mit KI</th>
+        <th>Ersparnis</th>
+      </tr>
+      <tr>
+        <td>_____ h/Woche</td>
+        <td>_____ h/Woche</td>
+        <td>_____ h/Woche</td>
+      </tr>
+    </table>
+    
+    <h3>Kolleg:innen schulen (min. 2-3 Personen):</h3>
+    <table>
+      <tr><th>Person/Rolle</th><th>Was zeige ich?</th><th>Termin</th></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+    </table>
+    
+    <p style="font-size: 10pt; margin-top: 3mm;"><strong>📌 Check-in 2 (nach 8 Wochen):</strong> Termin: ____________</p>
+  </div>
+
+  <!-- Phase 3 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-number">3</div>
+      <div>
+        <div class="phase-title">60-90 Tage</div>
+        <div class="phase-subtitle">bis ca. 10. März 2026 – Nachhaltigkeit & Wirkung messen</div>
+      </div>
+    </div>
+    
+    <h3>Zeitersparnis messen:</h3>
+    <table>
+      <tr><th>Aufgabenbereich</th><th>Vorher (h/Wo)</th><th>Mit KI (h/Wo)</th><th>Ersparnis</th></tr>
+      <tr><td>E-Mails & Kommunikation</td><td></td><td></td><td></td></tr>
+      <tr><td>Dokumentation & Berichte</td><td></td><td></td><td></td></tr>
+      <tr><td>Planung & Organisation</td><td></td><td></td><td></td></tr>
+      <tr style="font-weight: 600; background: #fef9f5;"><td>GESAMT</td><td></td><td></td><td></td></tr>
+    </table>
+    
+    <h3>Erfolge dokumentieren:</h3>
+    <table>
+      <tr>
+        <td style="text-align: center;">_____ <br><small>Aufgaben mit KI</small></td>
+        <td style="text-align: center;">_____ <br><small>Personen geschult</small></td>
+        <td style="text-align: center;">_____ <br><small>Stunden gespart</small></td>
+        <td style="text-align: center;">_____ <br><small>Eigene Prompts</small></td>
+      </tr>
+    </table>
+    
+    <p style="font-size: 10pt; margin-top: 3mm;"><strong>📌 Check-in 3 (nach 12 Wochen):</strong> Termin: ____________</p>
+  </div>
+
+  <!-- Commitment -->
+  <div class="commitment-box">
+    <h2 style="margin-top: 0;">💪 Mein Commitment</h2>
+    <ul class="checklist">
+      <li>Ich nutze KI regelmäßig (mindestens 3x pro Woche)</li>
+      <li>Ich teile meine Erfahrungen mit Kolleg:innen</li>
+      <li>Ich schule mindestens 3 Personen</li>
+      <li>Ich dokumentiere meine Erfolge</li>
+      <li>Ich bleibe dran – auch bei Rückschlägen</li>
+    </ul>
+    
+    <div class="signature-row">
+      <div>
+        <label style="font-size: 9pt; color: #666;">Unterschrift:</label>
+        <div class="input-line"></div>
+      </div>
+      <div>
+        <label style="font-size: 9pt; color: #666;">Datum:</label>
+        <div class="input-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>Workshop: KI in der Kita-Verwaltung</strong> | 11.12.2025 | Verband kath. Kindertageseinrichtungen Bayern e.V.<br>
+    💡 Tipp: Drucken Sie diesen Plan aus und hängen Sie ihn sichtbar an Ihrem Arbeitsplatz auf!
+  </div>
+</body>
+</html>

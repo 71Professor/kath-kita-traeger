@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutz-Guide – KI Workshop</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">KI</div>
+        <span>Workshop-Portal</span>
+      </a>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="prompt-bibliothek.html">Prompts</a></li>
+          <li><a href="30-60-90-plan.html">90-Tage-Plan</a></li>
+          <li><a href="multiplikatoren.html">Multiplikatoren</a></li>
+          <li><a href="datenschutz.html" class="active">Datenschutz</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 3rem 2rem;">
+    <div class="hero-content">
+      <span class="hero-badge">🔒 Klare Regeln</span>
+      <h1>Datenschutz-Guide</h1>
+      <p class="hero-subtitle">Was darf in KI-Tools – und was nicht? Klare Regeln für rechtssicheres und ethisch verantwortungsvolles Arbeiten.</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Wichtiger Hinweis -->
+    <section class="section">
+      <div class="card" style="background: linear-gradient(135deg, #fef2f2, #fee2e2); border: 2px solid #fca5a5; max-width: 900px; margin: 0 auto;">
+        <h3 style="color: #991b1b; margin-bottom: 1rem;">⚠️ Wichtiger Grundsatz</h3>
+        <p style="font-size: 1.1rem; color: #991b1b; margin-bottom: 0;">
+          <strong>Alles, was Sie in ein KI-Tool eingeben, kann potenziell auf Servern gespeichert und für Training verwendet werden.</strong> Behandeln Sie KI-Tools wie eine öffentliche Pinnwand – geben Sie nur ein, was Sie auch an diese hängen würden.
+        </p>
+      </div>
+    </section>
+
+    <!-- Do's and Don'ts -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Was darf rein – was nicht?</h2>
+      </div>
+
+      <div class="do-dont-grid">
+        <div class="dont-box">
+          <h3>❌ Das darf NICHT in KI-Tools</h3>
+          
+          <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1rem;">Personenbezogene Daten:</h4>
+          <ul>
+            <li>Namen von Kindern, Eltern, Mitarbeitenden</li>
+            <li>Geburtsdaten, Adressen, Telefonnummern</li>
+            <li>Gesundheitsdaten, Entwicklungsberichte</li>
+            <li>Interne Personalnummern, Gehaltsdaten</li>
+            <li>E-Mail-Adressen (außer allgemeine Funktionsadressen)</li>
+            <li>Fotos von Personen</li>
+          </ul>
+          
+          <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1rem;">Vertrauliche Informationen:</h4>
+          <ul>
+            <li>Finanzielle Details (konkrete Budgets, Gehälter)</li>
+            <li>Interne Strategien, die nicht öffentlich sind</li>
+            <li>Vertrauliche Protokolle</li>
+            <li>Personalakten-Inhalte</li>
+            <li>Passwörter, Zugangsdaten</li>
+          </ul>
+          
+          <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1rem;">Urheberrechtlich geschützt:</h4>
+          <ul>
+            <li>Komplette Texte aus Büchern, Artikeln</li>
+            <li>Fremde Konzepte ohne Erlaubnis</li>
+            <li>Geschützte Bilder/Grafiken</li>
+          </ul>
+        </div>
+
+        <div class="do-box">
+          <h3>✅ Das ist in Ordnung</h3>
+          
+          <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1rem;">Allgemeine Informationen:</h4>
+          <ul>
+            <li>Anonymisierte Szenarien („Eine Kita mit 80 Kindern...")</li>
+            <li>Allgemeine Fragestellungen ohne Namen</li>
+            <li>Struktur- und Formatfragen</li>
+            <li>Öffentlich verfügbare Informationen</li>
+          </ul>
+          
+          <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1rem;">Arbeitserleichterung:</h4>
+          <ul>
+            <li>Textformulierungen ohne persönliche Daten</li>
+            <li>Gliederungen, Strukturen, Checklisten</li>
+            <li>Allgemeine Recherchen (Gesetze, Richtlinien)</li>
+            <li>Übersetzungen von nicht-vertraulichen Texten</li>
+            <li>Brainstorming zu allgemeinen Themen</li>
+            <li>Formatierungshilfen und Textoptimierung</li>
+          </ul>
+          
+          <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1rem;">Beispiele:</h4>
+          <ul>
+            <li>„Formuliere einen Elternbrief zum Thema Sommerfest"</li>
+            <li>„Erstelle eine Checkliste für Einstellungen"</li>
+            <li>„Welche Punkte gehören in ein QM-Konzept?"</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sicherheitstipps -->
+    <section class="section">
+      <div class="section-header">
+        <h2>🛡️ Sicherheitstipps</h2>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="card">
+          <h3 style="display: flex; align-items: center; gap: 0.5rem;"><span style="font-size: 1.5rem;">1️⃣</span> Immer anonymisieren</h3>
+          <p>Verwenden Sie „Kind A", „Mitarbeitende Person X" oder „Einrichtung Y" statt echter Namen.</p>
+          <div style="background: var(--bg-cream); padding: 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;">
+            <strong>Statt:</strong> „Schreibe eine E-Mail an Frau Müller, Leiterin der Kita St. Martin"<br>
+            <strong>Besser:</strong> „Schreibe eine E-Mail an eine Kita-Leitung zum Thema..."
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 style="display: flex; align-items: center; gap: 0.5rem;"><span style="font-size: 1.5rem;">2️⃣</span> Verallgemeinern</h3>
+          <p>Beschreiben Sie Situationen allgemein, ohne konkrete Einrichtungen oder Personen zu nennen.</p>
+          <div style="background: var(--bg-cream); padding: 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;">
+            <strong>Statt:</strong> „In unserer Kita St. Martin in München..."<br>
+            <strong>Besser:</strong> „In einer katholischen Kita mit 80 Plätzen..."
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 style="display: flex; align-items: center; gap: 0.5rem;"><span style="font-size: 1.5rem;">3️⃣</span> Vor Absenden prüfen</h3>
+          <p>Lesen Sie jeden Prompt nochmal durch: Sind wirklich KEINE Namen oder identifizierenden Daten enthalten?</p>
+          <div style="background: var(--bg-cream); padding: 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;">
+            <strong>Checkliste:</strong><br>
+            ☐ Keine Namen?<br>
+            ☐ Keine Adressen?<br>
+            ☐ Keine identifizierenden Details?
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 style="display: flex; align-items: center; gap: 0.5rem;"><span style="font-size: 1.5rem;">4️⃣</span> Neutrale Szenarien nutzen</h3>
+          <p>Erfinden Sie fiktive Beispiele statt reale Situationen zu beschreiben.</p>
+          <div style="background: var(--bg-cream); padding: 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;">
+            <strong>Tipp:</strong> Beschreiben Sie die Art des Problems, nicht den konkreten Fall.
+          </div>
+        </div>
+        
+        <div class="card">
+          <h3 style="display: flex; align-items: center; gap: 0.5rem;"><span style="font-size: 1.5rem;">5️⃣</span> Im Zweifel: NICHT eingeben</h3>
+          <p>Wenn Sie unsicher sind, ob eine Information eingegeben werden darf – lassen Sie es lieber.</p>
+          <div style="background: var(--bg-cream); padding: 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.9rem;">
+            <strong>Faustregel:</strong> Würde ich das an eine öffentliche Pinnwand hängen? Wenn nein → nicht eingeben.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rechtliche Grundlagen -->
+    <section class="section">
+      <div class="section-header">
+        <h2>⚖️ Rechtliche Grundlagen</h2>
+      </div>
+
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <div style="display: grid; gap: 1.5rem;">
+          <div style="padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-light);">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">DSGVO (Datenschutz-Grundverordnung)</h4>
+            <p style="margin: 0;">Europäische Regelung zum Schutz personenbezogener Daten. Gilt für alle Verarbeitungen von Daten natürlicher Personen.</p>
+          </div>
+          
+          <div style="padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-light);">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">KDG (Kirchliches Datenschutzgesetz)</h4>
+            <p style="margin: 0;">Spezielles Datenschutzrecht für katholische Träger. Orientiert sich an der DSGVO, enthält aber kirchenspezifische Regelungen.</p>
+          </div>
+          
+          <div style="padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-light);">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Arbeitsrecht</h4>
+            <p style="margin: 0;">Besonderer Schutz für Personaldaten. Gehälter, Beurteilungen und Personalakten unterliegen strengem Schutz.</p>
+          </div>
+          
+          <div>
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Urheberrecht</h4>
+            <p style="margin: 0;">Schutz geistigen Eigentums. Fremde Texte, Konzepte und Bilder dürfen nicht ohne Erlaubnis verarbeitet werden.</p>
+          </div>
+        </div>
+        
+        <div style="background: var(--accent-light); padding: 1.5rem; border-radius: var(--radius-sm); margin-top: 2rem;">
+          <p style="margin: 0; font-weight: 500;"><strong>Im Zweifel:</strong> Kontaktieren Sie Ihre/n Datenschutzbeauftragte/n!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ethische Reflexion -->
+    <section class="section">
+      <div class="section-header">
+        <h2>🤔 Ethische Reflexion</h2>
+        <p style="color: var(--text-light);">Besondere Verantwortung in der Trägerarbeit</p>
+      </div>
+
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <h3 style="margin-bottom: 1.5rem;">Wo bleibt menschliche Verantwortung unverzichtbar?</h3>
+        
+        <div style="display: grid; gap: 1rem;">
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span style="color: var(--primary); font-size: 1.25rem;">→</span>
+            <div>
+              <strong>Personalentscheidungen</strong>
+              <p style="margin: 0.25rem 0 0; color: var(--text-medium);">KI kann Informationen aufbereiten, aber Einstellungs- und Beurteilungsentscheidungen müssen von Menschen getroffen werden.</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span style="color: var(--primary); font-size: 1.25rem;">→</span>
+            <div>
+              <strong>Pädagogische Einschätzungen</strong>
+              <p style="margin: 0.25rem 0 0; color: var(--text-medium);">Entwicklungsberichte und Beobachtungen erfordern fachliche Expertise und persönliche Kenntnis des Kindes.</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span style="color: var(--primary); font-size: 1.25rem;">→</span>
+            <div>
+              <strong>Seelsorgerliche Aufgaben</strong>
+              <p style="margin: 0.25rem 0 0; color: var(--text-medium);">Gespräche mit Familien in Krisensituationen erfordern menschliche Empathie und Präsenz.</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span style="color: var(--primary); font-size: 1.25rem;">→</span>
+            <div>
+              <strong>Wertebezogene Entscheidungen</strong>
+              <p style="margin: 0.25rem 0 0; color: var(--text-medium);">Die Ausrichtung an katholischen Werten und dem Leitbild erfordert menschliche Urteilskraft.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-cream); padding: 1.5rem; border-radius: var(--radius-sm); margin-top: 2rem; border-left: 4px solid var(--primary);">
+          <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Grundsatz:</h4>
+          <p style="margin: 0; font-size: 1.05rem;"><strong>KI ist ein Werkzeug – kein Ersatz für Fachlichkeit, Menschlichkeit und Verantwortung.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kritische Fragen -->
+    <section class="section">
+      <div class="section-header">
+        <h2>❓ Kritische Diskussionsfragen</h2>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="card">
+          <h4>Darf KI bei Personalentscheidungen unterstützen?</h4>
+          <p style="font-size: 0.95rem;">KI kann bei der Erstellung von Stellenbeschreibungen oder der Strukturierung von Bewerbungsprozessen helfen. Die finale Entscheidung muss immer beim Menschen liegen.</p>
+        </div>
+        
+        <div class="card">
+          <h4>Wie transparent müssen wir gegenüber Eltern sein?</h4>
+          <p style="font-size: 0.95rem;">Wenn KI bei der Erstellung von Dokumenten hilft, die Eltern erhalten, sollte dies im Sinne von Transparenz kommuniziert werden können.</p>
+        </div>
+        
+        <div class="card">
+          <h4>Was passiert bei falschen KI-Empfehlungen?</h4>
+          <p style="font-size: 0.95rem;">Die Verantwortung liegt immer beim Menschen. KI-Outputs müssen geprüft werden. Fehler der KI sind menschliche Fehler, wenn sie ungeprüft übernommen werden.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="section" style="text-align: center;">
+      <div class="card" style="background: linear-gradient(135deg, var(--bg-cream), var(--bg-white)); max-width: 600px; margin: 0 auto;">
+        <h3>📄 Datenschutz-Checkliste zum Ausdrucken</h3>
+        <p>Hängen Sie diese Checkliste an Ihren Arbeitsplatz – für schnelle Orientierung bei der KI-Nutzung.</p>
+        <a href="downloads.html" class="btn btn-primary" style="margin-top: 1rem;">Zur Download-Seite</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Workshop-Portal</h4>
+        <p>KI in der Kita-Verwaltung<br>Workshop: 11.12.2025</p>
+      </div>
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="prompt-bibliothek.html">Prompt-Bibliothek</a></li>
+          <li><a href="30-60-90-plan.html">90-Tage-Plan</a></li>
+          <li><a href="multiplikatoren.html">Multiplikatoren-Kit</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Veranstalter</h4>
+        <p>Verband katholischer Kindertageseinrichtungen Bayern e.V.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 – Materialien für Workshop-Teilnehmende</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

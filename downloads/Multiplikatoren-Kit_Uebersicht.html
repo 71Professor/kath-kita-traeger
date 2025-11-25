@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplikatoren-Kit – KI in der Trägerarbeit</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #333;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 12mm;
+    }
+    
+    h1 {
+      color: #E47823;
+      font-size: 20pt;
+      margin-bottom: 3mm;
+      border-bottom: 3px solid #E47823;
+      padding-bottom: 3mm;
+    }
+    
+    h2 {
+      color: #E47823;
+      font-size: 13pt;
+      margin: 6mm 0 3mm;
+      page-break-after: avoid;
+      border-left: 4px solid #E47823;
+      padding-left: 3mm;
+    }
+    
+    h3 {
+      font-size: 11pt;
+      margin: 4mm 0 2mm;
+      color: #444;
+    }
+    
+    .subtitle {
+      font-size: 11pt;
+      color: #666;
+      margin-bottom: 5mm;
+    }
+    
+    .intro-box {
+      background: #fef9f5;
+      border: 1px solid #E47823;
+      border-radius: 4px;
+      padding: 4mm;
+      margin-bottom: 5mm;
+    }
+    
+    .kit-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2mm;
+      margin: 3mm 0;
+    }
+    
+    .kit-item {
+      background: #f8f9fa;
+      padding: 2mm 3mm;
+      border-radius: 3px;
+      font-size: 9pt;
+    }
+    
+    .kit-item::before {
+      content: '✓ ';
+      color: #E47823;
+      font-weight: 700;
+    }
+    
+    .prompt-card {
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 3mm;
+      margin: 3mm 0;
+      page-break-inside: avoid;
+    }
+    
+    .prompt-title {
+      font-weight: 600;
+      color: #E47823;
+      margin-bottom: 2mm;
+    }
+    
+    .prompt-box {
+      background: #2d3748;
+      color: #e2e8f0;
+      padding: 3mm;
+      border-radius: 3px;
+      font-family: 'Consolas', monospace;
+      font-size: 8pt;
+      white-space: pre-wrap;
+      margin: 2mm 0;
+    }
+    
+    .prompt-use {
+      font-size: 8pt;
+      color: #666;
+      font-style: italic;
+    }
+    
+    .checklist {
+      list-style: none;
+      margin: 2mm 0;
+    }
+    
+    .checklist li {
+      padding: 1.5mm 0 1.5mm 6mm;
+      position: relative;
+      font-size: 9pt;
+    }
+    
+    .checklist li::before {
+      content: '☐';
+      position: absolute;
+      left: 0;
+      color: #E47823;
+    }
+    
+    .phase-header {
+      background: #E47823;
+      color: white;
+      padding: 2mm 3mm;
+      border-radius: 3px;
+      font-weight: 600;
+      margin: 4mm 0 2mm;
+      font-size: 10pt;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2mm 0;
+      font-size: 8pt;
+    }
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 2mm;
+      text-align: left;
+    }
+    
+    th {
+      background: #fef9f5;
+      font-weight: 600;
+      color: #E47823;
+    }
+    
+    .two-column {
+      display: flex;
+      gap: 4mm;
+      margin: 3mm 0;
+    }
+    
+    .column {
+      flex: 1;
+    }
+    
+    .dont-box {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      border-radius: 4px;
+      padding: 3mm;
+    }
+    
+    .do-box {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 4px;
+      padding: 3mm;
+    }
+    
+    .dont-box h4 { color: #991b1b; margin-bottom: 2mm; font-size: 10pt; }
+    .do-box h4 { color: #166534; margin-bottom: 2mm; font-size: 10pt; }
+    
+    .mini-list {
+      list-style: none;
+      font-size: 8pt;
+    }
+    
+    .mini-list li {
+      padding: 1mm 0;
+    }
+    
+    .dont-box .mini-list li::before { content: '✗ '; color: #991b1b; }
+    .do-box .mini-list li::before { content: '✓ '; color: #166534; }
+    
+    .tip-box {
+      background: #fef9f5;
+      border-left: 3px solid #E47823;
+      padding: 2mm 3mm;
+      margin: 3mm 0;
+      font-size: 9pt;
+    }
+    
+    .footer {
+      margin-top: 6mm;
+      padding-top: 3mm;
+      border-top: 1px solid #ddd;
+      font-size: 8pt;
+      color: #666;
+      text-align: center;
+    }
+    
+    .page-break {
+      page-break-before: always;
+    }
+    
+    @media print {
+      body { padding: 8mm; font-size: 9pt; }
+      .prompt-card { page-break-inside: avoid; }
+      h2 { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <h1>📦 Multiplikatoren-Kit</h1>
+  <p class="subtitle">KI in der Trägerarbeit – Für die Weitergabe an Kolleg:innen</p>
+  
+  <div class="intro-box">
+    <strong>Was ist im Kit enthalten?</strong>
+    <div class="kit-items">
+      <div class="kit-item">Kurzpräsentation (15 Folien)</div>
+      <div class="kit-item">Top 10 Prompts für Einsteiger</div>
+      <div class="kit-item">Checkliste für erste Schritte</div>
+      <div class="kit-item">Datenschutz-Handout</div>
+      <div class="kit-item">Mini-Workshop Konzepte (30/60/90 Min)</div>
+    </div>
+  </div>
+
+  <h2>🎯 Top 10 Prompts für Einsteiger</h2>
+
+  <div class="prompt-card">
+    <div class="prompt-title">1. E-Mail an Kita-Leitung</div>
+    <div class="prompt-box">Du bist ein erfahrener Trägervertreter. Schreibe eine freundliche, aber sachliche E-Mail an unsere Kita-Leitung zum Thema [THEMA]. Die E-Mail soll max. 150 Wörter umfassen und folgende Punkte enthalten: [PUNKT 1], [PUNKT 2], [PUNKT 3]. Ton: professionell und wertschätzend.</div>
+    <div class="prompt-use">→ Anwendung: Interne Kommunikation</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-title">2. Elternbrief erstellen</div>
+    <div class="prompt-box">Erstelle einen Elternbrief für unsere Kita zum Thema [THEMA]. Der Brief soll verständlich, empathisch und informativ sein. Zielgruppe: Eltern von Kindern im Alter von 3-6 Jahren. Länge: 1 A4-Seite. Bitte gliedere den Brief in: Begrüßung, Hauptteil mit Informationen, Handlungsempfehlungen und freundlichen Abschluss.</div>
+    <div class="prompt-use">→ Anwendung: Externe Kommunikation</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-title">3. Checkliste erstellen</div>
+    <div class="prompt-box">Erstelle eine übersichtliche Checkliste für [AUFGABE/PROZESS]. Die Checkliste soll chronologisch aufgebaut sein und alle wichtigen Schritte enthalten. Format: Aufzählungsliste mit Checkboxen. Zielgruppe: Trägervertreter und Verwaltungspersonal.</div>
+    <div class="prompt-use">→ Anwendung: Organisation & Planung</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-title">4. Meeting-Protokoll zusammenfassen</div>
+    <div class="prompt-box">Fasse dieses Meeting-Protokoll in einer Executive Summary zusammen. Die Zusammenfassung soll max. 1 Seite umfassen und folgende Abschnitte enthalten: 1) Wichtigste Beschlüsse, 2) Offene Punkte mit Verantwortlichen und Deadlines, 3) Nächste Schritte. Stil: prägnant und handlungsorientiert.
+
+[HIER PROTOKOLL EINFÜGEN - ohne Namen!]</div>
+    <div class="prompt-use">→ Anwendung: Dokumentation</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-title">5. Stellenbeschreibung formulieren</div>
+    <div class="prompt-box">Erstelle eine professionelle Stellenbeschreibung für die Position [POSITION] in unserem katholischen Kita-Träger. Abschnitte: Über uns, Ihre Aufgaben, Ihr Profil, Wir bieten. Ton: modern, wertschätzend und attraktiv für Bewerber:innen. Betone unsere katholischen Werte.</div>
+    <div class="prompt-use">→ Anwendung: Personalmanagement</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-title">6. Projektplan erstellen</div>
+    <div class="prompt-box">Erstelle einen Projektplan für [PROJEKT] mit einer Laufzeit von [DAUER]. Der Plan soll enthalten: Ziele, Meilensteine mit Zeitachse, Verantwortlichkeiten, Risiken und Maßnahmen. Format: Tabellarisch und übersichtlich strukturiert.</div>
+    <div class="prompt-use">→ Anwendung: Strategische Planung</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-title">7. Konzept-Gliederung entwickeln</div>
+    <div class="prompt-box">Erstelle eine detaillierte Gliederung für ein [TYP]-Konzept zum Thema [THEMA] in unserem Kita-Träger. Die Gliederung soll logisch aufgebaut sein mit Hauptkapiteln und Unterkapiteln. Berücksichtige: pädagogisch, organisatorisch, finanziell, qualitätssichernd.</div>
+    <div class="prompt-use">→ Anwendung: Konzeptentwicklung</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-title">8. Social Media Post</div>
+    <div class="prompt-box">Schreibe einen Social Media Post für [PLATTFORM] über [THEMA]. Der Post soll: informativ und emotional ansprechend sein, max. [ZEICHENANZAHL] Zeichen umfassen, Call-to-Action enthalten. Zielgruppe: [ZIELGRUPPE]. Füge 3-5 passende Hashtags hinzu.</div>
+    <div class="prompt-use">→ Anwendung: Öffentlichkeitsarbeit</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-title">9. Jahresbericht strukturieren</div>
+    <div class="prompt-box">Erstelle die Struktur für unseren Träger-Jahresbericht [JAHR]. Themenbereiche: Einleitung/Grußwort, Zahlen und Fakten, Pädagogische Schwerpunkte, Besondere Projekte, Finanzen im Überblick, Ausblick. Schlage für jeden Bereich konkrete Inhalte und Visualisierungsmöglichkeiten vor.</div>
+    <div class="prompt-use">→ Anwendung: Berichtswesen</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-title">10. Fortbildungsplan erstellen</div>
+    <div class="prompt-box">Erstelle einen Fortbildungsplan für das Jahr [JAHR] für die Mitarbeitenden in unserem Träger. Themenbereiche: [THEMEN]. Der Plan soll enthalten: Fortbildungstitel, Zielgruppe, Format (online/präsenz), Dauer, vorgeschlagene Termine. Format: Übersichtstabelle.</div>
+    <div class="prompt-use">→ Anwendung: Personalentwicklung</div>
+  </div>
+
+  <div class="tip-box">
+    <strong>💡 Tipps:</strong> 1. Platzhalter [IN KLAMMERN] durch konkrete Inhalte ersetzen | 2. Ergebnis prüfen und nachbessern | 3. KEINE personenbezogenen Daten eingeben!
+  </div>
+
+  <div class="page-break"></div>
+
+  <h2>✅ Checkliste: Erste Schritte mit KI</h2>
+
+  <div class="phase-header">Phase 1: Vorbereitung (Tag 1)</div>
+  <ul class="checklist">
+    <li>Account anlegen: Bei einem KI-Tool registrieren (ChatGPT, Claude, Gemini)</li>
+    <li>Datenschutz-Handout lesen: Was darf in KI-Tools, was nicht?</li>
+    <li>1-2 Aufgaben identifizieren: Welche Aufgaben möchte ich als erstes mit KI bearbeiten?</li>
+  </ul>
+
+  <div class="phase-header">Phase 2: Erste Schritte (Tag 1-7)</div>
+  <ul class="checklist">
+    <li>Ersten Prompt testen: Mit einem der Top 10 Prompts starten</li>
+    <li>5-Elemente-Schema üben: Rolle, Aufgabe, Kontext, Format, Ton</li>
+    <li>Ergebnis prüfen: Ist das Output brauchbar? Was muss nachbearbeitet werden?</li>
+    <li>Prompt verbessern: Zweiten Versuch mit präziserem Prompt</li>
+  </ul>
+
+  <div class="phase-header">Phase 3: Routine aufbauen (Woche 2-4)</div>
+  <ul class="checklist">
+    <li>Tägliche Nutzung: Mindestens 1 Aufgabe pro Tag mit KI bearbeiten</li>
+    <li>Verschiedene Aufgaben testen: Kommunikation, Planung, Dokumentation</li>
+    <li>Eigene Prompts sammeln: Die besten Prompts in einem Dokument speichern</li>
+    <li>Erste Person einführen: Einer Kollegin/einem Kollegen KI zeigen</li>
+  </ul>
+
+  <div class="phase-header">Phase 4: Weitergeben (Woche 4-8)</div>
+  <ul class="checklist">
+    <li>Mini-Workshop planen: 30-60 Min Einführung für Team/Kolleg:innen</li>
+    <li>Materialien vorbereiten: Multiplikatoren-Kit nutzen</li>
+    <li>Workshop durchführen: Mit Präsentation und Live-Demo</li>
+    <li>Feedback einholen: Was war hilfreich? Was fehlt noch?</li>
+  </ul>
+
+  <h2>🔒 Datenschutz-Kurzübersicht</h2>
+
+  <div class="two-column">
+    <div class="column">
+      <div class="dont-box">
+        <h4>❌ Das darf NICHT rein</h4>
+        <ul class="mini-list">
+          <li>Namen von Kindern, Eltern, Mitarbeitenden</li>
+          <li>Geburtsdaten, Adressen, Telefonnummern</li>
+          <li>Gesundheitsdaten, Entwicklungsberichte</li>
+          <li>Personalnummern, Gehaltsdaten</li>
+          <li>Vertrauliche Protokolle</li>
+          <li>Passwörter, Zugangsdaten</li>
+        </ul>
+      </div>
+    </div>
+    <div class="column">
+      <div class="do-box">
+        <h4>✅ Das ist in Ordnung</h4>
+        <ul class="mini-list">
+          <li>Anonymisierte Szenarien ("Kind A")</li>
+          <li>Allgemeine Fragestellungen ohne Namen</li>
+          <li>Struktur- und Formatfragen</li>
+          <li>Gliederungen, Checklisten</li>
+          <li>Allgemeine Recherchen</li>
+          <li>Öffentlich verfügbare Informationen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>🎓 Mini-Workshop Formate</h2>
+
+  <h3>Format A: Express-Einführung (30 Min)</h3>
+  <table>
+    <tr><th>Zeit</th><th>Inhalt</th><th>Methode</th></tr>
+    <tr><td>0-5 Min</td><td>Begrüßung & Einordnung</td><td>Kurzvortrag</td></tr>
+    <tr><td>5-10 Min</td><td>Was ist KI?</td><td>Präsentation</td></tr>
+    <tr><td>10-15 Min</td><td>Das 5-Elemente-Prompt-Schema</td><td>Live-Demo</td></tr>
+    <tr><td>15-25 Min</td><td>Erste eigene Prompts testen</td><td>Hands-on</td></tr>
+    <tr><td>25-30 Min</td><td>Datenschutz & nächste Schritte</td><td>Handout, Q&A</td></tr>
+  </table>
+
+  <h3>Format B: Standard-Einführung (60 Min)</h3>
+  <table>
+    <tr><th>Zeit</th><th>Inhalt</th><th>Methode</th></tr>
+    <tr><td>0-5 Min</td><td>Begrüßung & Erwartungen</td><td>Blitzlicht</td></tr>
+    <tr><td>5-15 Min</td><td>KI-Grundlagen</td><td>Präsentation</td></tr>
+    <tr><td>15-25 Min</td><td>Prompt-Schema & Live-Demo</td><td>Demonstration</td></tr>
+    <tr><td>25-45 Min</td><td>Praktisches Ausprobieren</td><td>Hands-on (2-3 Prompts)</td></tr>
+    <tr><td>45-55 Min</td><td>Datenschutz & Ethik</td><td>Input + Diskussion</td></tr>
+    <tr><td>55-60 Min</td><td>Nächste Schritte & Ressourcen</td><td>Checkliste, Handouts</td></tr>
+  </table>
+
+  <h3>Format C: Vertiefungs-Workshop (90 Min)</h3>
+  <table>
+    <tr><th>Zeit</th><th>Inhalt</th><th>Methode</th></tr>
+    <tr><td>0-10 Min</td><td>Ankommen & Erwartungscheck</td><td>Interaktiv</td></tr>
+    <tr><td>10-20 Min</td><td>KI-Grundlagen</td><td>Präsentation</td></tr>
+    <tr><td>20-35 Min</td><td>Prompt-Engineering vertiefen</td><td>Live-Demo + Beispiele</td></tr>
+    <tr><td>35-60 Min</td><td>Intensive Praxisphase</td><td>Hands-on: 3-4 eigene Aufgaben</td></tr>
+    <tr><td>60-75 Min</td><td>Anwendungsfelder erkunden</td><td>Gruppenarbeit</td></tr>
+    <tr><td>75-85 Min</td><td>Datenschutz, Ethik & Transfer</td><td>Diskussion + 30-Tage-Plan</td></tr>
+    <tr><td>85-90 Min</td><td>Abschluss & Vernetzung</td><td>Feedback, nächste Schritte</td></tr>
+  </table>
+
+  <h2>💡 Tipps für erfolgreiche Multiplikation</h2>
+
+  <div class="two-column">
+    <div class="column">
+      <h4 style="color: #E47823; margin-bottom: 2mm;">Vorbereitung</h4>
+      <ul class="mini-list" style="list-style: disc; padding-left: 4mm;">
+        <li style="padding: 1mm 0;">Zielgruppe kennen: KI-Niveau? Bedarfe?</li>
+        <li style="padding: 1mm 0;">Eigene Beispiele nutzen</li>
+        <li style="padding: 1mm 0;">Technik vorher testen</li>
+        <li style="padding: 1mm 0;">Zeitpuffer einplanen</li>
+      </ul>
+    </div>
+    <div class="column">
+      <h4 style="color: #E47823; margin-bottom: 2mm;">Durchführung</h4>
+      <ul class="mini-list" style="list-style: disc; padding-left: 4mm;">
+        <li style="padding: 1mm 0;">Begeisterung zeigen!</li>
+        <li style="padding: 1mm 0;">Nicht überfordern</li>
+        <li style="padding: 1mm 0;">Hands-on priorisieren</li>
+        <li style="padding: 1mm 0;">Datenschutz betonen</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>✅ Bin ich bereit als Multiplikator:in?</h2>
+
+  <div class="two-column">
+    <div class="column">
+      <strong>Inhaltlich:</strong>
+      <ul class="checklist">
+        <li>Ich kann das 5-Elemente-Schema erklären</li>
+        <li>Ich habe 5+ Prompts erfolgreich genutzt</li>
+        <li>Ich kenne die Datenschutz-Regeln</li>
+        <li>Ich kann 3 Anwendungsfälle nennen</li>
+      </ul>
+    </div>
+    <div class="column">
+      <strong>Organisatorisch:</strong>
+      <ul class="checklist">
+        <li>Termin ist festgelegt</li>
+        <li>Raum mit WLAN und Beamer</li>
+        <li>Teilnehmende haben Geräte</li>
+        <li>Handouts sind vorbereitet</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>Workshop: KI in der Kita-Verwaltung</strong> | 11.12.2025 | Verband kath. Kindertageseinrichtungen Bayern e.V.<br>
+    🚀 Viel Erfolg als Multiplikator:in!
+  </div>
+</body>
+</html>

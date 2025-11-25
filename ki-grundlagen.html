@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KI-Grundlagen – KI Workshop</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">KI</div>
+        <span>Workshop-Portal</span>
+      </a>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="prompt-bibliothek.html">Prompts</a></li>
+          <li><a href="30-60-90-plan.html">90-Tage-Plan</a></li>
+          <li><a href="multiplikatoren.html">Multiplikatoren</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 3rem 2rem;">
+    <div class="hero-content">
+      <span class="hero-badge">🧠 Verstehen & Anwenden</span>
+      <h1>KI-Grundlagen</h1>
+      <p class="hero-subtitle">Wie funktionieren ChatGPT, Claude & Co.? Und wie formulieren Sie effektive Prompts?</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Was ist KI? -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Was ist KI?</h2>
+      </div>
+      
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+          <strong>Künstliche Intelligenz (KI)</strong> bezeichnet Computersysteme, die Aufgaben ausführen können, die normalerweise menschliche Intelligenz erfordern – wie Texte verstehen, Sprache verarbeiten oder Muster erkennen.
+        </p>
+        
+        <h3 style="margin-bottom: 1rem; color: var(--primary);">Large Language Models (LLMs)</h3>
+        <p>ChatGPT, Claude, Gemini und ähnliche Tools sind sogenannte <strong>Large Language Models</strong>. Sie wurden mit riesigen Textmengen trainiert und können:</p>
+        <ul style="padding-left: 1.5rem; margin: 1rem 0; color: var(--text-medium);">
+          <li>Texte verstehen und zusammenfassen</li>
+          <li>Neue Texte in verschiedenen Stilen generieren</li>
+          <li>Fragen beantworten und Informationen aufbereiten</li>
+          <li>Bei Formulierungen und Strukturierung helfen</li>
+          <li>Ideen entwickeln und Brainstorming unterstützen</li>
+        </ul>
+        
+        <div style="background: var(--bg-cream); padding: 1.5rem; border-radius: var(--radius-sm); margin-top: 1.5rem; border-left: 4px solid var(--primary);">
+          <p style="margin: 0;"><strong>Wichtig:</strong> KI „versteht" nicht wirklich wie Menschen. Sie erkennt Muster und generiert wahrscheinliche Antworten basierend auf dem Training. Deshalb ist immer eine menschliche Prüfung der Ergebnisse notwendig.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KI-Tools im Überblick -->
+    <section class="section">
+      <div class="section-header">
+        <h2>KI-Tools im Überblick</h2>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="card">
+          <h3 style="color: #10a37f;">ChatGPT</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.5rem;">von OpenAI</p>
+          <p>Der bekannteste Chatbot. Kostenlose Version verfügbar, Plus-Version mit GPT-4 für komplexere Aufgaben.</p>
+          <p style="margin-top: 1rem;"><a href="https://chat.openai.com" target="_blank" rel="noopener">→ chat.openai.com</a></p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: #d97706;">Claude</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.5rem;">von Anthropic</p>
+          <p>Besonders gut bei längeren Texten und nuancierten Aufgaben. Gilt als besonders sicher und zuverlässig.</p>
+          <p style="margin-top: 1rem;"><a href="https://claude.ai" target="_blank" rel="noopener">→ claude.ai</a></p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: #4285f4;">Gemini</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.5rem;">von Google</p>
+          <p>Googles KI-Assistent. Gut integriert mit Google-Diensten wie Docs, Gmail und Drive.</p>
+          <p style="margin-top: 1rem;"><a href="https://gemini.google.com" target="_blank" rel="noopener">→ gemini.google.com</a></p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: #0078d4;">Microsoft Copilot</h3>
+          <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.5rem;">von Microsoft</p>
+          <p>In Microsoft 365 integriert. Hilft direkt in Word, Excel, Outlook und PowerPoint.</p>
+          <p style="margin-top: 1rem;"><a href="https://copilot.microsoft.com" target="_blank" rel="noopener">→ copilot.microsoft.com</a></p>
+        </div>
+      </div>
+      
+      <div class="card" style="margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <h3 style="margin-bottom: 1rem;">💡 Welches Tool ist das richtige?</h3>
+        <p>Für den Einstieg empfehlen wir, mit <strong>einem Tool</strong> zu starten und es gut kennenzulernen. Alle genannten Tools sind für die typischen Trägeraufgaben gut geeignet. Später können Sie vergleichen und das beste Tool für verschiedene Aufgaben wählen.</p>
+      </div>
+    </section>
+
+    <!-- Das 5-Elemente-Schema -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Das 5-Elemente-Prompt-Schema</h2>
+        <p style="color: var(--text-light);">So formulieren Sie effektive Prompts</p>
+      </div>
+
+      <div class="card" style="max-width: 900px; margin: 0 auto;">
+        <p style="margin-bottom: 2rem;">Ein guter Prompt besteht aus bis zu 5 Elementen. Je mehr Kontext Sie geben, desto besser das Ergebnis:</p>
+        
+        <div style="display: grid; gap: 1.5rem;">
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</div>
+            <div>
+              <h4 style="color: var(--primary); margin-bottom: 0.25rem;">Rolle</h4>
+              <p style="margin: 0; color: var(--text-medium);">Wer soll die KI sein?</p>
+              <p style="margin: 0.5rem 0 0; font-style: italic; color: var(--text-light);">„Du bist ein erfahrener Trägervertreter in einem katholischen Kita-Träger."</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</div>
+            <div>
+              <h4 style="color: var(--primary); margin-bottom: 0.25rem;">Aufgabe</h4>
+              <p style="margin: 0; color: var(--text-medium);">Was soll die KI tun?</p>
+              <p style="margin: 0.5rem 0 0; font-style: italic; color: var(--text-light);">„Schreibe eine E-Mail an die Kita-Leitung zum Thema neue Hygienevorschriften."</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</div>
+            <div>
+              <h4 style="color: var(--primary); margin-bottom: 0.25rem;">Kontext</h4>
+              <p style="margin: 0; color: var(--text-medium);">Welche Hintergrundinformationen sind wichtig?</p>
+              <p style="margin: 0.5rem 0 0; font-style: italic; color: var(--text-light);">„Die neuen Vorschriften treten am 01.02. in Kraft. Die Leitung soll bis Ende des Monats eine Umsetzungsstrategie vorlegen."</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">4</div>
+            <div>
+              <h4 style="color: var(--primary); margin-bottom: 0.25rem;">Format</h4>
+              <p style="margin: 0; color: var(--text-medium);">Wie soll das Ergebnis aussehen?</p>
+              <p style="margin: 0.5rem 0 0; font-style: italic; color: var(--text-light);">„Max. 200 Wörter, mit Betreff, Anrede, Hauptteil und Schluss. Nutze Bullet Points für die wichtigsten Punkte."</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">5</div>
+            <div>
+              <h4 style="color: var(--primary); margin-bottom: 0.25rem;">Ton</h4>
+              <p style="margin: 0; color: var(--text-medium);">Wie soll der Text klingen?</p>
+              <p style="margin: 0.5rem 0 0; font-style: italic; color: var(--text-light);">„Wertschätzend, klar und lösungsorientiert. Die E-Mail soll motivieren, nicht unter Druck setzen."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beispiel -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Beispiel: Vom schlechten zum guten Prompt</h2>
+      </div>
+
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div class="card" style="background: #fef2f2; border-color: #fca5a5; margin-bottom: 1.5rem;">
+          <h3 style="color: #991b1b; margin-bottom: 0.5rem;">❌ Schlechter Prompt</h3>
+          <div style="background: white; padding: 1rem; border-radius: var(--radius-sm); font-family: monospace; font-size: 0.9rem;">
+            Schreib eine E-Mail über Hygienevorschriften.
+          </div>
+          <p style="margin-top: 1rem; font-size: 0.9rem; color: #991b1b;">→ Zu vage! Die KI weiß nicht, wer schreibt, an wen, was genau mitgeteilt werden soll, wie lang, in welchem Ton...</p>
+        </div>
+
+        <div class="card" style="background: #f0fdf4; border-color: #86efac;">
+          <h3 style="color: #166534; margin-bottom: 0.5rem;">✅ Guter Prompt</h3>
+          <div style="background: white; padding: 1rem; border-radius: var(--radius-sm); font-family: monospace; font-size: 0.9rem; white-space: pre-wrap;">Du bist ein erfahrener Trägervertreter in einem katholischen Kita-Träger.
+
+Schreibe eine professionelle E-Mail an die Leitung einer Kita zum Thema neue Hygienevorschriften.
+
+Die E-Mail soll:
+- Max. 200 Wörter umfassen
+- Folgende Punkte enthalten: Information über neue Vorschriften, Umsetzungsfrist bis 01.02., Unterstützungsangebot durch den Träger
+- Mit konkreter Handlungsaufforderung enden
+
+Kontext: Gesetzesänderung tritt zum 01.02.2026 in Kraft.
+
+Ton: Wertschätzend, klar und lösungsorientiert</div>
+          <p style="margin-top: 1rem; font-size: 0.9rem; color: #166534;">→ Alle 5 Elemente sind enthalten! Die KI hat alle Informationen, die sie braucht.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tipps -->
+    <section class="section">
+      <div class="section-header">
+        <h2>💡 Tipps für bessere Prompts</h2>
+      </div>
+
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="card">
+          <h3>Iterativ arbeiten</h3>
+          <p>Prompts müssen nicht beim ersten Mal perfekt sein. Starten Sie, prüfen Sie das Ergebnis, und verfeinern Sie den Prompt. „Mach es kürzer", „Formuliere den ersten Absatz um", „Füge noch X hinzu".</p>
+        </div>
+        
+        <div class="card">
+          <h3>Beispiele geben</h3>
+          <p>Wenn Sie einen bestimmten Stil wollen, geben Sie ein Beispiel: „Ähnlich wie dieser Text: [Beispiel]" oder „Im Stil von formellen Geschäftsbriefen".</p>
+        </div>
+        
+        <div class="card">
+          <h3>Länge konkretisieren</h3>
+          <p>Geben Sie immer an, wie lang das Ergebnis sein soll: „Max. 200 Wörter", „5 Bullet Points", „1 A4-Seite", „3 Absätze".</p>
+        </div>
+        
+        <div class="card">
+          <h3>Ergebnisse prüfen</h3>
+          <p>KI macht Fehler! Prüfen Sie immer: Stimmen die Fakten? Passt der Ton? Ist nichts Unangemessenes dabei? Sie sind verantwortlich für das Endergebnis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="text-align: center;">
+      <div class="card" style="background: linear-gradient(135deg, var(--bg-cream), var(--bg-white)); max-width: 600px; margin: 0 auto;">
+        <h3>Bereit zum Ausprobieren?</h3>
+        <p>Nutzen Sie die Prompt-Bibliothek mit über 30 getesteten Vorlagen für Ihre Trägerarbeit.</p>
+        <a href="prompt-bibliothek.html" class="btn btn-primary" style="margin-top: 1rem;">Zur Prompt-Bibliothek →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Workshop-Portal</h4>
+        <p>KI in der Kita-Verwaltung<br>Workshop: 11.12.2025</p>
+      </div>
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="prompt-bibliothek.html">Prompt-Bibliothek</a></li>
+          <li><a href="30-60-90-plan.html">90-Tage-Plan</a></li>
+          <li><a href="multiplikatoren.html">Multiplikatoren-Kit</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Veranstalter</h4>
+        <p>Verband katholischer Kindertageseinrichtungen Bayern e.V.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 – Materialien für Workshop-Teilnehmende</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
