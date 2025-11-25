@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block 1 – Einführung & Grundlagen</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>1️⃣</text></svg>">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">KI</div>
+        <span>Workshop-Portal</span>
+      </a>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="../index.html">Start</a></li>
+          <li><a href="../prompt-bibliothek.html">Prompts</a></li>
+          <li><a href="../30-60-90-plan.html">90-Tage-Plan</a></li>
+          <li><a href="../multiplikatoren.html">Multiplikatoren</a></li>
+          <li><a href="../datenschutz.html">Datenschutz</a></li>
+          <li><a href="../downloads.html" class="active">Downloads</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 3rem 2rem;">
+    <div class="hero-content">
+      <span class="hero-badge">Block 1 · Grundlagen</span>
+      <h1>Einführung &amp; Setup</h1>
+      <p class="hero-subtitle">Gemeinsame Basis schaffen, KI verstehen und sicher in die ersten Prompts starten.</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" style="max-width: 950px; margin: 0 auto;">
+      <div class="card" style="padding: 2.5rem;">
+        <div class="card-icon">1️⃣</div>
+        <h2 style="margin-bottom: 1rem;">Worum es geht</h2>
+        <p>Block 1 legt das Fundament des Workshops: Die Teilnehmenden richten ihre Geräte ein, lernen sich kennen und klären Erwartungshaltungen. Eine Einstiegsübung zeigt, welche KI-Erfahrung im Raum vorhanden ist. Anschließend folgt eine verständliche Einführung in Funktionsweise, Chancen und Grenzen von KI.</p>
+
+        <div class="card" style="background: var(--bg-cream); margin: 1.5rem 0; border: 1px solid var(--border-light);">
+          <h3>Schwerpunkte</h3>
+          <ul style="margin-left: 1.25rem; color: var(--text-medium);">
+            <li><strong>Funktionsweise verstehen:</strong> KI erkennt Muster in großen Textmengen und generiert passende Antworten – ohne echte Intelligenz.</li>
+            <li><strong>Einsatzfelder im Trägeralltag:</strong> Texte, Recherchen, Checklisten oder Planungsaufgaben sind naheliegende Startpunkte.</li>
+            <li><strong>Sensible Grenzen kennen:</strong> Rechtliche Themen und personenbezogene Daten gehören nicht in öffentliche KI-Tools.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin: 1.5rem 0; border: 1px solid var(--border-light);">
+          <h3>Praxis &amp; Methodik</h3>
+          <p>Die erste Arbeitsphase nutzt das 5-Elemente-Prompt-Schema. Die Teilnehmenden formulieren Prompts für E-Mails, Checklisten oder Dokumente, erleben schnelle Ergebnisse und üben präzise Anweisungen.</p>
+          <p>Ein abschließendes Peer-Feedback schafft Sicherheit im Umgang mit den neuen Werkzeugen und beantwortet offene Fragen.</p>
+        </div>
+
+        <div class="card" style="background: var(--accent-light); border: 1px solid rgba(228, 120, 35, 0.2);">
+          <h3>Kurzfazit</h3>
+          <p>Block 1 vermittelt Grundlagenwissen, sensibilisiert für Datenschutz und Ethik und führt direkt in die praktische Prompt-Arbeit ein. So entsteht eine gemeinsame, sichere Basis für alle weiteren Workshop-Teile.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Workshop-Portal</h4>
+        <p>KI in der Kita-Verwaltung<br>Workshop: 11.12.2025</p>
+      </div>
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="../index.html">Startseite</a></li>
+          <li><a href="../prompt-bibliothek.html">Prompt-Bibliothek</a></li>
+          <li><a href="../30-60-90-plan.html">90-Tage-Plan</a></li>
+          <li><a href="../multiplikatoren.html">Multiplikatoren-Kit</a></li>
+          <li><a href="../datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Veranstalter</h4>
+        <p>Verband katholischer Kindertageseinrichtungen Bayern e.V.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 – Materialien für Workshop-Teilnehmende</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
