@@ -82,23 +82,24 @@ a:hover {
 
 /* Header & Navigation */
 header {
-  background: var(--bg-white);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.92) 100%);
   border-bottom: 1px solid var(--border-light);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 4px 24px rgba(45, 55, 72, 0.08);
+  backdrop-filter: blur(6px);
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0.5rem 2rem 0.65rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 74px;
-  gap: 1rem;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -126,19 +127,21 @@ header {
 nav {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 0.35rem;
-  padding: 0.35rem 0.4rem;
-  background: rgba(255, 255, 255, 0.9);
+  gap: 0.45rem;
+  padding: 0.55rem 0.7rem;
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid var(--border-light);
   border-radius: 999px;
-  box-shadow: 0 6px 20px rgba(45, 55, 72, 0.07);
-  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 28px rgba(45, 55, 72, 0.08);
+  backdrop-filter: blur(8px);
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 nav li {
@@ -147,13 +150,14 @@ nav li {
 
 nav a {
   position: relative;
-  padding: 0.65rem 1.05rem;
+  padding: 0.65rem 1rem;
   border-radius: 999px;
   color: var(--text-medium);
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.01em;
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 nav a::after {
