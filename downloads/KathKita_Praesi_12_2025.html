@@ -1,0 +1,3314 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>KI in der Kita-Verwaltung – Reveal.js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css">
+<!-- Custom Workshop Styles -->
+
+<style>
+  .reveal section {
+    font-size: 28px;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  /* ==============================
+     🎬 1) Startfolie (Titel-Folie)
+     ============================== */
+  .reveal section.startslide {
+    text-align: center;
+  }
+
+  .reveal section.startslide h1 {
+    font-size: 2.6em;
+    margin-bottom: 0.2em;
+    color: #E47823; /* Orange für H1 */
+  }
+
+  .reveal section.startslide h2 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 0.6em;
+  }
+
+  .reveal section.startslide p {
+    font-size: 0.9em;
+    margin: 0.2em 0;
+  }
+
+  .reveal section.startslide .logo {
+    margin-bottom: 1.4rem;
+  }
+
+  /* ====================================
+     🧭 2) Kapitel-Folien (Block-Start)
+     ==================================== */
+  .reveal section.chapter {
+    text-align: left;
+    padding: 1.8rem 2.2rem;
+    border-radius: 16px;
+    background: #fde8d7; /* sehr helle Variante von #E47823 */
+    box-shadow: 0 0.5rem 1.2rem rgba(0,0,0,0.01);
+  }
+
+  .reveal section.chapter::before {
+    content: "";
+    display: block;
+    width: 4.5rem;
+    height: 0.35rem;
+    background: #E47823; /* Akzentbalken in Orange */
+    border-radius: 999px;
+    margin-bottom: 1.2rem;
+  }
+
+  .reveal section.chapter h1 {
+    font-size: 2.2em;
+    margin-bottom: 0.1em;
+    color: #E47823; /* Orange für H1 */
+  }
+
+  .reveal section.chapter h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-top: 0.2em;
+    color: #555;
+  }
+
+  /* =========================================
+     ✏️ 3) Hands-on / Arbeitsphasen (Karten)
+     ========================================= */
+  .reveal section.hands-on {
+    text-align: left;
+    padding: 1.8rem 2.2rem;
+    border-radius: 16px;
+    background: #e5f2ff; /* sehr helles Blau */
+    box-shadow: 0 0.5rem 1.2rem rgba(0,0,0,0.1);
+  }
+
+  .reveal section.hands-on h1,
+  .reveal section.hands-on h2 {
+    margin-top: 0;
+    color: #E47823; /* Orange für Überschriften in Hands-on */
+  }
+
+  .reveal section.hands-on ul,
+  .reveal section.hands-on ol {
+    margin-top: 0.8em;
+  }
+
+  .reveal section.hands-on strong {
+    font-weight: 700;
+  }
+
+  /* ======================================
+     ☕ 4) Pausen-Folien (Kaffee / Mittag)
+     ====================================== */
+  .reveal section.pause {
+    text-align: center;
+  }
+
+    .reveal section.pause h1 {
+    font-size: 2.4em;
+    margin-bottom: 0.3em;
+    color: #E47823; /* Orange für H1 */
+  }
+
+  .reveal section.pause p {
+    font-size: 1.2em;
+    margin-top: 0.4em;
+  }
+
+  /* ======================================
+     ✅ 5) Summary / Abschluss / Takeaways
+     ====================================== */
+  .reveal section.summary {
+   text-align: left;
+    padding: 1.8rem 2.2rem;
+    border-radius: 16px;
+    background: #f0f9e8; /* sehr helles Grün */
+    box-shadow: 0 0.5rem 1.2rem rgba(0,0,0,0.1);
+  }
+
+  .reveal section.summary h1 {
+    font-size: 1.8em;
+    margin-bottom: 0.6em;
+    color: #E47823; /* Orange für H1 */
+  }
+
+  .reveal section.summary ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .reveal section.summary ul li {
+    position: relative;
+    padding-left: 2.2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .reveal section.summary ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 700;
+    color: #E47823; /* Checkmarks in Orange */
+  }
+</style>
+
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown
+               data-separator="^\s*---\s*$"
+               data-separator-vertical="^\s*--\s*$"
+               data-separator-notes="^Note:">
+        <textarea data-template>
+
+<!-- .slide: class="startslide" -->
+
+<img src="logokathkita.jpg" alt="Logo" width="250" style="margin-bottom: 1.5rem;">
+
+# **KI in der Kita-Verwaltung**
+
+## Effizient entscheiden, steuern und gestalten
+
+**11. Dezember 2025**  
+Referent: Michael Kohl
+
+Note:
+**Vorbereitung (5 Min vor Beginn):**
+- Präsentation geöffnet
+- Flipchart beschriftet: "Herzlich Willkommen! WLAN: [Zugangsdaten]"
+- Namenskarten auf Tischen
+- Portfolio-Mappen ausgelegt
+
+**Teilnehmende kommen an:**
+- Persönlich begrüßen
+- Auf Namenskarten hinweisen
+- Auf WLAN-Zugangsdaten hinweisen
+- Technik-Check anbieten ("Brauchen Sie Hilfe beim Einrichten?")
+
+---
+
+<!-- .slide: class="chapter" -->
+
+# Willkommen!
+
+Note:
+**Begrüßung (09:30 Uhr):**
+"Guten Morgen und herzlich willkommen zu unserem Workshop 'KI in der Kita-Verwaltung'! 
+Mein Name ist Michael Kohl, ich bin Referent für digitale Bildung und freue mich sehr, dass Sie heute hier sind. 
+Bevor wir starten, lassen Sie uns kurz die Technik checken."
+
+**Technik-Check (4 Min):**
+1. Laptop oder Tablet dabei und eingeschaltet? → Handzeichen, wer Hilfe braucht
+2. WLAN-Verbindung → Zugangsdaten am Flipchart
+3. KI-Tool-Zugang → Wer hat bereits Account bei ChatGPT, Claude oder Gemini?
+
+---
+
+## Agenda: Unser Tag
+
+**09:30-10:50** Block 1: Einführung & Grundlagen  
+**10:50-11:05** Kaffeepause  
+**11:05-12:30** Block 2: Kommunikation
+
+Note:
+Die Agenda gibt einen Überblick über den gesamten Tag. Betonen Sie, dass der Workshop sehr praxisorientiert ist und die Teilnehmenden viel selbst ausprobieren werden.  
+
+Block 1: Einführung & Grundlagen   
+
+Zum Einstieg klären wir, was Künstliche Intelligenz eigentlich ist – und was nicht. Sie lernen die Funktionsweise gängiger KI-Tools kennen, bekommen ein Gefühl für Chancen und Grenzen und sammeln erste praktische Erfahrungen. Datenschutz und Verantwortung spielen dabei von Anfang an eine zentrale Rolle.  
+
+Block 2: KI in der Kommunikation  
+
+In diesem Block schauen wir, wie KI bei interner und externer Kommunikation konkret unterstützen kann. Sie arbeiten an E-Mails, Elternbriefen oder Rundschreiben und erleben, wie stark Tonalität und Zielgruppe die Wirkung von Texten verändern. Ziel ist es, schneller zu guten, professionellen und passenden Formulierungen zu kommen.  
+--
+
+## Agenda: Unser Tag
+
+**12:30-13:30** Mittagspause  
+**13:30-14:45** Block 3: Planung & Organisation  
+**14:45-15:00** Kaffeepause
+
+Note:
+Block 3: Planung & Organisation  
+  
+Jetzt geht es um komplexere Aufgaben wie Planung, Organisation und Konzeptarbeit. Sie erfahren, wie KI bei Projektplänen, Jahresübersichten, Checklisten oder ersten Konzeptentwürfen helfen kann. Wichtig ist dabei das iterative Vorgehen: Die KI liefert Strukturen – Sie bringen Fachlichkeit und Entscheidungskraft ein.  
+--
+
+## Agenda: Unser Tag
+
+**15:00-16:00** Block 4: Dokumentation & Visualisierung  
+**16:00-16:45** Block 5: Ethik & Transfer  
+**16:45-17:00** Abschluss & Feedback
+
+Note: 
+Block 4: Dokumentation & Visualisierung  
+Dieser Block fokussiert typische Zeitfresser im Alltag: Dokumentation, Berichte, Protokolle und Vorlagen. Zusätzlich lernen Sie, wie KI Texte zusammenfasst und auch Bilder oder Visualisierungen für Präsentationen, Social Media oder interne Zwecke erstellen kann – inklusive rechtlicher und praktischer Grenzen.  
+  
+Block 5: Ethik & Transfer  
+  
+Zum Abschluss reflektieren wir den verantwortungsvollen Einsatz von KI im Trägerkntext. Es geht um ethische Fragen, Datenschutz, Transparenz und klare Grenzen der Nutzung.  
+Außerdem erarbeiten Sie einen konkreten Transfer: Was nehmen Sie mit – und was setzen Sie ab morgen, in den nächsten Wochen und langfristig um?  
+
+Schauen Sie auch gerne schon mal in das Skript vor Ihnen, falls Sie das noch nicht getan haben.  
+
+---
+
+<!-- .slide: class="chapter" -->
+
+# Wer ist heute da?
+
+Note: 
+Sie wissen nun also wer ich bin, was wir heute vorhaben und jetzt würde ich gerne kurz von Ihnen erfahren, was Ihre Hauptaufgaben sind.
+
+Was haben Sie schon mit KI gemacht? Warum? Warum NICHT?
+
+---
+
+**Mein Name ist...**  
+
+**Meine Tätigkeiten sind vor allem...**  
+
+**Heute möchte ich lernen, wie ich...**  
+
+**Mein wichtigstes Ziel ist...**
+
+Note:
+Auf Flipchart festhalten!  
+
+Vielen Dank! Ich sehe hier sehr konkrete und realistische Ziele.   
+
+Schauen wir am Ende des Tages noch einmal auf diese Liste - ich bin zuversichtlich, dass wir das meiste davon erreichen werden.  
+
+Und jetzt: Lassen Sie uns loslegen!  
+
+---
+
+<!-- .slide: class="chapter" -->
+
+# Block 1
+
+## Einführung & Grundlagen
+
+---
+
+## Was Sie hier lernen
+
+- KI-Grundlagen verstehen
+- Prompts formulieren können
+- Datenschutz beachten
+- Erste praktische Erfahrungen sammeln
+
+Note:
+**Übergeordnete Ziele von Block 1:**
+Nach Block 1 können die Teilnehmenden:
+- Die Funktionsweise von Large Language Models in eigenen Worten erklären
+- Mindestens 3 unterschiedliche KI-Tools benennen und deren Einsatzgebiete beschreiben
+- Das 5-Elemente-Prompt-Schema anwenden und 3 eigene Prompts formulieren
+- Datenschutzrelevante und ethische Aspekte beim KI-Einsatz identifizieren
+- Erste praktische Erfahrungen mit KI-Tools gesammelt haben
+
+---
+
+## Was ist KI?
+
+**Künstliche Intelligenz** = KI  
+
+
+Note:
+**Einstiegsfrage an die Gruppe:**
+
+"Bevor ich Ihnen erkläre, was KI ist: Was glauben Sie denn? Wer möchte mal eine Definition versuchen?"
+
+2-3 Antworten zulassen, dann:
+"Danke! Sie haben schon viele richtige Aspekte genannt. Lassen Sie mich das ein bisschen sortieren."
+  
+Das Wort "Intelligenz" ist **irreführend**!
+---
+
+## KI denkt nicht
+
+KI ist im Grunde ein **statistisches Mustererkennungssystem**
+
+Note:
+"KI 'denkt' nicht. KI 'versteht' die Welt nicht wirklich. 
+
+Was macht KI dann? KI ist im Grunde ein statistisches Muster-Erkennungs-System."
+
+---
+
+## Wie funktioniert KI?
+
+1. Trainiert mit **Millionen von Texten** aus dem Internet  
+2. Lernt: **"Welches Wort kommt nach welchem Wort?"**  
+3. Berechnet: **"Was ist die wahrscheinlichste Antwort?"**
+
+Note:
+"Stellen Sie sich vor:
+1. Die KI wurde trainiert mit Millionen von Texten aus dem Internet - Bücher, Artikel, Websites, etc.
+2. Dabei hat sie gelernt: 'Welches Wort kommt nach welchem Wort am wahrscheinlichsten?'
+3. Wenn Sie jetzt eine Frage stellen, berechnet die KI: 'Welche Wortkombination ist statistisch gesehen die beste Antwort auf diese Frage?'
+
+Natürlich funktioniert das in Wirklichkeit viel komplexer - aber das Grundprinzip ist das gleiche: Mustererkennung und Wahrscheinlichkeitsberechnung."
+
+---
+
+## Ein einfaches Beispiel
+
+**Eingabe:** "Der Himmel ist..."  
+
+**KI "überlegt":** Nach diesen Wörtern kommt statistisch: *blau*  
+
+**Antwort:** "Der Himmel ist blau"
+
+Note:
+Ein einfaches Beispiel zur Veranschaulichung:
+- Sie schreiben: 'Der Himmel ist...'
+- KI denkt: 'Nach diesen Wörtern kommt statistisch am häufigsten: blau'
+- KI antwortet: 'Der Himmel ist blau'
+
+---
+
+## Ein zweites Beispiel
+
+https://www.soekia.ch/gpt.html
+
+Note:
+Trainiert auf Märchen und kann daraus neue Märchen kreieren
+
+---
+
+## Large Language Models (LLMs)
+
+Die KI-Tools (oder auch "ChatBots"), die wir nutzen:
+
+- ChatGPT
+- Claude
+- Gemini  
+
+Note:
+"Die KI-Tools, die wir heute nutzen - ChatGPT, Claude, Gemini - sind sogenannte 'Large Language Models' oder kurz LLMs."
+
+---
+
+## Was bedeutet LLM?
+
+**Large** = Riesige Mengen an Text  
+**Language** = Arbeiten mit Sprache  
+**Model** = Mathematisches Vorhersage-Modell
+
+Note:
+"'Large' heißt: Sie wurden mit RIESIGEN Mengen an Text trainiert.
+'Language' heißt: Sie arbeiten mit Sprache (nicht nur Deutsch, sondern viele Sprachen).
+'Model' heißt: Es ist ein mathematisches Modell, das Vorhersagen macht."  
+Heutige KI-Modelle haben 1700 Milliarden Parameter, die diese Wahrscheinlichkeit bestimmen.  
+Vergleich: Malbuch, wo man Punkte zu einem Bild verbinden muss. Kleine Modelle haben wenig Punkte und liefern ein unscharfes Bild. Große Modelle haben viele Punkte und liefern ein scharfes Bild.  
+
+---
+
+<img src="malbild.png" alt="Ausmalbild" width="800" style="margin-bottom: 1.5rem;">
+
+---
+
+## Wichtig zu verstehen
+
+KI hat:
+
+- Kein Bewusstsein  
+- Keine Gefühle  
+- Kein echtes Verständnis  
+
+KI ist ein **Werkzeug**
+
+Note:
+"Wichtig zu verstehen: Diese Systeme haben kein Bewusstsein, keine Gefühle, kein echtes Verständnis von der Welt. Sie sind Werkzeuge - sehr mächtige Werkzeuge, aber eben nur Werkzeuge."
+
+---
+
+## Welche KI-Tools gibt es?
+
+--
+
+## 1. ChatGPT (OpenAI)
+
+- Am bekanntesten  
+- Sehr gut für allgemeine Aufgaben  
+- Kostenlose Version verfügbar
+
+Note:
+ChatGPT ist am bekanntesten und sehr gut für allgemeine Aufgaben. Die kostenlose Version reicht für den Einstieg.
+Plus-Version (20€/Monat) mit erweiterten Funktionen verfügbar.
+
+--
+
+## 2. Claude (Anthropic)
+
+- Ähnlich wie ChatGPT  
+- Oft "nachdenklicher" und präziser  
+- Gut für längere Texte  
+- Kostenlose Version verfügbar
+
+Note:
+Claude ist ähnlich wie ChatGPT, oft etwas "nachdenklicher" und präziser. Besonders gut für längere Texte geeignet. Kostenlose Version verfügbar.
+
+--
+
+## 3. Gemini (Google)
+
+- Von Google entwickelt  
+- Gut integriert mit Google-Diensten  
+- Kostenlos nutzbar
+
+Note:
+Gemini ist von Google entwickelt und gut integriert mit Google-Diensten. Kostenlos nutzbar.
+
+--
+
+## 4. Microsoft Copilot
+
+- In Office 365 integriert  
+- Nur mit entsprechendem Abo  
+- Gut für Unternehmensumgebungen
+
+Note:
+Microsoft Copilot ist in Office 365 integriert (Word, Outlook, etc.). Nur mit entsprechendem Abo verfügbar, aber gut für Unternehmensumgebungen.
+
+---
+
+
+## **Live Ansicht**
+
+Note:
+"Das war jetzt viel Theorie. Lassen Sie mich Ihnen zeigen, wie das in der Praxis aussieht."
+
+Bildschirm teilen / Beamer auf eigenen Laptop:
+"Ich habe hier ChatGPT geöffnet. Und jetzt stelle ich eine Frage, die Sie mir geben können. 
+Wer hat eine Frage, die ich der KI stellen soll? Gerne etwas aus Ihrer Trägerarbeit!"
+Danach Claude, danach Gemini, danach Copilot
+
+---
+
+## Empfehlung für heute
+
+Wir arbeiten mit:
+
+- **ChatGPT** oder  
+- **Claude**
+
+→ Am zugänglichsten für Einsteiger
+
+Note:
+"Meine Empfehlung für heute: Wir arbeiten hauptsächlich mit ChatGPT oder Claude, weil die für Einsteiger am zugänglichsten sind.
+
+Wichtig: Die Qualität der Antworten ist bei allen ähnlich gut. Welches Tool Sie nutzen, ist Geschmackssache."
+
+---
+
+# Was kann KI?
+
+Note:
+"Jetzt, wo Sie eine Vorstellung haben, WIE KI funktioniert, lassen Sie uns darüber sprechen: Was kann sie für uns als Träger leisten - und wo sind die Grenzen?"
+
+---
+
+## 1. Texte formulieren
+
+- E-Mails an Kita-Leitungen  
+- Elternbriefe  
+- Stellenausschreibungen  
+- Pressemitteilungen  
+
+→ KI liefert Ihnen **Entwürfe**
+
+Note:
+"KI kann Sie als Träger in vielen Bereichen unterstützen:
+1. Texte formulieren: E-Mails, Elternbriefe, Stellenausschreibungen, Pressemitteilungen
+→ KI liefert Ihnen Entwürfe, die Sie dann anpassen."
+
+--
+
+## 2. Recherche & Information
+
+- Zusammenfassungen von Gesetzestexten  
+- Überblick über Förderprogramme  
+- Recherche zu pädagogischen Konzepten  
+
+→ KI findet und **strukturiert** Informationen
+
+Note:
+"2. Recherche und Informationsbeschaffung: Zusammenfassungen von Gesetzestexten, Überblick über Förderprogramme, Recherche zu pädagogischen Konzepten
+→ KI findet und strukturiert Informationen für Sie."
+
+--
+
+## 3. Planung & Organisation
+
+- Projektpläne erstellen  
+- Checklisten generieren  
+- Jahresplanungen strukturieren  
+
+→ KI gibt Ihnen **Strukturen** vor
+
+Note:
+"3. Planung und Organisation: Projektpläne erstellen, Checklisten generieren, Jahresplanungen strukturieren
+→ KI gibt Ihnen Strukturen vor, die Sie befüllen."
+
+--
+
+## 4. Konzepte entwickeln
+
+- Gliederungen für Trägerkonzepte  
+- Qualitätsentwicklungs-Konzepte  
+- Schutzkonzepte  
+
+→ KI liefert Ihnen einen **roten Faden**
+
+Note:
+"4. Konzepte entwickeln: Gliederungen für Trägerkonzepte, Qualitätsentwicklungs-Konzepte, Schutzkonzepte
+→ KI liefert Ihnen einen roten Faden."
+
+--
+
+## 5. Dokumentation
+
+- Protokolle zusammenfassen  
+- Berichte strukturieren  
+- Vorlagen erstellen  
+
+→ KI nimmt Ihnen **Routinearbeit** ab
+
+Note:
+"5. Dokumentation: Protokolle zusammenfassen, Berichte strukturieren, Vorlagen erstellen
+→ KI nimmt Ihnen Routinearbeit ab."
+
+---
+
+## Die zentrale Botschaft
+
+KI ist Ihr **persönlicher Assistent**
+
+- Liefert Entwürfe  
+- Sie bleiben der Experte  
+- Sie entscheiden und passen an
+
+Note:
+"Die zentrale Botschaft: KI ist Ihr persönlicher Assistent, der Ihnen Entwürfe liefert. Sie bleiben der Experte, der entscheidet und anpasst!"
+Und wie bei einem persönlichen Assistenten, muss man auch erstmal die Stärken und Schwächen der KI-Assistenten kennenlernen.
+
+---
+
+# Was kann KI NICHT?
+
+Note:
+"Und jetzt das MINDESTENS genauso Wichtige: Was kann KI NICHT?"
+
+--
+
+## 1. KI kann halluzinieren
+
+KI erfindet manchmal **Dinge**, die nicht stimmen  
+→ präsentiert sie dennoch selbstbewusst als Fakten  
+
+**Beispiel:** Erfundenes Förderprogramm mit falschen Fristen  
+
+**Immer prüfen!**
+
+Note:
+"1. KI kann halluzinieren
+Das heißt: KI erfindet manchmal Dinge, die nicht stimmen - und präsentiert sie selbstbewusst als Fakten.
+
+Beispiel: Ich habe mal ChatGPT nach einem Förderprogramm gefragt, das es nicht gibt. ChatGPT hat mir trotzdem eines erfunden - mit Fristen, Ansprechpartnern, allem. Klang super. War aber komplett erfunden.
+
+→ DESHALB: Prüfen Sie IMMER, ob die Informationen stimmen!"
+
+--
+
+## 2. KI hat veraltete Informationen
+
+Training mit Daten bis ca. **2024**
+
+- Aktuelle Gesetzesänderungen  
+- Neue Förderprogramme  
+- Aktuelle Ereignisse  
+
+**Für aktuelle Infos zusätzlich recherchieren!**
+
+Note:
+"2. KI hat veraltete Informationen
+Die meisten KI-Tools wurden mit Daten bis ca. 2024 trainiert. Aktuelle Gesetzesänderungen, neue Förderprogramme, aktuelle Ereignisse kennt die KI nicht.  
+
+Aber: bei den meisten Modellen kann inzwischen ein "Schau mal im Internet nach"-Modus aktiviert werden.
+
+→ DESHALB: Für aktuelle Informationen zusätzlich recherchieren!"
+
+--
+
+## 3. KI kann keine Rechtsberatung
+
+- Gesetzestexte erklären: JA  
+- Rechtssichere Beratung: NEIN  
+
+**Bei rechtlichen Fragen: Fachperson hinzuziehen!**
+
+Note:
+"3. KI kann keine Rechtsberatung
+KI kann Ihnen zwar Gesetzestexte erklären - aber sie kann keine rechtssichere Beratung geben. Dafür brauchen Sie weiterhin Juristen.
+
+→ DESHALB: Bei rechtlichen Fragen immer eine Fachperson hinzuziehen!"
+
+--
+
+## 4. KI kann keine Entscheidungen treffen
+
+KI kann:
+
+- Optionen aufzeigen  
+- Pro/Contra auflisten  
+
+Aber:
+
+- Die Entscheidung treffen **Sie**  
+- Die Verantwortung tragen **Sie**
+
+Note:
+"4. KI kann keine Entscheidungen treffen
+KI kann Ihnen Optionen aufzeigen, Pro/Contra listen - aber die Entscheidung müssen SIE treffen. Sie tragen die Verantwortung.
+
+→ DESHALB: KI ist ein Werkzeug, kein Ersatz für Ihre Expertise!"
+
+--
+
+## 5. KI hat kein echtes Verständnis
+
+- Kein Kontextverständnis  
+- Kann nicht zwischen Zeilen lesen  
+- Keine Empathie  
+- Keine menschlichen Nuancen  
+
+**Bei sensiblen Themen ist der Mensch - sind Sie - unersetzlich!**
+
+Note:
+"5. KI hat kein echtes Verständnis
+KI versteht den Kontext nicht wirklich. Sie kann nicht zwischen den Zeilen lesen, keine Empathie zeigen, keine menschlichen Nuancen (Gestik, Mimik, Tonfall) erfassen.
+
+→ DESHALB: Gerade bei sensiblen Themen ist der Mensch - sind Sie - unersetzlich!"
+
+---
+
+<!-- .slide: class="summary" -->
+
+# 🏛️ Block 1 – Mitnehmsel 1
+
+- KI ist kein denkendes Wesen, sondern ein Wahrscheinlichkeitsmodell
+- Sie liefert Entwürfe – Verantwortung bleibt beim Menschen
+- Stärken UND Schwächen benennen können
+
+Note:
+**Kurze Diskussion (2 Min):**
+"So, jetzt habe ich viel geredet. Lassen Sie uns kurz diskutieren:
+- Wo sehen SIE Potenzial für KI in Ihrer Trägerarbeit?
+- Wo haben SIE Bedenken?
+
+Wer möchte etwas sagen?"
+
+3-4 Wortmeldungen zulassen.
+
+--- 
+
+# Datenschutz & Ethik
+
+Note:
+"So. Jetzt kommen wir zu dem Thema, das für Sie als Träger (kirchlicher Träger) ENTSCHEIDEND ist: Datenschutz und Ethik.
+
+Das ist nicht optional. Das ist das Fundament für alles, was wir heute und in Zukunft mit KI machen.
+
+Ich nehme mir dafür jetzt 10 Minuten Zeit - und bitte Sie, hier besonders aufmerksam zu sein."
+
+--
+
+## DSGVO & Kirchliches Datenschutzrecht
+
+Als katholischer Träger unterliegen Sie:
+
+1. **DSGVO** (Datenschutz-Grundverordnung)  
+2. **KDG** (Kirchliches Datenschutzgesetz)
+
+Note:
+"Als Kita-Träger unterliegen Sie zwei Datenschutz-Regelungen:
+1. DSGVO (Datenschutz-Grundverordnung) - gilt für alle
+2. KDG (Kirchliches Datenschutzgesetz) - gilt für katholische Einrichtungen
+
+Beide sagen im Kern das Gleiche: Personenbezogene Daten gehören NICHT in KI-Tools!"
+
+--
+
+## Die Kernregel
+
+**Personenbezogene Daten** gehören NICHT in KI-Tools!**
+
+Note:
+Das ist die wichtigste Regel: Personenbezogene Daten gehören NICHT in KI-Tools!
+
+--
+
+## Was darf NICHT in KI?
+
+- **Namen** von Kindern, Eltern, Mitarbeitenden  
+- **Geburtsdaten**, Adressen, Telefonnummern  
+- **Gesundheitsdaten**, Entwicklungsberichte  
+- **Personalnummern**, Gehaltsdaten  
+- **E-Mail-Adressen** (außer allgemeine)
+
+Note:
+"Diese Daten dürfen Sie NIEMALS in ChatGPT, Claude oder andere öffentliche KI-Tools eingeben:
+- Namen von Kindern, Eltern, Mitarbeitenden (Auch nicht: 'Das Kind Max aus der Bärengruppe...' Sondern: 'Ein 4-jähriges Kind...' oder 'Kind A')
+- Geburtsdaten, Adressen, Telefonnummern
+- Gesundheitsdaten, Entwicklungsberichte (Auch nicht in anonymisierter Form! Diese Daten sind besonders sensibel.)
+- Personalnummern, Gehaltsdaten
+- E-Mail-Adressen (Ausnahme: allgemeine wie info@kita-beispiel.de)"
+
+--
+
+## Was darf NICHT in KI?
+
+- **Fotos** von Personen  
+- **Interne, vertrauliche** Dokumente  
+- **Protokolle** von Personalversammlungen
+
+Note:
+Weitere Daten, die nicht eingegeben werden dürfen:
+- Fotos von Personen
+- Interne, vertrauliche Dokumente (z.B. Protokolle von Personalversammlungen, interne Strategiepapiere)
+
+--
+
+## Die Faustregel
+
+**Wenn Sie sich fragen:**  
+"Darf das rein?"  
+
+**Dann:**  
+**NICHT!**
+
+Im Zweifel: **Lieber nicht eingeben**
+
+Note:
+"Die Faustregel: Wenn Sie sich fragen: 'Darf das rein?' - Dann NICHT! Im Zweifel: Lieber nicht eingeben."
+
+--
+
+## Warum ist das so wichtig?
+
+Alles was Sie eingeben:
+
+- Verlässt Ihre Organisation  
+- Geht an US/EU-Firmen  
+- Sie haben keine Kontrolle mehr  
+
+**Datenschutzverstoß** kann teuer werden!
+
+Note:
+"Sie fragen sich vielleicht: Warum ist das so streng?
+
+Der Grund: Alles, was Sie in öffentliche KI-Tools eingeben, verlässt Ihre Organisation. Die Daten gehen an amerikanische oder europäische Firmen. 
+
+Diese Firmen versprechen zwar Datenschutz - aber Sie haben keine Kontrolle mehr darüber, was mit den Daten passiert.
+
+Und: Wenn Namen oder sensible Daten in der KI landen und dann in Antworten an andere Nutzer auftauchen - ist das ein massiver Datenschutzverstoß. Das kann richtig teuer werden!
+
+Deshalb: Lieber vorsichtig sein!"
+
+---
+
+## Ethische Fragen
+
+Als **Träger** besondere Verantwortung
+
+Note:
+"Neben dem Datenschutz gibt es noch eine ethische Dimension. Als Träger (kirchlicher Träger) haben Sie eine besondere Verantwortung."
+
+---
+
+## Frage 1: Verantwortung
+
+Wie viel Verantwortung geben wir an Maschinen ab?
+
+- KI kann unterstützen  
+- Entscheidungen müssen **wir** treffen
+
+Note:
+"Frage 1: Wie viel Verantwortung geben wir an Maschinen ab?
+KI kann uns unterstützen - aber die Entscheidung über Personalangelegenheiten, über pädagogische Konzepte, über das Wohl von Kindern: Das müssen WIR treffen."
+
+--
+
+## Frage 2: Fehler
+
+Wenn KI einen Fehler macht:
+
+**Wer trägt die Verantwortung?**
+
+→ **SIE!** Deshalb: Immer prüfen!
+
+Note:
+"Frage 2: Wie gehen wir mit KI-Fehlern um?
+Wenn eine KI einen Fehler macht (und das wird passieren -> Beispiel: Gerichtsfälle) - wer trägt die Verantwortung? SIE als Träger. Deshalb: Immer prüfen!"
+
+--
+
+## Frage 3: Transparenz
+
+Sollten Eltern/Mitarbeitende wissen, wenn wir KI nutzen?
+
+→ Frage, die **Sie** beantworten müssen
+
+Note:
+"Frage 3: Wie transparent sind wir?
+Sollten Eltern wissen, wenn wir Elternbriefe mit KI-Unterstützung schreiben? Sollten Mitarbeitende wissen, wenn Stellenbeschreibungen KI-generiert sind?
+→ Das sind Fragen, die Sie für sich und Ihren Träger beantworten müssen."
+
+--
+
+## Träger-Perspektive
+
+**Der Mensch steht im Mittelpunkt**
+
+KI = Werkzeug  
+KI ≠ Ersatz für:
+
+- Menschliche Zuwendung  
+- Empathie  
+- Verantwortung
+
+Note:
+Als Träger haben Sie eine besondere Verantwortung: Der Mensch steht im Mittelpunkt. KI ist ein Werkzeug - aber niemals Ersatz für menschliche Zuwendung, Empathie und Verantwortung."
+
+---
+
+<!-- .slide: class="hands-on" -->
+
+# 🛠️ HANDS-ON
+
+## Erste Prompts
+
+Note:
+"Jetzt geht's los! In den nächsten 30 Minuten werden Sie selbst mit KI arbeiten.
+
+Ihr Ziel: 3 funktionierende Prompts erstellen - und damit echte Ergebnisse produzieren.
+
+Dazu brauchen Sie ein gutes Prompt-Schema. Ich stelle Ihnen jetzt das 5-Elemente-Prompt-Schema vor, das Ihnen dabei hilft."
+
+---
+
+## Das 5-Elemente-Prompt-Schema
+
+Ein guter Prompt besteht aus:
+
+**[ROLLE] + [AUFGABE] + [KONTEXT] + [FORMAT] + [TON]**
+
+Note:
+"Bevor Sie loslegen: Das wichtigste Tool für gute KI-Ergebnisse ist ein guter Prompt.
+
+Ein Prompt ist Ihre Anweisung an die KI. Je präziser Sie sind, desto besser die Ergebnisse. Stellen Sie sich die KI als einen Praktikanten vor. Muss eingearbeitet werden, braucht genaue Anweisungen. 
+Mit der Zeit wird alles besser flutschen.
+
+Und dafür gibt es eine einfache Formel - das 5-Elemente-Schema."
+
+--
+
+## 1. ROLLE
+
+"Du bist ein..."
+
+**Beispiel:**  
+"Du bist ein erfahrener Trägervertreter in einem katholischen Kita-Träger."
+
+→ Hilft KI, die richtige **Perspektive** einzunehmen
+
+Note:
+"1. ROLLE: 'Du bist ein...'
+Beispiel: 'Du bist ein erfahrener Trägervertreter in einem katholischen Kita-Träger.'
+→ Die Rolle hilft der KI, die richtige Perspektive einzunehmen."
+
+--
+
+## 2. AUFGABE
+
+"Deine Aufgabe ist..." / "Schreibe..." / "Erstelle..."
+
+**Beispiel:**  
+"Schreibe eine E-Mail an die Kita-Leitung."
+
+→ Sagt KI, **WAS** sie tun soll
+
+Note:
+"2. AUFGABE: 'Deine Aufgabe ist...' oder 'Schreibe...' oder 'Erstelle...'
+Beispiel: 'Schreibe eine E-Mail an die Kita-Leitung.'
+→ Die Aufgabe sagt der KI, WAS sie tun soll."
+
+--
+
+## 3. KONTEXT
+
+"Situation ist..." / "Hintergrund ist..."
+
+**Beispiel:**  
+"Es geht um neue Hygienevorschriften, die ab 01.02.2026 gelten."
+
+→ Hilft KI zu verstehen, **WARUM**
+
+Note:
+"3. KONTEXT: 'Situation ist...' oder 'Hintergrund ist...'
+Beispiel: 'Es geht um neue Hygienevorschriften, die ab 01.02. gelten.'
+→ Der Kontext hilft der KI zu verstehen, WARUM."
+
+--
+
+## 4. FORMAT
+
+"Max. 200 Wörter" / "Als Bullet Points" / "In 3 Abschnitten"
+
+**Beispiel:**  
+"Die E-Mail soll max. 150 Wörter haben."
+
+→ Gibt die **Struktur** vor
+
+Note:
+"4. FORMAT: 'Max. 200 Wörter' oder 'Als Bullet Points' oder 'In 3 Abschnitten'
+Beispiel: 'Die E-Mail soll max. 150 Wörter haben und folgende Punkte enthalten: Information, Umsetzungsfrist, Unterstützungsangebot.'
+→ Das Format gibt die Struktur vor."
+
+--
+
+## 5. TON
+
+"Ton: freundlich" / "professionell" / "empathisch"
+
+**Beispiel:**  
+"Ton: wertschätzend, klar und lösungsorientiert."
+
+→ Bestimmt, **WIE** es klingt
+
+Note:
+"5. TON: 'Ton: freundlich' oder 'professionell' oder 'empathisch'
+Beispiel: 'Ton: wertschätzend, klar und lösungsorientiert.'
+→ Der Ton bestimmt, WIE es klingt."
+
+--
+
+## Merke
+
+**R-A-K-F-T**
+
+**R**olle  
+**A**ufgabe  
+**K**ontext  
+**F**ormat  
+**T**on
+
+Note:
+"Merksatz: RAKFT - Rolle, Aufgabe, Kontext, Format, Ton
+
+Sie müssen nicht IMMER alle 5 Elemente nutzen - aber je mehr Sie einbauen, desto besser wird das Ergebnis."
+
+---
+
+## Live-Demonstration
+
+Note: 
+E-Mail an die Kita-Leitungen schreiben über eine neue Fortbildungspflicht.
+
+
+Du bist ein erfahrener Trägervertreter in einem katholischen Kita-Träger.
+Schreibe eine E-Mail an alle Kita-Leitungen.
+Ab 2026 gibt es eine neue Fortbildungspflicht für Leitungen (mind. 20 Stunden pro Jahr).
+Die E-Mail soll max. 200 Wörter umfassen und folgende Punkte enthalten:
+1) Information über die neue Regelung
+2) Was bedeutet das konkret?
+3) Unser Unterstützungsangebot als Träger  
+4) Ton: professionell, aber freundlich und ermutigend.
+
+---
+
+## Jetzt sind SIE dran!
+
+**Aufgabe:** 3 Prompts für reale Aufgaben formulieren (siehe Handout)
+
+1. Eltern-E-Mail (z.B. Schließtage, Sommerfest) 
+2. Checkliste (z.B. für Auszubildende: Wie funktionert unser Ablagesystem)  
+3. Dokument-Entwurf (z.B. Einladung, Hinweis-Schreiben) 
+
+⏱ **Zeit:** 15 Minuten
+
+Note:
+**Anleitung:**
+"Jetzt arbeiten Sie selbst! Sie haben jetzt 15 Minuten Zeit, um 3 Prompts zu formulieren und auszuprobieren.
+
+Die 3 Aufgaben:
+1. Eltern-E-Mail formulieren - Wählen Sie ein Thema aus Ihrer Arbeit, nutzen Sie das 5-Elemente-Schema
+2. Checkliste erstellen - Denken Sie an einen Prozess, den Sie regelmäßig durchführen
+3. Dokument-Entwurf - Freie Wahl: Brief, Konzept-Gliederung, Rundschreiben...
+
+Wichtig: 
+- Nutzen Sie ECHTE Themen aus Ihrer Arbeit
+- KEINE Namen oder personenbezogene Daten eingeben!
+- Notieren Sie stichpunktartig Ihre besten Prompts im Aufgabenblatt
+
+Ich bin im Raum unterwegs und helfe bei Fragen. Los geht's!"
+
+**Während die TN arbeiten:**
+- Aktiv im Raum bewegen
+- Proaktiv nachfragen: "Wie läuft's? Klappt alles?"
+- Individuelle Hilfe anbieten
+
+**Nach 15 Min:** Peer-Feedback in Paaren (5 Min)
+
+---
+
+## Peer Feedback 
+Sie haben jetzt 5 Minuten für einen Austausch mit Ihrem Sitznachbarn oder Ihrer Sitznachbarin
+
+**Zeigen Sie sich gegenseitig:**
+ 
+1. Einen Ihrer Prompts
+2. Das Ergebnis, das die KI geliefert hat
+ 
+**Notieren Sie sich Feedback auf dem Skript:**
+ 
+- Was funktioniert gut?
+- Was könnte noch verbessert werden?
+- Hätten Sie den Prompt anders formuliert?
+ 
+**Los geht's!"**
+
+---
+
+<!-- .slide: class="summary" -->
+
+# 🏛️ Block 1 - Mitnehmsel 2
+
+- Datenschutz und Ethik mitdenken
+- Rolle + Aufgabe + Kontext = bessere Ergebnisse
+- Ton beeinflusst Wirkung massiv
+- Sie steuern – die KI reagiert
+
+Note:
+**Abschluss Block 1:**
+"Sie haben gerade in 30 Minuten:
+- Das 5-Elemente-Schema kennengelernt
+- Mindestens 2-3 eigene Prompts erstellt
+- Echte Ergebnisse produziert
+- Feedback gegeben und bekommen
+
+Das ist schon ein beträchtlicher Schritt!
+
+Und jetzt: Kaffeepause! 15 Minuten. Danach geht's weiter mit noch mehr Praxis. Bis gleich!"
+
+--- 
+
+<!-- .slide: class="pause" -->
+
+# ☕ Kaffeepause
+
+**15 Minuten**
+
+Note:
+Pause bis 11:05 Uhr.
+
+In der Pause: Zu den "schwächeren" TN gehen und Einzelhilfe anbieten, falls technische Probleme bestehen.
+
+---
+
+<!-- .slide: class="chapter" -->
+
+# Block 2
+
+## KI in der Kommunikation
+
+Note:
+**Übergeordnete Ziele von Block 2:**
+Nach Block 2 können die Teilnehmenden:
+- E-Mails, Rundschreiben und Elternbriefe mit KI formulieren und zielgruppengerecht anpassen
+- Tonalität und Stil von KI-generierten Texten gezielt steuern
+- Schwierige Gesprächssituationen mit KI vorbereiten
+- Protokolle und Zusammenfassungen automatisiert erstellen
+- KI auf eigene, reale Kommunikationsaufgaben anwenden
+- Mindestens 4 verschiedene Kommunikationsdokumente erstellt haben
+
+---
+
+## Was haben Sie bisher gemacht?
+
+- KI-Grundlagen verstanden  
+- 5-Elemente-Schema gelernt  
+- Erste Prompts erstellt  
+
+**Jetzt:** Kommunikation professionalisieren!
+
+Note:
+**Begrüßung (pünktlich 11:05 Uhr starten!):**
+"Willkommen zurück! Ich hoffe, der Kaffee war gut.
+
+Bevor wir weitermachen, möchte ich Ihnen etwas zeigen:"
+
+**Best-Practice-Prompts vom Vormittag zeigen:**
+"Während Sie in der Pause waren, habe ich mir einige Ihrer Prompts aus Block 1 angeschaut. 
+Und ich muss sagen: Wow! Einige von Ihnen haben schon richtig gute Prompts formuliert!"
+
+---
+
+## Block 2: Überblick
+
+**Teil 1:** Interne Kommunikation (circa 40 Min)  
+**Teil 2:** Externe Kommunikation (circa 30 Min)  
+
+Note:
+"In den nächsten 80 Minuten arbeiten Sie überwiegend praktisch. Sie werden mindestens 4 verschiedene Kommunikationsdokumente erstellen:
+
+Teil 1: Interne Kommunikation (circa 40 Min)
+- E-Mails an Kita-Leitungen
+- Rundschreiben
+- Schwierige Gespräche vorbereiten
+- Protokolle zusammenfassen
+
+Teil 2: Externe Kommunikation (circa 30 Min)
+- Elternbriefe
+- Social-Media-Posts
+- Pressemitteilungen
+
+Klingt gut? Dann legen wir los!"
+
+---
+
+## Die Macht der Tonalität
+
+**Gleicher Inhalt** → **Unterschiedliche Wirkung**
+
+Note:
+"Bevor Sie starten, noch ein wichtiger Tipp: Die Tonalität macht den Unterschied!
+
+Schauen Sie sich diese drei Varianten an:"
+
+--
+
+## Version 1: Sachlich
+
+"Hiermit informieren wir Sie über die Schließtage zu Weihnachten vom 23.12. bis 06.01."
+
+Note:
+Version 1 - Sachlich: Nüchtern, informativ, aber etwas distanziert.
+
+--
+
+## Version 2: Empathisch
+
+"Liebe Eltern, wir wissen, dass die Ferienbetreuung für Sie eine Herausforderung sein kann. Deshalb möchten wir Sie frühzeitig informieren..."
+
+Note:
+Version 2 - Empathisch: Verständnisvoll, nimmt die Perspektive der Eltern ein.
+
+--
+
+## Version 3: Motivierend
+
+"Gute Nachrichten! Unsere Kita bleibt über Weihnachten geöffnet - bis auf folgende Tage..."
+
+Note:
+Version 3 - Motivierend: Positiv geframed, hebt das Positive hervor.
+
+--
+
+## Sehen Sie den Unterschied?
+
+**Inhalt:** Fast gleich  
+**Wirkung:** Komplett anders!
+
+Note:
+"Sehen Sie den Unterschied? Der Inhalt ist fast gleich - aber die Wirkung ist komplett anders!"
+
+--
+
+## Sie können steuern!
+
+- "Ton: sachlich und informativ"  
+- "Ton: empathisch und verständnisvoll"  
+- "Ton: motivierend und positiv"  
+- "Ton: professionell aber freundlich"
+
+Note:
+"Und Sie können der KI sagen, welche Tonalität Sie wollen:
+- 'Ton: sachlich und informativ'
+- 'Ton: empathisch und verständnisvoll'
+- 'Ton: motivierend und positiv'
+- 'Ton: professionell aber freundlich'
+
+Probieren Sie heute verschiedene Tonalitäten aus! Das ist eine Superkraft von KI."
+
+---
+
+<!-- .slide: class="hands-on" -->
+
+# 🛠️ HANDS-ON
+
+## Interne Kommunikation
+
+Note:
+"So! Jetzt wird gearbeitet. Die nächsten 40 Minuten gehören der internen Kommunikation - also allem, was Sie mit Ihren Kita-Leitungen, Teams und Mitarbeitenden kommunizieren.
+
+Sie haben 4 Aufgaben - bearbeiten Sie mindestens 2 davon. Wenn Sie schnell sind: Machen Sie alle 4!"
+
+---
+
+## Kurzer Exkurs: KI Systeme mit Dateien füttern
+
+Note:
+Dateien anhängen und mit ihnen interagieren (nur wer sich damit schon wohlfühlt)
+
+--
+
+## Aufgaben: Interne Kommunikation
+
+**Aufgabe 1:** E-Mail an Kita-Leitung  
+**Aufgabe 2:** Rundschreiben  
+**Aufgabe 3:** Schwieriges Gespräch vorbereiten  
+**Aufgabe 4:** Protokoll zusammenfassen  
+
+
+
+Note:
+**Die 4 Aufgaben:**
+1. E-Mail an Kita-Leitung: Schreiben Sie eine E-Mail zu einem aktuellen Thema aus Ihrer Arbeit.
+2. Rundschreiben an alle Einrichtungen: Erstellen Sie ein Rundschreiben zu einer Information, die alle betrifft.
+3. Schwieriges Gespräch vorbereiten: Lassen Sie sich von der KI einen Gesprächsleitfaden erstellen.
+4. Protokoll zusammenfassen: Fassen Sie ein langes Protokoll in 5 Bullet Points zusammen.
+
+**Wichtig:**
+- Nutzen Sie ECHTE Themen aus Ihrer Arbeit
+- KEINE Namen oder personenbezogene Daten eingeben!
+- Wenn ein Prompt nicht funktioniert: Verfeinern und neu probieren
+- Notieren Sie Ihre besten Prompts stichpunktartig im Skript
+
+--
+
+Beispiel "Interne Kommunikation"´
+Du bist Trägervertreter. Schreibe eine E-Mail an die Leitung 
+der Kita zum Thema: Neue Brandschutzauflagen ab März 2026 - 
+wir brauchen eine Begehung durch die Feuerwehr.
+
+Die E-Mail soll:
+- Max. 150 Wörter
+- Folgende Punkte enthalten: Was ist neu? Was müssen Sie tun? 
+  Bis wann? Wir unterstützen Sie dabei.
+- Ton: klar, sachlich, aber unterstützend
+
+Füge eine freundliche Betreffzeile hinzu.
+
+--
+
+## Los geht's!
+
+## Ziel:
+
+Mindestens **2 Aufgaben** bearbeiten (Aufgaben finden Sie im Skript) 
+
+Besser: **3 oder alle 4**  
+
+⏱ **Zeit:** 30 Minuten
+Note:
+
+Aufgaben stehen im Skript
+
+**Typische Probleme und Lösungen:**
+
+Problem 1: "Ich weiß nicht, was ich schreiben soll"
+→ "Was machen Sie denn regelmäßig? Schreiben Sie oft E-Mails an Leitungen? Nehmen Sie ein Thema aus den letzten Wochen."
+
+Problem 2: "Der Prompt funktioniert nicht"
+→ "Sagen Sie der KI mehr: An wen genau? Wie lang? Welche Punkte? Welchen Ton?"
+
+Problem 3: "Das Ergebnis ist zu lang/zu kurz/zu förmlich"
+→ "Sagen Sie: 'Schreib das nochmal, aber kürzer/ausführlicher/freundlicher.'"
+
+Am Ende: kurze Zwischenbilanz: was war gut, was war schlecht?
+Wie viele der Aufgaben haben Sie geschafft?
+
+---
+
+<!-- .slide: class="hands-on" -->
+
+# 🛠️ HANDS-ON
+
+## Externe Kommunikation
+
+Note:
+"Interne Kommunikation war mit Fachpersonal - Kita-Leitungen, Kolleg:innen. Die verstehen unsere Fachsprache.
+
+Jetzt kommt externe Kommunikation - und da sind die Zielgruppen ganz anders!"
+
+---
+
+## Besonderheiten externe Kommunikation
+
+**Intern:** Fachpersonal versteht Fachsprache  
+
+**Extern:** Ganz andere Zielgruppen
+
+- Eltern (unterschiedliche Bildungshintergründe)  
+- Öffentlichkeit (Social Media, Presse)  
+- Kooperationspartner
+
+Note:
+"Interne Kommunikation war mit Fachpersonal - die verstehen unsere Fachsprache.
+
+Jetzt kommt externe Kommunikation - und da sind die Zielgruppen ganz anders:
+- Eltern - sehr unterschiedliche Bildungshintergründe
+- Öffentlichkeit - über Social Media oder Presse
+- Kooperationspartner - Schulen, Behörden, Wissenschaft
+
+Und das bedeutet: Andere Sprache, anderer Ton, andere Erwartungen!"
+
+--
+
+## Was ist anders?
+
+1. **Verständlichkeit** – Keine Fachbegriffe  
+2. **Empathie** – Eltern haben Sorgen  
+3. **Klarheit** – Was soll wer wann tun?  
+4. **Kürze** – Social Media noch kürzer!  
+5. **Professionalität** – Je nach Kanal
+
+Note:
+"Bei externer Kommunikation müssen Sie beachten:
+1. Verständlichkeit: Keine Fachbegriffe, die Eltern nicht kennen. Einfache Sprache!
+2. Empathie: Eltern haben Sorgen, Fragen, Unsicherheiten. Ton muss empathisch sein.
+3. Klarheit: Was sollen die Empfänger konkret tun? Wann? Wie?
+4. Kürze (oft): Social Media: Noch kürzer als E-Mails!
+5. Professionalität: Bei Pressemitteilungen sehr professionell, bei Elternbriefen professionell UND herzlich.
+
+Die gute Nachricht: KI kann all das - wenn Sie es im Prompt sagen!"
+
+--
+
+## Vergleich: Intern vs. Extern
+
+**E-Mail an Leitung:**  
+"Bezüglich der BayBEP-Umsetzung benötigen wir eine aktualisierte Konzeption gemäß § 45 SGB VIII..."
+
+**Elternbrief zum gleichen Thema:**  
+"Liebe Eltern, Sie fragen sich vielleicht: Was macht mein Kind eigentlich den ganzen Tag in der Kita? Heute möchten wir Ihnen zeigen, wie wir arbeiten..."
+
+Note:
+
+Beispiel für interne Kommunikation - Fachsprache ist hier angemessen.
+
+Beispiel für externe Kommunikation - Alltagssprache, die Eltern abholt.
+
+--
+
+## Der Unterschied
+
+- Fachsprache ↔ Alltagssprache  
+- Sachlich ↔ Empathisch  
+- Informieren ↔ Abholen  
+
+**KI kann beides!**
+
+Note:
+"Sehen Sie den Unterschied?
+- Fachsprache vs. Alltagssprache
+- Sachlich vs. Empathisch
+- Informieren vs. Abholen
+
+Und KI kann beides - Sie müssen nur sagen, für wen der Text ist!"
+
+---
+
+## Aufgaben: Externe Kommunikation
+
+**Aufgabe 5:** Elternbrief (3 Tonalitäten!)  
+**Aufgabe 6:** Social-Media-Post  
+**Aufgabe 7:** Pressemitteilung (Fortgeschrittene)  
+
+
+
+Note:
+"Sie haben jetzt 20 Minuten Zeit für diese Aufgaben:
+
+Aufgabe 5: Elternbrief schreiben
+Wählen Sie ein Thema: Schließzeiten, neue Regelung, Fest, was auch immer.
+→ Schreiben Sie den Brief in 3 Tonalitäten: sachlich, empathisch, motivierend
+
+Aufgabe 6: Social-Media-Post
+Erstellen Sie einen Post für Facebook/Instagram über ein Ereignis in einer Ihrer Kitas.
+
+Aufgabe 7: Pressemitteilung (für Fortgeschrittene)
+Wenn Sie schon Übung haben: Schreiben Sie eine Pressemitteilung über ein Projekt.
+
+Ziel: Mindestens 1-2 Aufgaben bearbeiten."
+
+--
+
+### Beispiel-Prompt für Aufgabe 5
+
+Du bist Trägervertreter eines katholischen Kita-Trägers. 
+
+Schreibe einen Elternbrief zum Thema: Schließtage über 
+Weihnachten (23.12. bis 06.01.).
+
+Der Brief soll:
+- Max. 200 Wörter umfassen
+- Folgende Punkte enthalten: Information über Schließtage, 
+  Hintergrund (Team-Erholung), Hinweis auf Notfallbetreuung 
+  bei dringendem Bedarf
+- Zielgruppe: Eltern mit unterschiedlichem Bildungshintergrund
+- Ton: [HIER VARIIEREN! empathisch / sachlich / motivierend]
+
+Füge eine freundliche Grußformel hinzu.
+
+--
+
+## Challenge bei Aufgabe 5
+
+Schreiben Sie **1 Elternbrief** in **3 Versionen:**
+
+1. Sachlich  
+2. Empathisch  
+3. Motivierend  
+
+Note:
+"Besondere Challenge bei Aufgabe 5: Probieren Sie wirklich alle 3 Tonalitäten aus!"
+
+--
+
+## Los geht's!
+
+**Die Aufgaben stehen im Skript!**  
+
+⏱ **Zeit:** 20 Minuten
+
+Note: Aufgaben stehen im Skript
+
+---
+
+## Kleingruppenarbeit
+
+**Austausch:** 5 Minuten
+
+Zeigen Sie sich gegenseitig:
+
+- Ein Kommunikationsdokument  
+- Den verwendeten Prompt  
+
+Diskutieren Sie:
+
+- Ist die Tonalität passend?  
+- Was würden Sie anders machen?
+
+Note:
+**Anleitung Kleingruppenarbeit:**
+"Bilden Sie jetzt Dreier- oder Vierergruppen - einfach mit den Personen um Sie herum.
+
+Zeigen Sie sich gegenseitig:
+1. Eines Ihrer Kommunikationsdokumente (z.B. Elternbrief)
+2. Den Prompt, den Sie verwendet haben
+
+Diskutieren Sie:
+- Ist die Tonalität passend für die Zielgruppe?
+- Würden Sie etwas anders machen?
+- Was hat besonders gut funktioniert?
+
+5 Minuten - los geht's!"
+
+---
+
+## Reflexion Block 2
+
+**Was haben Sie gelernt?**
+
+Note:
+**Sammlung im Plenum:**
+"Kurze Runde: Was war Ihr größtes Learning aus Block 2?
+
+Ich frage einfach in die Runde - wer möchte etwas teilen?"
+
+5-7 Wortmeldungen zulassen.
+
+Typische Antworten:
+- "Wie einfach es ist, Tonalität zu ändern"
+- "Wie viel Zeit ich damit sparen kann"
+- "Dass ich verschiedene Versionen vergleichen kann"
+- "Dass ich jetzt weniger Angst vor dem leeren Blatt habe"
+
+---
+
+## Erfolgs-Bilanz
+
+In den letzten 80 Minuten haben Sie:
+
+- 4–6 Kommunikationsdokumente erstellt  
+- Verschiedene Tonalitäten ausprobiert  
+- Intern UND extern geübt
+- Die KI mit Dateien interagieren lassen  
+- Echte, nutzbare Texte produziert
+
+Note:
+"Lassen Sie mich zusammenfassen, was Sie in den letzten 80 Minuten gemacht haben:
+
+Sie haben:
+- Mindestens 4-6 Kommunikationsdokumente erstellt
+- Verschiedene Tonalitäten ausprobiert
+- Interne UND externe Kommunikation geübt
+- Echte, nutzbare Texte produziert
+
+Schätzen Sie mal: Wie viel Zeit hätten diese Aufgaben ohne KI gedauert?
+→ [TN antworten lassen: '3 Stunden', 'Halber Tag', etc.]
+
+Und Sie haben es in 80 Minuten geschafft. Das ist die Power von KI!"
+
+---
+
+<!-- .slide: class="summary" -->
+
+# 🏛️ Block 2 – Mitnehmsel
+
+- Gleiche Inhalte wirken je nach Ton völlig unterschiedlich
+- Intern ≠ extern → Sprache anpassen
+- KI hilft besonders bei Einstieg & Formulieren
+- Verantwortung bleibt immer bei Ihnen
+
+Note:
+**Ausblick auf Nachmittag:**
+"Nach der Mittagspause geht es weiter mit:
+- Block 3: Planung & Organisation - Projektpläne, Konzepte, Personalmanagement
+- Block 4: Dokumentation & Visualisierung - Berichte, Vorlagen, Bilder erstellen
+- Block 5: Ethik & Transfer - Wie setzen Sie das alles dauerhaft um?
+
+Aber jetzt erst mal: Mittagspause! 1 Stunde. Bis 13:30 Uhr!
+
+Guten Appetit!"
+
+---
+
+<!-- .slide: class="pause" -->
+
+# 🥨 Mittagspause
+
+**1 Stunde** – bis 13:30 Uhr
+
+Note:
+Mittagspause bis 13:30 Uhr.
+
+---
+
+# Willkommen zurück
+
+---
+
+<!-- .slide: class="chapter" -->
+
+# Block 3
+
+## KI für Planung & Organisation
+
+Note:
+**Übergeordnete Ziele von Block 3:**
+Nach Block 3 können die Teilnehmenden:
+- Projektpläne und Jahresplanungen mit KI strukturiert erstellen
+- Konzepte entwickeln (Schutzkonzept, QM-Handbuch, Eingewöhnungskonzept)
+- Stellenbeschreibungen und Personalmanagement-Dokumente formulieren
+- Komplexe, strategische Aufgaben mit KI bearbeiten
+- Iteratives Arbeiten mit KI verstehen (verfeinern, anpassen, erweitern)
+- Mindestens 3 strategische Planungsdokumente erstellt haben
+
+---
+
+## Was haben wir bisher gemacht?
+
+**Block 1:** Grundlagen  
+**Block 2:** Kommunikation
+
+**Jetzt:** Strategische Planung!
+
+Note:
+"Kurze Erinnerung, was Sie heute Vormittag schon alles geschafft haben:
+
+Block 1: KI-Grundlagen verstanden, 5-Elemente-Prompt-Schema gelernt, Erste Prompts erstellt
+
+Block 2: Interne Kommunikation (E-Mails, Rundschreiben, Protokolle), Externe Kommunikation (Elternbriefe, Social Media), Tonalität steuern gelernt
+
+Das sind schon mindestens 6-8 Dokumente, die Sie erstellt haben!
+
+Und jetzt kommt der spannendste Teil: Strategische Planung!"
+
+---
+
+## Warum ist Block 3 anders?
+
+**Vormittag:** Klare, abgeschlossene Aufgaben
+
+- E-Mail schreiben: 5 Min 
+- Elternbrief: 10 Min 
+
+**Jetzt:** Komplexere, strategische Aufgaben
+
+- Schutzkonzept: Normalerweise **Wochen**! 
+- Jahresplanung: Normalerweise **Tage**! 
+
+Erfordert ein **anderes** Arbeiten
+
+Note:
+"Block 3 ist anders als der Vormittag. Warum?
+
+Vormittag: Kommunikation - klare, abgeschlossene Aufgaben
+- Eine E-Mail schreiben: 5 Minuten
+- Einen Elternbrief formulieren: 10 Minuten
+
+Jetzt: Planung & Organisation - komplexere, strategische Aufgaben
+- Ein Schutzkonzept entwickeln: Normalerweise Wochen!
+- Eine Jahresplanung erstellen: Normalerweise Tage!
+- Ein QM-Handbuch strukturieren: Normalerweise Monate!"
+
+
+"Die gute Nachricht: Mit KI geht das deutlich schneller - aber es ist ein anderes Arbeiten!"
+
+---
+
+## Das Prinzip: Iteratives Arbeiten
+
+**START** → **ENTWURF** → **VERFEINERN** → **ERWEITERN** → **ANPASSEN** → **FERTIG**
+
+**(kann mehrmals durchlaufen werden)**
+
+Note:
+"Bei komplexen Aufgaben arbeiten Sie iterativ mit KI. Was heißt das?
+
+Der Prozess: START → ENTWURF → VERFEINERN → ERWEITERN → ANPASSEN → FERTIG
+(kann mehrmals durchlaufen werden)"
+
+--
+
+## Schritt 1: Grober Entwurf
+
+**Prompt:**
+"Erstelle mir eine Gliederung für ein Schutzkonzept"
+
+**KI liefert:**
+Struktur mit 5-7 Hauptpunkten
+
+Note:
+"Schritt 1: Grober Entwurf
+'Erstelle mir eine Gliederung für ein Schutzkonzept'
+→ KI gibt Ihnen Struktur mit 5-7 Hauptpunkten"
+
+--
+
+## Schritt 2: Verfeinern
+
+**Prompt:**
+"Schreibe Punkt 3 (Präventionsmaßnahmen) detaillierter aus"
+
+**KI entwickelt:**
+Diesen Punkt weiter
+
+Note:
+"Schritt 2: Verfeinern
+'Schreibe Punkt 3 (Präventionsmaßnahmen) detaillierter aus'
+→ KI entwickelt diesen Punkt weiter"
+
+--
+
+## Schritt 3: Erweitern
+
+**Prompt:**
+"Füge bei den Präventionsmaßnahmen noch einen Unterpunkt hinzu: Fortbildungen"
+
+**KI ergänzt:**
+Neuen Unterpunkt
+
+Note:
+"Schritt 3: Erweitern
+'Füge bei den Präventionsmaßnahmen noch einen Unterpunkt hinzu: Fortbildungen'
+→ KI ergänzt"
+
+--
+
+## Schritt 4: Anpassen
+
+**Prompt:**
+"Formuliere das Ganze in einfacherer Sprache"
+
+**KI passt an:**
+Stil wird angepasst
+
+Note:
+"Schritt 4: Anpassen
+'Formuliere das Ganze in einfacherer Sprache'
+→ KI passt den Stil an"
+
+--
+
+## Fokus auf den "Chat"-Aspekt beim ChatBot!
+
+- Sie geben Feedback 
+- KI reagiert 
+- Sie verfeinern weiter 
+
+**Das ist der richtige Weg!**
+
+Note:
+"Das ist wie ein Dialog! Sie geben Feedback, KI reagiert, Sie verfeinern weiter."
+
+--
+
+## Wichtig!
+
+Bei strategischen Aufgaben:
+
+- Erwarten Sie nicht, dass der erste Prompt perfekt ist! 
+
+- Das ist wie beim Kochen:
+Man würzt nach, verfeinert, ergänzt
+
+Note:
+"Wichtig: Bei strategischen Aufgaben erwarten Sie nicht, dass der erste Prompt perfekt ist!
+
+Das ist wie beim Kochen: Man würzt nach, verfeinert, ergänzt.
+
+Und das ist OK! Das ist sogar der richtige Weg."
+
+---
+
+<!-- .slide: class="hands-on" -->
+
+# 🛠️ HANDS-ON
+
+## Strategische Planung
+
+Note:
+"Strategische Planung - das ist der Bereich, in dem KI richtig viel Zeit sparen kann.
+
+Denken Sie mal daran:
+- Ein Projektplan für ein Sommerfest: Wie lange dauert das normalerweise? 2-3 Stunden?
+- Eine Jahresplanung für den Träger: Einen halben Tag?
+- Ein Qualitätsentwicklungs-Konzept: Mehrere Tage?
+
+Mit KI: Sie bekommen in 10 Minuten einen ersten, sehr guten Entwurf! Und dann verfeinern Sie."
+
+---
+
+## Aufgaben: Strategische Planung
+
+ **Aufgabe 8:** Projektplan erstellen  
+ **Aufgabe 9:** Jahresplanung  
+ **Aufgabe 10:** Checkliste für Prozess
+
+
+
+Note:
+"Sie haben jetzt 20 Minuten Zeit für diese Aufgaben:
+
+Aufgabe 8: Projektplan erstellen
+Erstellen Sie einen Projektplan für ein konkretes Projekt aus Ihrer Arbeit.
+Beispiele: Sommerfest, Umbaumaßnahme, Einführung neues IT-System, Qualitätsentwicklung
+
+Aufgabe 9: Jahresplanung
+Lassen Sie sich von der KI eine Jahresplanung für Ihren Träger erstellen.
+Welche Themen stehen wann an? Welche Fristen gibt es?
+
+Aufgabe 10: Checkliste für Prozess
+Erstellen Sie eine detaillierte Checkliste für einen wiederkehrenden Prozess.
+Beispiele: Kita-Neuaufnahme, Personaleinstellung, Jahreszeitenwechsel
+
+Ziel: Mindestens 1-2 Aufgaben bearbeiten, idealerweise alle 3 ausprobieren."
+
+--
+
+## Beispiele für Projekte
+
+- Sommerfest 
+- Umbaumaßnahme 
+- Einführung neues IT-System 
+- Qualitätsentwicklung 
+- Kita-Erweiterung 
+
+--
+
+## Beispiel für Jahresplanung
+
+- Pädagogischen Themen 
+- Elternarbeit
+- Ferien berücksichtigen
+- Jahreszeitenspezifische Elemente
+
+--
+
+## Beispiele Checklisten
+
+- Kita-Neuaufnahme
+- Personaleinstellung
+- Elternabend
+- Jahreszeitenwechsel
+
+Note:
+Beispiele für Projekte, die geplant werden können. Ermutigen Sie die TN, echte Projekte aus ihrer Arbeit zu nehmen.
+
+--
+## Denken Sie dran
+
+- Nutzen Sie ECHTE Themen 
+- Arbeiten Sie iterativ 
+- Verfeinern Sie Schritt für Schritt 
+- KEINE personenbezogenen Daten! 
+
+Note:
+Wichtige Erinnerungen für die Arbeitsphase.
+
+--
+
+## Ziel
+
+Mindestens **1-2 Aufgaben** bearbeiten
+
+Idealerweise: Alle **3 ausprobieren**
+
+⏱ **Zeit:** 20 Minuten
+
+## Los geht's!
+
+Note:
+Aufgabenstellung im Skript
+
+**Während der Arbeitsphase - Typische Hilfestellungen:**
+
+"Der Projektplan ist zu allgemein"
+→ "Perfekt! Genau das ist iteratives Arbeiten! Sagen Sie der KI: 'Entwickle den Zeitplan detaillierter aus. Ich brauche konkrete Wochen-Angaben.'"
+
+"Ich weiß nicht, was ich planen soll"
+→ "Überlegen Sie: Was steht bei Ihnen demnächst an? Ein Fest? Eine Veranstaltung? Eine größere Anschaffung?"
+
+"Die KI hat etwas vergessen"
+→ "Sehr gut beobachtet! Dann ergänzen Sie es: 'Füge noch einen Punkt hinzu: Barrierefreiheit berücksichtigen'"
+
+---
+
+<!-- .slide: class="hands-on" -->
+
+# 🛠️ HANDS-ON
+
+## Konzepte & Personalmanagement
+
+Note:
+"Sie haben gerade geplant. Jetzt wird's nochmal anspruchsvoller: Konzeptentwicklung!
+
+Das sind Aufgaben wie:
+- Schutzkonzept für den Träger
+- Eingewöhnungskonzept
+- QM-Handbuch
+- Beschwerdeverfahren
+
+Und: Personalmanagement
+- Stellenbeschreibungen
+- Anforderungsprofile
+- Onboarding-Pläne
+- Falls Sie damit betraut sind: auch Dienstpläne
+
+Das sind die Königsdisziplinen - und KI kann auch hier helfen!"
+
+---
+
+## WICHTIG bei Konzepten!
+
+KI ersetzt **NICHT** Ihre Expertise!
+
+Note:
+"Wichtig bei Konzepten: KI ersetzt NICHT Ihre fachliche Expertise!"
+
+--
+
+## Was KI kann
+
+- Struktur vorschlagen 
+- Textbausteine formulieren 
+- Inhalte gliedern 
+- Inspiration liefern 
+
+Note:
+"Was KI kann:
+- Struktur vorschlagen
+- Textbausteine formulieren
+- Inhalte gliedern
+- Inspiration liefern"
+
+--
+
+## Was KI NICHT kann
+
+- Gesetzliche Vorgaben kennen (nicht tagesaktuell!) 
+- Ihre trägerspezifischen Besonderheiten 
+- Katholische oder trägerspezifische Werte einbetten (außer Sie sagen es) 
+- Verbindliche Rechtsberatung 
+
+Note:
+"Was KI NICHT kann:
+- Gesetzliche Vorgaben kennen (z.B. SGB VIII, BayKiBiG - oft nicht aktuellste Version!)
+- Ihre träger-spezifischen Besonderheiten kennen
+- Katholische bzw. trägerspezifische Werte einbetten (außer Sie sagen es explizit)
+- Verbindliche Rechtsberatung geben"
+
+--
+
+## Faustregel
+
+**KI liefert das Gerüst**
+
+**Sie füllen es fachlich fundiert!**
+
+Note:
+"Faustregel: KI liefert das Gerüst, Sie füllen es fachlich fundiert!"
+
+--
+
+## Beispiel Konzeptentwicklung:
+
+Du bist Experte für Kinderschutz in katholischen Kita-Trägern.
+
+Erstelle eine detaillierte Gliederung für ein Schutzkonzept gemäß 
+§ 8a SGB VIII und den Präventionsordnungen der katholischen Kirche.
+
+Die Gliederung soll folgende Hauptbereiche umfassen:
+1) Grundlagen und Ziele
+2) Risikoanalyse
+3) Präventionsmaßnahmen
+4) Interventionspläne bei Verdachtsfällen
+5) Beschwerdewege
+6) Fortbildung und Schulung
+7) Evaluation und Weiterentwicklung
+
+Zu jedem Hauptbereich: Gib 3-5 Unterpunkte an, die behandelt 
+werden müssen.
+
+Format: Strukturierte Gliederung mit Nummerierung.
+
+WICHTIG: Weise darauf hin, wenn rechtliche Aspekte fachlich geprüft 
+werden müssen!
+
+Note:
+Beispiel für eine typische Schutzkonzept-Gliederung, die KI liefern kann.
+
+**Typische Herausforderungen:**
+
+"Ist die KI-Gliederung rechtssicher?"
+→ "NEIN! Und das ist wichtig zu verstehen. Die Gliederung ist ein Entwurf. Sie müssen sie fachlich prüfen. KI ist Inspiration, nicht Rechtsberatung!"
+
+"Die Stellenbeschreibung ist zu allgemein"
+→ "Dann verfeinern Sie! Sagen Sie: 'Füge bei den Aufgaben konkrete, katholische Aspekte hinzu (z.B. religiöse Erziehung, Feste im Kirchenjahr)'"
+
+---
+
+## Aufgaben: Konzepte
+
+ **Aufgabe 11:** Konzept-Gliederung erstellen  
+ **Aufgabe 12:** Stellenbeschreibung  
+ **Aufgabe 13:** Eigene Aufgabe  
+
+⏱ **Zeit:** 15 Minuten
+
+Note:
+"Sie haben jetzt 15 Minuten für diese Aufgaben:
+
+Aufgabe 11: Konzept-Gliederung erstellen
+Lassen Sie sich von KI eine Gliederung für ein Konzept erstellen.
+Beispiele: Schutzkonzept, Eingewöhnungskonzept, Partizipationskonzept, Beschwerdeverfahren, Demokratiebildung, Medienkompetenz
+
+Aufgabe 12: Stellenbeschreibung
+Erstellen Sie eine Stellenbeschreibung für eine Position in Ihrer Organisation.
+Beispiele: Kita-Leitung, päd. Fachkraft, Verwaltungskraft, Hauswirtschaft
+
+Aufgabe 13: Eigene, freie Aufgabe (Bonus)
+Bringen Sie eine reale Aufgabe aus Ihrer Praxis mit. Was brauchen Sie wirklich? Arbeiten Sie daran!
+
+Ziel: Mindestens 1-2 Aufgaben schaffen."
+
+---
+
+## Exkurs
+
+**Research-Funktion**: Die KI als Recherche-Assistent
+
+Note:
+In Gemini, Claude, ChatGPT kurz zeigen
+
+---
+
+## Erfolge in Block 3
+
+Sie haben:
+
+- Projektpläne erstellt 
+- Jahresplanungen strukturiert 
+- Konzept-Gliederungen entwickelt 
+- Stellenbeschreibungen formuliert  
+- **Iteratives Arbeiten** gelernt
+
+Note:
+"Block 3 ist geschafft. Sie haben:
+- Projektpläne erstellt
+- Jahresplanungen strukturiert
+- Konzept-Gliederungen entwickelt
+- Stellenbeschreibungen formuliert  
+
+Und das Wichtigste: Sie haben iteratives Arbeiten gelernt!"
+
+---
+
+<!-- .slide: class="summary" -->
+
+# 🏛️ Block 3 – Mitnehmsel
+
+- Große Aufgaben in kleine Schritte zerlegen
+- Iterativ statt „perfekt beim ersten Mal"
+- KI liefert Strukturen, nicht die Fachentscheidung
+- Ihre Expertise macht den Unterschied
+
+Note:
+**Überleitung zu Block 4:**
+"Jetzt kommt Block 4: Dokumentation & Visualisierung.
+
+Und da wird's nochmal spannend - denn KI kann nicht nur Texte, sondern auch BILDER erstellen!
+
+15 Minuten Pause. Dann geht's weiter. Bis gleich!"
+
+--- 
+
+<!-- .slide: class="pause" -->
+
+# ☕ Kaffeepause
+
+**15 Minuten**
+
+Note:
+Pause bis 15:00 Uhr.
+
+---
+
+<!-- .slide: class="chapter" -->
+
+# Block 4
+
+## Dokumentation & Visualisierung
+
+Note:
+**Übergeordnete Ziele von Block 4:**
+Nach Block 4 können die Teilnehmenden:
+- Berichte und Dokumentations-Vorlagen mit KI erstellen
+- Lange Texte strukturiert zusammenfassen (Meeting-Protokolle, Berichte)
+- KI für Bildgenerierung nutzen (Flyer, Social Media, Präsentationen)
+- Visualisierungen für verschiedene Zwecke erstellen
+- Die Grenzen von KI-Bildgenerierung kennen
+- Mindestens 3-4 verschiedene Visualisierungs-Outputs erstellt haben
+
+---
+
+## Block 4: Überblick
+
+**Teil 1:** Dokumentation (25 Min)  
+**Teil 2:** Visualisierung & Bildgenerierung (35 Min)
+
+→ Jetzt wird's kreativ!
+
+Note:
+"Willkommen zurück! Hoffentlich war der Kaffee stark - denn jetzt wird's kreativ!
+
+Block 4 ist der letzte Praxisblock - und der spannendste!
+
+Block 4 hat zwei Teile:
+Teil 1: Dokumentation (25 Min) - Berichte schreiben, Vorlagen erstellen, Texte zusammenfassen
+Teil 2: Visualisierung (35 Min) - KI kann nicht nur Texte, sondern auch BILDER erstellen!
+
+Das wird richtig cool - versprochen!"
+
+---
+
+## Dokumentation – Die Zeitfresser
+
+Wie viel Zeit verbringen Sie mit:
+
+- Berichten an Behörden 
+- Sitzungsprotokollen 
+- Jahresberichten 
+- Statistiken 
+- Vorlagen 
+
+**KI ist darin richtig gut!**
+
+Note:
+"Hand aufs Herz: Wie viel Zeit verbringen Sie mit Dokumentation?
+- Berichte an Behörden
+- Sitzungsprotokolle
+- Jahresberichte
+- Statistiken zusammenfassen
+- Vorlagen erstellen
+
+Das sind die kleinen, nervigen Aufgaben, die SO VIEL Zeit kosten!
+
+Gute Nachricht: KI ist darin richtig richtig gut!"
+
+--
+
+## Beispiel Vorlagen-Erstellung
+
+Du bist Experte für Träger-Verwaltung in Kitas.
+
+Erstelle eine Protokoll-Vorlage für Leitungskonferenzen unseres 
+Trägers (8 Kitas).
+
+Die Vorlage soll folgende Struktur haben:
+1) Kopfzeile (Datum, Ort, Teilnehmende, Moderation, Protokollant)
+2) Tagesordnungspunkte (nummeriert, mit Platz für Notizen)
+3) Zu jedem TOP:
+   - Sachstand
+   - Diskussion (Stichpunkte)
+   - Beschlüsse
+   - Zuständigkeiten
+   - Fristen
+4) Nächster Termin
+5) Unterschriften
+
+Format: Als Tabelle oder strukturiertes Dokument, das man 
+direkt nutzen kann.
+
+Ton: Professionell, klar, übersichtlich.
+
+--
+
+## Tipp: Texte zusammenfassen
+
+**Geben Sie klare Anweisungen:**
+
+- "Fasse den Text in 5 Bullet Points zusammen" 
+- "Fasse den Text in 3 Sätzen zusammen" 
+- "Extrahiere die wichtigsten Beschlüsse für einen E-mail Newsletter" 
+
+**Je präziser, desto besser!**
+
+Note:
+"Bei Aufgabe 15 (Zusammenfassen) beachten Sie:
+
+Geben Sie klare Anweisungen:
+- 'Fasse den Text in 5 Bullet Points zusammen'
+- 'Fasse den Text in 3 Sätzen zusammen'
+- 'Extrahiere die wichtigsten Beschlüsse aus dem Protokoll'
+
+Je präziser, desto besser!"
+
+--
+
+## Aufgaben: Dokumentation
+
+ **Aufgabe 14:** Dokumentations-Vorlage  
+ **Aufgabe 15:** Text zusammenfassen  
+ **Aufgabe 16:** Bericht generieren (Bonus)  
+
+**Think outside the box!**
+
+⏱ **Zeit:** 15 Minuten
+
+Note:
+"Sie haben jetzt 15 Minuten für diese Aufgaben:
+
+Aufgabe 14: Dokumentations-Vorlage erstellen
+Lassen Sie sich eine Vorlage erstellen für wiederkehrende Dokumentation.
+Beispiele: Protokoll-Vorlage, Berichts-Vorlage, Checklisten-Vorlage, Elterngespräch-Dokumentation
+
+Aufgabe 15: Text zusammenfassen
+Geben Sie einen langen Text ein und lassen Sie ihn zusammenfassen.
+Beispiel: Meeting-Protokoll → 5 Bullet Points
+WICHTIG: KEINE personenbezogenen Daten!
+
+Aufgabe 16: Bericht generieren (Bonus)
+Erstellen Sie einen Bericht für Behörden, Elternbeirat oder Träger.
+
+Ziel: Mindestens Aufgabe 14 UND 15 schaffen!"
+
+---
+
+## Ergebnisse sammeln
+
+Note: Kurzer Austausch
+
+---
+
+## Exkurs "Think outside the box"
+
+**NotebookLM** (https://notebooklm.google.com/notebook/0f4b9a29-831d-41ae-9852-19512a4b3082)    
+**Gemini - Visuelles Layout** (https://gemini.google.com/share/62935bb1af72)  
+**Gemini - Storybook** (https://gemini.google.com/share/869f9ead5bcb)
+
+---
+
+<!-- .slide: class="chapter" -->
+
+# Visualisierungen
+
+---
+
+# KI kann auch BILDER erstellen!
+
+Note:
+"STOPP! Schauen Sie sich das mal an!
+
+Diese Bilder wurden NICHT fotografiert.
+Diese Bilder wurden NICHT gezeichnet.
+Diese Bilder wurden von KI GENERIERT - aus Text!
+
+Und genau das machen Sie jetzt auch!"
+https://chatgpt.com/share/69393653-2cbc-8013-afcc-a0c5bc0bdf47
+https://gemini.google.com/share/8d5c143e2f33
+--
+
+## Was ist Bildgenerierung?
+
+Sie beschreiben in **Worten**, was Sie sehen wollen
+
+**KI generiert ein Bild dazu!**
+
+Das nennt man: **Text-to-Image**
+
+Note:
+"Bildgenerierung funktioniert so:
+
+Sie beschreiben in Worten, was Sie sehen wollen.
+
+Beispiel: 'Eine fröhliche Kindergruppe spielt im Herbstlaub im Garten, warmes Licht, fotografischer Stil'
+
+→ KI generiert ein Bild dazu!
+
+Das nennt man: Text-to-Image"
+
+--
+
+## Beispiel 1
+
+**Prompt:**
+"Eine fröhliche Kindergruppe spielt im Herbstlaub im Garten, warmes Licht, fotografischer Stil"
+
+**→ KI generiert Bild!**
+
+Note:
+Beispiel für einen Bildgenerierungs-Prompt.
+
+--
+
+## Beispiel 2
+
+**Prompt**
+Eine freundliche Kita-Leiterin sitzt an ihrem Schreibtisch und 
+arbeitet konzentriert am Laptop. Im Hintergrund sieht man durch 
+ein großes Fenster einen bunten Kita-Garten mit Spielgeräten. 
+Warmes Tageslicht, professionelle Atmosphäre, realistischer 
+Foto-Stil.
+
+---
+
+## Welche Tools gibt es?
+
+Note:
+"Es gibt mehrere Tools für Bildgenerierung:"
+
+--
+
+## 1. ChatGPT 
+
+- Integriert in ChatGPT Plus/Team/Enterprise 
+- Einfach zu bedienen 
+- Gute Qualität 
+
+Note:
+"1. ChatGPT (mit DALL-E)
+- Integriert in ChatGPT Plus/Team/Enterprise
+- Einfach zu bedienen
+- Gute Qualität"
+
+--
+
+## 2. Midjourney
+
+- Über Discord 
+- Sehr künstlerisch 
+- Kostenpflichtig 
+
+Note:
+"2. Midjourney
+- Über Discord
+- Sehr künstlerisch
+- Kostenpflichtig"
+
+--
+
+## 3. Google Gemini
+
+- integriert in den Chatbot 
+- derzeit bestes Programm auf dem Markt (Stand: heute!) 
+
+Note:
+"3. Gemini
+- In den Chatbot integriert
+- Derzeit bestes System auf dem Markt (Stand: heute!)
+
+Heute nutze ich: ChatGPT und Gemini - weil Sie die Tools schon kennen!"
+
+---
+
+## Anwendungen für Träger
+
+ **Social Media:** Instagram, Facebook, Stories  
+ **Print:** Flyer, Plakate, Einladungen  
+ **Präsentationen:** PowerPoint-Bilder  
+ **Webseite:** Header-Bilder, Illustrationen
+
+Note:
+"Was können Sie mit KI-Bildern machen?
+
+Social Media: Instagram-Posts, Facebook-Beiträge, Story-Grafiken
+Print: Flyer, Plakate, Einladungen
+Präsentationen: PowerPoint-Bilder, Workshop-Materialien
+Webseite: Header-Bilder, Illustrationen
+
+Aber Achtung: Nicht alles ist perfekt - und nicht alles ist rechtlich sicher!"
+
+---
+
+# WICHTIG
+
+## Grenzen der Bildgenerierung
+
+Note:
+"Pass auf, das ist wichtig! Wichtige Grenzen & Rechtliches:"
+
+--
+
+## Was funktioniert NICHT gut
+
+ **Hände** (allerdings kaum mehr in aktuellen Systemen)  
+ **Text in Bildern** (nur bei wenigen Tools gut)  
+ **Realistische Gesichter** bekannter Personen  
+ **Sehr spezifische Details**  
+ **Komplexe Szenen** mit vielen Personen
+
+Note:
+"Was funktioniert NICHT gut:
+- Hände (oft merkwürdig, zu viele Finger)
+- Text in Bildern (meist unleserlich oder falsch)
+- Realistische Gesichter von bekannten Personen
+- Sehr spezifische Details
+- Komplexe Szenen mit vielen Personen"
+
+--
+
+## Rechtliche Grenzen
+
+ **Urheberrecht ist Grauzone!**
+Wer besitzt das Bild?
+
+ **Kommerzielle Nutzung:**
+Vorsicht! AGB prüfen!
+
+ **KEINE echten Kinder-Fotos** durch KI ersetzen!
+
+ **Markennamen/Logos:** Nicht generieren lassen!
+
+Note:
+"Rechtliche Grenzen:
+- Urheberrecht ist Grauzone! Wer besitzt das Bild?
+- Kommerzielle Nutzung: Vorsicht! AGB prüfen!
+- KEINE echten Kinder-Fotos durch KI ersetzen!
+- Markennamen/Logos: Nicht generieren lassen!"
+
+--
+
+## Faustregel
+
+- Für **Inspiration:** JA 
+- Für **Social Media** (nicht-kommerziell): Meist OK 
+- Für **interne Präsentationen:** JA 
+- Für **kommerzielle Kampagnen:** Rechtlich prüfen! 
+- Als **Ersatz für echte Kinder-Fotos:** NEIN! 
+
+Note:
+"Faustregel:
+- Für Inspiration: JA
+- Für Social Media (nicht-kommerziell): Meist OK
+- Für interne Präsentationen: JA
+- Für kommerzielle Kampagnen: Rechtlich prüfen!
+- Als Ersatz für echte Kinder-Fotos: NEIN!"
+
+---
+
+## Tipps für gute Bildprompts
+
+**GUTER PROMPT =**
+Detaillierte Beschreibung + Stil + Stimmung
+
+Note:
+"Tipps für gute Bildprompts:
+GUTER BILDPROMPT = Detaillierte Beschreibung + Stil + Stimmung"
+
+--
+
+## Beispiel: Gut vs. Schlecht
+
+ **SCHLECHT:** "Erzieherinnen in einem Raum"
+→ Zu vage!
+
+ **GUT:** "5 Erzieherinnen, Kreis, Seminarraum, Flipchart, warmes Licht, fotorealistisch, freundlich"
+→ Detailliert!
+
+Note:
+"Beispiel:
+SCHLECHT: 'Erzieherinnen in einem Raum' → Zu vage!
+GUT: '5 Erzieherinnen, Kreis, Seminarraum, Flipchart, warmes Licht, fotorealistisch, freundlich' → Detailliert!"
+
+---
+
+<!-- .slide: class="hands-on" -->
+
+# 🛠️ HANDS-ON
+
+## Aufgaben: Bildgenerierung
+
+ **Aufgabe 17:** Social-Media-Bild  
+ **Aufgabe 18:** Präsentations-Bild  
+ **Aufgabe 19:** Kreativ experimentieren
+
+⏱ **Zeit:** 20 Minuten
+
+Note:
+"Jetzt sind Sie dran! Sie haben 20 Minuten für diese Aufgaben:
+
+Aufgabe 17: Social-Media-Bild erstellen
+Erstellen Sie ein Bild für einen Instagram/Facebook-Post.
+Themen: Herbstfest, Tag der offenen Tür, Stellenanzeige, etc.
+
+Aufgabe 18: Präsentations-Bild
+Erstellen Sie ein Bild für eine Präsentation.
+Themen: Teamwork, Qualitätsentwicklung, Fortbildung, etc.
+
+Aufgabe 19: Kreativ experimentieren (Bonus)
+Probieren Sie aus, was möglich ist! Lassen Sie Ihrer Fantasie freien Lauf!
+
+Ziel: Mindestens 2 Bilder erstellen. Mehr ist besser!
+
+WICHTIG:
+- Beschreiben Sie detailliert, was Sie sehen wollen
+- Geben Sie Stil an (fotorealistisch, illustriert, gemalt, etc.)
+- Erwarten Sie nicht Perfektion beim ersten Versuch!"
+
+---
+
+Highlights
+
+Note:
+**Sammlung: Highlights**
+"Ganz schnell in die Runde: Was war Ihr persönliches Highlight aus Block 4? Ein Satz pro Person!"
+
+5-7 Antworten zulassen.
+
+Typische Antworten:
+- "Dass ich in 2 Minuten ein Bild für Instagram erstellt habe!"
+- "Die Galerie-Runde - so viele coole Bilder!"
+- "Dass ich jetzt keine Angst mehr vor leeren Vorlagen habe"
+
+---
+
+## Erfolgs-Bilanz Block 4
+
+Sie haben:
+
+- 2-3 Vorlagen erstellt 
+- Texte zusammengefasst 
+- 2-4 Bilder generiert 
+- Kreativ experimentiert 
+
+**Gesamt heute: 20+ Outputs!**
+
+Note:
+"Was haben Sie in Block 4 gemacht?
+- Mindestens 2-3 Vorlagen erstellt
+- Texte zusammengefasst
+- Mindestens 2-4 Bilder generiert
+- Kreativ experimentiert
+
+Das sind nochmal 4-6 Outputs!
+
+Gesamt heute: 20+ nutzbare Dokumente und Bilder!"
+
+---
+
+<!-- .slide: class="summary" -->
+
+# 🏛️ Block 4 – Mitnehmsel
+
+- KI spart Zeit bei Dokumentation
+- Klare Anweisungen = bessere Ergebnisse
+- Bildgenerierung eignet sich für Inspiration
+- Multimediale Möglichkeiten (Input&Output)
+- Rechtliche & ethische Grenzen beachten
+
+Note:
+**Ausblick auf Block 5:**
+"Jetzt kommt der letzte Block: Ethik & Transfer
+
+Da geht's um:
+- Wie gehen wir verantwortungsvoll mit KI um?
+- Wie setzen Sie das alles dauerhaft in Ihrer Arbeit um?
+- Was ist Ihr persönlicher Plan?
+
+Letzter Block, dann haben Sie's geschafft!
+
+--- 
+
+<!-- .slide: class="chapter" -->
+
+# Block 5
+
+## Ethik & Transfer
+
+Note:
+**Übergeordnete Ziele von Block 5:**
+Nach Block 5 können die Teilnehmenden:
+- Ethische Fragen im Umgang mit KI reflektieren und benennen
+- Verantwortungsvolle Nutzung von KI in der Trägerarbeit sicherstellen
+- Einen konkreten, persönlichen Aktionsplan für die nächsten 30-60-90 Tage haben
+- Hindernisse und Erfolgsfaktoren für die Umsetzung benennen
+- Mit Motivation und klarem Plan aus dem Workshop gehen
+- Den Workshop als wertvoll und praxisrelevant bewerten
+
+---
+
+## Der wichtigste Block?
+
+Sie haben heute VIEL gemacht:
+
+- Texte geschrieben 
+- Pläne erstellt 
+- Konzepte entwickelt 
+- Bilder generiert 
+
+**Jetzt: Die wichtigste Frage...**
+
+Note:
+"Willkommen zu unserem letzten Block!
+
+Sie haben heute VIEL gemacht:
+- Texte geschrieben
+- Pläne erstellt
+- Konzepte entwickelt
+- Bilder generiert
+
+Und jetzt stellen wir uns die wichtigste Frage:"
+
+---
+
+# Wie nutzen wir KI verantwortungsvoll?
+
+Note:
+"Wie nutzen wir KI verantwortungsvoll?"
+
+---
+
+## Vom Machen zum Reflektieren
+
+**KI ist nicht neutral**
+
+KI ist ein **Werkzeug**
+
+→ Es kommt darauf an, **WIE** wir es nutzen
+
+Note:
+"Die letzten Stunden waren sehr praktisch. Jetzt wird's reflektiv.
+
+Denn: KI ist nicht neutral. KI ist ein Werkzeug - und wie bei jedem Werkzeug kommt es darauf an, WIE wir es nutzen."
+
+--
+
+## Unsere besondere Verantwortung
+
+Als Träger:
+
+- Für die Kinder 
+- Für die Familien 
+- Für unsere Mitarbeitenden 
+- Für unsere Werte 
+
+Note:
+"Als Träger haben wir eine besondere Verantwortung:
+- Für die Kinder
+- Für die Familien
+- Für unsere Mitarbeitenden
+- Für unsere Werte
+
+Und deshalb müssen wir über Ethik sprechen."
+
+--
+
+## Die 5 großen Fragen
+
+1. Wann wird KI-Nutzung problematisch? 
+2. Wie viel Verantwortung geben wir ab? 
+3. Was passiert mit unseren Daten? 
+4. Wie transparent sind wir? 
+5. Was bedeutet das für den Menschen? 
+
+Note:
+"Diese 5 Fragen möchte ich mit Ihnen diskutieren. Nicht akademisch, sondern ganz praktisch für Ihre Arbeit."
+
+--
+
+## Frage 1: Grenzen erkennen
+
+**Wann sollten wir KI NICHT nutzen?**
+
+Note:
+"Frage an Sie: Wann sollten wir KI NICHT nutzen?"
+
+2-3 Antworten zulassen.
+
+Typische Antworten:
+- "Wenn es um sensible Entscheidungen geht"
+- "Wenn personenbezogene Daten involviert sind"
+- "Wenn es rechtliche Konsequenzen hat"
+
+--
+
+## KI sollten wir NICHT nutzen für
+
+ **Personalentscheidungen** (Einstellung, Kündigung)  
+ **Pädagogische Beurteilungen** (Entwicklungsberichte)  
+ **Rechtliche Entscheidungen** (Verträge, Haftung)  
+ **Sensible Kommunikation** (Konfliktgespräche)  
+ **Ersatz für Beziehung** (Elterngespräche, Seelsorge)
+
+Note:
+"Genau! KI sollten wir NICHT nutzen für:
+- Personalentscheidungen (Einstellung, Kündigung)
+- Pädagogische Beurteilungen (Entwicklungsberichte über Kinder)
+- Rechtliche Entscheidungen (Vertragsklauseln, Haftungsfragen)
+- Sensible Kommunikation (Konfliktgespräche, Krisensituationen)
+- Ersatz für menschliche Beziehung (Elterngespräche, Seelsorge)"
+
+--
+
+## Faustregel
+
+Wenn Menschen direkt betroffen sind und es um **Vertrauen, Beziehung oder weitreichende Konsequenzen** geht:
+
+→ **KI ist Assistent, nicht Entscheider!**
+
+Note:
+"Faustregel: Wenn Menschen direkt betroffen sind und es um Vertrauen, Beziehung oder weitreichende Konsequenzen geht → KI ist Assistent, nicht Entscheider!"
+
+---
+
+## Frage 2: Verantwortung
+
+**Wenn KI einen Fehler macht:**
+
+Wer ist verantwortlich?
+
+Note:
+"Frage: Wenn KI einen Fehler macht - wer ist verantwortlich?"
+
+1-2 Antworten zulassen.
+
+--
+
+## Die Antwort
+
+**SIE!**
+
+Nicht die KI.
+Nicht ChatGPT.
+Nicht Claude.
+
+**Sie tragen die Verantwortung für jeden Output!**
+
+Note:
+"Richtig: SIE! Nicht die KI. Nicht ChatGPT. Nicht Claude.
+
+Sie tragen die Verantwortung für jeden Output, den Sie nutzen!"
+
+--
+
+## Das bedeutet
+
+- Sie prüfen jeden Text
+- Sie prüfen jede Gliederung 
+- Sie prüfen jede rechtliche Aussage 
+- Sie entscheiden, was Sie verwenden 
+
+**KI entlastet – aber entbindet nicht von Verantwortung!**
+
+Note:
+"Das bedeutet:
+- Sie prüfen jeden Text
+- Sie prüfen jede Gliederung
+- Sie prüfen jede rechtliche Aussage
+- Sie entscheiden, was Sie verwenden
+
+KI entlastet - aber entbindet nicht von Verantwortung!"
+
+---
+
+## Frage 3: Datenschutz
+
+Was passiert mit Daten in ChatGPT & Co.?
+
+Note:
+"Wir haben heute oft über Datenschutz gesprochen. Nochmal zusammengefasst:
+
+Was passiert mit Daten, die wir in ChatGPT, Claude & Co. eingeben?"
+
+--
+
+## Die Wahrheit
+
+- An Server in USA/EU gesendet 
+- Können zur Verbesserung genutzt werden 
+- Nicht mehr unter Ihrer Kontrolle 
+
+**Deshalb:**
+- KEINE Namen 
+- KEINE personenbezogenen Daten 
+- KEINE vertraulichen Informationen 
+
+**außer:**
+
+Note:
+"Die Wahrheit:
+- Sie werden an Server in den USA / EU gesendet
+- Sie können zur Verbesserung der KI-Modelle genutzt werden (je nach Einstellung!)
+- Sie sind NICHT mehr unter unserer Kontrolle
+
+Deshalb:
+- KEINE Namen
+- KEINE personenbezogenen Daten
+- KEINE vertraulichen Informationen
+
+Wenn Sie unsicher sind: Lieber nicht eingeben!"
+
+--
+
+## Für fortgeschrittene Nutzung
+
+**Enterprise-Lösungen** (DSGVO-konform)
+
+- ChatGPT Enterprise 
+- Claude for Work 
+- Microsoft Copilot (Enterprise) 
+
+- Kostet Geld 
+- Datenschutzrechtlich sicherer 
+- Für regelmäßige Nutzung überlegen! 
+
+Note:
+"Für Träger, die mehr machen wollen:
+
+Es gibt Enterprise-Lösungen von ChatGPT, Claude, Microsoft Copilot, die DSGVO-konform sind und bei denen Daten NICHT trainiert werden.
+
+→ Das kostet Geld, ist aber datenschutzrechtlich sicherer.
+→ Für regelmäßige Nutzung: Ernsthaft überlegen!"
+
+---
+
+## Frage 4: Transparenz
+
+**Müssen wir sagen, wenn wir KI nutzen?**
+
+Note:
+"Diskussionsfrage: Müssen wir Eltern und Mitarbeitenden sagen, wenn wir KI nutzen?
+
+Was meinen Sie?"
+
+3-4 Meinungen zulassen - kontrovers diskutieren!
+
+--
+
+## Transparenz mit Augenmaß
+
+ **Transparent sein bei:**
+- KI-generierten Bildern in Social Media
+- Großen Konzepten auf KI-Basis
+- Wenn direkt gefragt 
+
+ **Nicht explizit bei:**
+
+- Jeder einzelnen E-Mail (übertrieben) 
+- Internen Arbeitsprozessen 
+- Stark überarbeiteten Entwürfen 
+
+Note:
+"Interessante Perspektiven! Hier ist meine Einschätzung:
+
+Transparenz ist wichtig - aber mit Augenmaß:
+
+Transparent sein bei:
+- KI-generierten Bildern in Social Media ('Bild: KI-generiert')
+- Großen Konzepten, die auf KI-Strukturen basieren
+- Wenn Eltern/Mitarbeitende direkt fragen
+
+Nicht explizit kommunizieren bei:
+- Jeder einzelnen E-Mail (übertrieben)
+- Internen Arbeitsprozessen (niemand fragt)
+- Entwürfen, die Sie stark überarbeitet haben"
+
+--
+
+## Grundregel
+
+**KI sichtbar** im Output (z.B. Bilder)
+→ Transparent sein
+
+**KI nur Werkzeug** (wie Rechtschreibprüfung)
+→ Nicht nötig
+
+**Aber:** Verstecken Sie es nicht!
+Wenn jemand fragt: Ehrlich antworten
+
+Note:
+"Grundregel: Wenn KI sichtbar im Output ist (z.B. Bilder) → transparent sein. Wenn KI nur Werkzeug war (wie Rechtschreibprüfung) → nicht nötig.
+
+Aber: Verstecken Sie es nicht aktiv! Wenn jemand fragt: Ehrlich antworten."
+
+---
+
+## Frage 5: Der Mensch im Mittelpunkt
+
+**Was bedeutet KI für den Menschen?**
+
+Note:
+"Letzte Frage - und die wichtigste: Was bedeutet KI für den Menschen in unserer Arbeit?"
+
+--
+
+- KI kann uns **entlasten** (Verwaltung, Planung) 
+- KI gibt uns **mehr Zeit** für das Wesentliche 
+- KI kann **inspirieren** und unterstützen 
+
+Note:
+"KI kann uns entlasten (Verwaltung, Planung)
+KI gibt uns mehr Zeit für das Wesentliche (Beziehung, Pädagogik)
+KI kann inspirieren und unterstützen"
+
+--
+
+## Aber
+
+- KI ersetzt **NIEMALS** menschliche Zuwendung 
+- KI ersetzt **NIEMALS** pädagogisches Handeln 
+- KI ersetzt **NIEMALS** Vertrauen und Beziehung 
+
+**KI ist Werkzeug – der Mensch bleibt Mittelpunkt!**
+
+Note:
+"ABER:
+- KI ersetzt NIEMALS menschliche Zuwendung
+- KI ersetzt NIEMALS pädagogisches Handeln
+- KI ersetzt NIEMALS Vertrauen und Beziehung
+
+KI ist Werkzeug - der Mensch bleibt Mittelpunkt!"
+
+---
+
+## Persönliches Statement
+
+KI ist eine **Chance** für Sie als Mitarbeitende beim Träger:
+
+- Effizienter arbeiten 
+- Kreativer sein 
+- Mehr Zeit für Menschen 
+
+**ABER:** Nur wenn wir sie **verantwortungsvoll** nutzen!
+
+Note:
+"Persönlich bin ich überzeugt:
+
+KI ist eine Chance für uns als Träger.
+- Wir können effizienter arbeiten
+- Wir können kreativer sein
+- Wir können mehr Zeit für Menschen haben
+
+ABER: Nur, wenn wir sie verantwortungsvoll nutzen!
+
+Und genau deshalb haben wir heute darüber gesprochen - nicht nur über das WIE, sondern auch über das WARUM und das OB."
+
+---
+
+<!-- .slide: class="summary" -->
+
+# 🏛️ Block 5 - Mitnehmsel
+
+- KI darf entlasten, aber nicht entscheiden
+- Transparenz schafft Vertrauen
+- Datenschutz ist nicht verhandelbar
+- Mensch & Beziehung stehen über Effizienz
+
+Note:
+"So! Ethik: ✅ Reflektiert.
+
+Jetzt zur wichtigsten Frage: Wie setzen Sie das alles um?"
+
+--- 
+
+# Transfer
+
+## Vom Workshop in die Praxis
+
+Note:
+"Sie haben heute SO VIEL gelernt und ausprobiert!
+
+Die wichtigste Frage ist jetzt:
+Was machen Sie morgen, nächste Woche, nächsten Monat damit?
+
+Denn: Der beste Workshop bringt nichts, wenn nichts davon umgesetzt wird!"
+
+---
+
+## Die wichtigste Frage
+
+**Was machen Sie morgen, nächste Woche, nächsten Monat damit?**
+
+Der beste Workshop bringt nichts ohne **Umsetzung**!
+
+Note:
+Die zentrale Frage für den Transfer.
+
+---
+
+## Warum scheitert die Umsetzung?
+
+**90 % sind begeistert**
+**30 % setzen es wirklich um**
+
+Warum?
+
+Note:
+"Ich habe viele Workshops gegeben. Und ich weiß:
+
+90% der Teilnehmenden sind begeistert.
+Aber nur 30% setzen es wirklich um.
+
+Warum? Weil Hindernisse kommen:"
+
+---
+
+## Hindernisse
+
+- "Ich habe keine Zeit" 
+- "Ich weiß nicht, wo ich anfangen soll" 
+- "Mein Team ist skeptisch" 
+- "Die Technik funktioniert nicht" 
+- "Ich vergesse es einfach" 
+
+**Kennen Sie das?**
+
+Note:
+"Typische Hindernisse:
+- 'Ich habe keine Zeit' → Alltag übernimmt, Dringliches verdrängt Wichtiges
+- 'Ich weiß nicht, wo ich anfangen soll' → Zu viele Möglichkeiten, keine Priorisierung
+- 'Mein Team ist skeptisch' → Kollegen/Vorgesetzte bremsen
+- 'Die Technik funktioniert nicht' → Account-Problem, Budget fehlt, Zugang fehlt
+- 'Ich vergesse es einfach' → Kein System, keine Routine
+
+Kennen Sie das?"
+
+---
+
+## Was funktioniert?
+
+Die erfolgreichen 30% machen:
+
+Note:
+"Aber es gibt auch die 30%, die erfolgreich sind. Was machen die anders?"
+
+--
+
+## Erfolgsfaktor 1
+
+ **Sie starten klein**
+
+Nicht alles auf einmal
+→ 1-2 konkrete Anwendungen
+
+Note:
+"Erfolgsfaktor 1: Sie starten klein
+→ Nicht alles auf einmal, sondern 1-2 konkrete Anwendungen"
+
+--
+
+## Erfolgsfaktor 2
+
+ **Sie haben einen Plan**
+
+Konkrete Termine
+Konkrete Aufgaben
+
+Note:
+"Erfolgsfaktor 2: Sie haben einen Plan
+→ Konkrete Termine, konkrete Aufgaben"
+
+--
+
+## Erfolgsfaktor 3
+
+ **Sie teilen ihr Wissen**
+
+Zeigen es Kollegen
+Werden zum Multiplikator
+
+Note:
+"Erfolgsfaktor 3: Sie teilen ihr Wissen
+→ Zeigen es Kollegen, werden zum Multiplikator"
+
+--
+
+## Erfolgsfaktor 4
+
+ **Sie dokumentieren Erfolge**
+
+"Diese E-Mail: 20 Min → mit KI: 3 Min"
+→ Motivation!
+
+Note:
+"Erfolgsfaktor 4: Sie dokumentieren Erfolge
+→ 'Diese E-Mail hätte 20 Min gedauert, mit KI: 3 Min' → Motivation!"
+
+--
+
+## Erfolgsfaktor 5
+
+ **Sie bauen Routinen auf**
+
+Feste Zeiten
+Feste Anwendungsfälle
+
+Note:
+"Erfolgsfaktor 5: Sie bauen Routinen auf
+→ Feste Zeiten, feste Anwendungsfälle
+
+Und genau das werden Sie jetzt auch machen!"
+
+---
+
+# Ihr persönlicher Aktionsplan
+
+**30-60-90 Tage**
+
+Note:
+"Sie haben in Ihren Unterlagen eine Vorlage: 30-60-90-Tage-Plan
+
+Die füllen Sie jetzt aus - ganz konkret für sich!"
+
+--
+
+## 30-Tage-Plan (nächster Monat)
+
+- Was will ich in den nächsten 30 Tagen mit KI machen? 
+- **1-3 konkrete Anwendungsfälle** 
+- Welche Hürden erwarte ich? 
+- Wer kann mich unterstützen? 
+
+Note:
+"30-TAGE-PLAN (nächster Monat)
+- Was will ich in den nächsten 30 Tagen mit KI machen?
+- 1-3 konkrete Anwendungsfälle
+- Welche Hürden erwarte ich?
+- Wer kann mich unterstützen?"
+
+--
+
+## 60-Tage-Plan (in 2 Monaten)
+
+- Was will ich erweitern? 
+- Welche neuen Anwendungen ausprobieren? 
+- Wen will ich einbinden (Team, Kollegen)? 
+
+Note:
+"60-TAGE-PLAN (in 2 Monaten)
+- Was will ich erweitern?
+- Welche neuen Anwendungen ausprobieren?
+- Wen will ich einbinden (Team, Kollegen)?"
+
+--
+
+## 90-Tage-Plan (in 3 Monaten)
+
+- Wie sieht meine KI-Routine aus? 
+- Was habe ich erreicht? 
+- Was ist mein nächster Lernschritt? 
+
+Note:
+"90-TAGE-PLAN (in 3 Monaten)
+- Wie sieht meine KI-Routine aus?
+- Was habe ich erreicht?
+- Was ist mein nächster Lernschritt?"
+
+--
+
+## WICHTIG beim Planen
+
+ **Seien Sie konkret!**
+"E-Mails mit KI" → zu vage
+"Jeden Montag: Rundschreiben-Entwurf" → konkret!
+
+ **Seien Sie realistisch!**
+Nicht 20 Ziele, sondern 2-3 machbare
+
+ **Denken Sie an Hindernisse!**
+Dann überraschen sie Sie nicht
+
+Note:
+"Wichtig:
+- Seien Sie konkret! ('E-Mails mit KI schreiben' ist zu vage. 'Jeden Montag: Rundschreiben-Entwurf mit KI erstellen' ist konkret!)
+- Seien Sie realistisch! (Nicht 20 Ziele, sondern 2-3 machbare)
+- Denken Sie an Hindernisse! (Dann überraschen sie Sie nicht)"
+
+---
+
+<!-- .slide: class="hands-on" -->
+
+# 🛠️ HANDS-ON
+
+## Ihr Aktionsplan!
+
+⏱ **10 Minuten:**
+
+Füllen Sie Ihren persönlichen **30-60-90-Tage-Plan** aus
+
+Note:
+"10 Minuten Zeit:
+
+Füllen Sie Ihren persönlichen Aktionsplan aus.
+
+Ich bin im Raum und helfe, falls Sie Fragen haben.
+
+Los geht's!"
+
+**Während der Arbeitsphase:**
+- Von Person zu Person gehen
+- Unterstützen bei der Konkretisierung
+- Ermutigen, klein anzufangen
+- Hindernisse ernst nehmen
+
+**Typische Hilfestellungen:**
+- "Ich will alles ausprobieren!" → "Super Motivation! Aber starten Sie klein. Wählen Sie 1-2 Sachen."
+- "Ich weiß nicht, ob mein Chef das erlaubt." → "Schreiben Sie das als Hindernis auf. Könnten Sie erstmal privat üben?"
+
+---
+
+<!-- .slide: class="chapter" -->
+
+# Abschluss
+
+Note:
+"So! Sie haben jetzt:
+- Einen Plan für die nächsten 90 Tage
+- Feedback von einem Kollegen/einer Kollegin bekommen
+- Wissen über KI aufgebaut
+- 20+ praktische Outputs erstellt
+
+Jetzt machen wir den Abschluss!"
+
+---
+
+## Erfolge feiern!
+
+**Heute Morgen, 9:30 Uhr**
+
+Note:
+"Schauen wir nochmal zurück auf diesen Tag:
+
+Heute Morgen, 9:30 Uhr:
+- Viele kannten KI nur vom Hörensagen
+- Manche waren skeptisch
+- Niemand hatte praktische Erfahrung"
+
+---
+
+## Jetzt, 16:45 Uhr
+
+Sie haben:
+- 20+ Dokumente erstellt 
+- 4-5 KI-Tools kennengelernt 
+- Prompts formuliert 
+- Bilder generiert 
+- Einen Umsetzungsplan 
+
+**Das ist RIESIG!**
+
+Note:
+"Jetzt, 16:45 Uhr:
+- Sie haben 20+ Dokumente erstellt
+- Sie kennen 4-5 KI-Tools
+- Sie wissen, wie man Prompts formuliert
+- Sie haben Bilder generiert
+- Sie haben einen Umsetzungsplan
+
+Das ist RIESIG!"
+
+---
+
+## Unterstützung nach dem Workshop
+
+**Alle Materialien finden Sie online unter t1p.de/kitatraeger**
+
+Note:
+"Sie gehen nicht alleine nach Hause! Sie haben Unterstützung:
+
+1. Materialien zum Workshop:
+- Alle Folien
+- Prompt-Bibliothek mit 200+ Prompts
+- Alle Arbeitsblätter
+- Best-Practice-Beispiele
+→ Erhalten Sie per E-Mail"
+
+---
+
+<img src="logokathkita.jpg" alt="Logo" width="250" style="margin-bottom: 1.5rem;">
+
+# Danke
+
+Note:
+"So! Das war's! 
+
+Wenn Sie noch Fragen haben: Ich bin noch 15 Minuten hier.
+
+Ansonsten: Kommen Sie gut nach Hause und bis bald!"
+
+**Workshop beendet ✅**
+
+    </textarea>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+  </script>
+</body>
+</html>
